@@ -1,6 +1,7 @@
 "use client";
 import NavBar from "@/components/navbar";
 import { Button } from "../ui/button";
+import CellCapitalPrimaryButton from "../cell-capital-button";
 
 export default function HeroSection() {
 	return (
@@ -24,17 +25,9 @@ export default function HeroSection() {
 
 const MainHero = () => {
 	return (
-		<div className="grid  px-4 pb-4">
+		<div className="grid grid-rows-[1fr_min-content]  px-4 pb-4">
 			<div className="justify-self-center self-center flex flex-col">
-				<div className="hidden lg:block">
-					<h1 className="text-heading-0 uppercase text-center leading-[1.2] hidden md:block">
-						$15million secured in debt
-					</h1>
-					<h1 className="text-heading-0 uppercase hidden md:block text-center">
-						free grants. You could be next!
-					</h1>
-				</div>
-				<div className="hidden sm:block lg:hidden">
+				<div className="hidden sm:block ">
 					<h1 className="text-heading-0 uppercase text-center leading-[1.2]">
 						$15million secured
 					</h1>
@@ -50,15 +43,10 @@ const MainHero = () => {
 						$15million secured in debt free grants. You could be next!
 					</h1>
 				</div>
-				<Button
-					size="lg"
-					className="uppercase text-caption rounded-none px-7 cursor-pointer mt-4 mx-auto"
-				>
-					Book a free consultation
-				</Button>
+				<CellCapitalPrimaryButton />
 			</div>
 			<div className="self-end flex">
-				<p className="uppercase text-caption">
+				<p className="uppercase text-caption hidden md:block">
 					[ sucess oriented grant writing agency ]
 				</p>
 				<p className="uppercase text-caption ml-auto">[ scroll to see more ]</p>

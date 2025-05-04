@@ -51,7 +51,7 @@
 	--background-black-border: var(--cellcapital-light);
 	--input: oklch(89.49% 0.006 84.57);
 	--ring: oklch(0.708 0 0);
-	--fs-heading-0: clamp(3.2rem, 5.5vw, 7rem);
+	--fs-heading-0: clamp(3.2rem, 4.5vw, 7rem);
 	--fs-heading-one: clamp(2.5rem, 4.5vw, 3rem);
 	--fs-heading-two: clamp(1.1rem, 2.55vw, 1.3rem);
 	--fs-base-text: clamp(0.9rem, 2vw, 1.1rem);

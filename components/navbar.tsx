@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "./logo";
 import { ShoppingBag } from "lucide-react";
 import { Button } from "./ui/button";
-import CellCapitalPrimaryButton from "./cell-capital-button";
+import { CellCapitalSecondaryButton } from "./cell-capital-button";
 
 export default function NavBar() {
 	return (
@@ -22,13 +22,13 @@ export default function NavBar() {
 				</li>
 			</ul>
 
-			<div className="flex gap-4 col-start-3 items-center ml-auto">
+			<div className="flex gap-4 col-start-3 items-center  ml-auto">
 				<div className="uppercase text-caption flex items-center gap-2">
 					<span>cart</span>
 					<ShoppingBag size={16} />
 				</div>
 
-				<CellCapitalPrimaryButton />
+				<CellCapitalSecondaryButton />
 				<Button
 					size="sm"
 					className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden"
