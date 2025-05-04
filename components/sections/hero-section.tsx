@@ -43,7 +43,9 @@ const MainHero = () => {
 						$15million secured in debt free grants. You could be next!
 					</h1>
 				</div>
-				<CellCapitalPrimaryButton />
+				<CellCapitalPrimaryButton color="white">
+					Book a free consultation
+				</CellCapitalPrimaryButton>
 			</div>
 			<div className="self-end flex">
 				<p className="uppercase text-caption hidden md:block">
