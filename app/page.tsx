@@ -1,3 +1,4 @@
+import AboutSection from "@/components/sections/about-section";
 import HeroSection from "@/components/sections/hero-section";
 import SocialProof from "@/components/sections/social-proof";
 
@@ -6,6 +7,7 @@ export default function Home() {
 		<div>
 			<HeroSection />
 			<SocialProof />
+			<AboutSection />
 		</div>
 	);
 }

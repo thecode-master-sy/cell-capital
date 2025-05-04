@@ -27,11 +27,11 @@ export default function SocialProof() {
 				</div>
 
 				<div className="sm:hidden col-span-full max-w-[60ch]">
-					<p>
-						We have helped a diverse group of clients secure over 15million in
-						grant funding to grow and scale their operations and have a positive
-						impact on their communities, and we can help you too!
-					</p>
+					<p>We have helped a diverse group of clients</p>
+					<p>secure over 15million in grant funding to </p>
+					<p>grow and scale their operations and have </p>
+					<p>a positive impact on their communities,</p>
+					<p> and we can help you too!</p>
 				</div>
 			</div>
 
