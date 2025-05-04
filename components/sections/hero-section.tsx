@@ -45,6 +45,11 @@ const MainHero = () => {
 						You could be next!
 					</h1>
 				</div>
+				<div className="sm:hidden">
+					<h1 className="text-heading-0 uppercase text-center leading-[1.2]">
+						$15million secured in debt free grants. You could be next!
+					</h1>
+				</div>
 				<Button
 					size="lg"
 					className="uppercase text-caption rounded-none px-7 cursor-pointer mt-4 mx-auto"
