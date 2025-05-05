@@ -16,7 +16,7 @@ export default function CellCapitalPrimaryButton({
 	};
 	const objectStyles = {
 		white: "bg-primary",
-		primary: "bg-background-black",
+		primary: "bg-background-black opacity-60",
 	};
 	return (
 		<Button

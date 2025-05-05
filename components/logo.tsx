@@ -12,7 +12,9 @@ export default function Logo() {
 				priority
 			/>
 
-			<span className="text-base font-bold text-white">ell Capital</span>
+			<span className="text-base font-bold uppercase text-white">
+				ell Capital
+			</span>
 		</div>
 	);
 }
