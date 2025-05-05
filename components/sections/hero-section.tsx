@@ -28,18 +28,12 @@ const MainHero = () => {
 		<div className="grid grid-rows-[1fr_min-content]  px-4 pb-4">
 			<div className="justify-self-center self-center flex flex-col">
 				<div className="hidden sm:block ">
-					<h1 className="text-heading-0 uppercase text-center leading-[1.2]">
-						$15million secured
-					</h1>
-					<h1 className="text-heading-0 uppercase text-center">
-						in debt free grants.
-					</h1>
-					<h1 className="text-heading-0 uppercase text-center">
-						You could be next!
-					</h1>
+					<h1 className="text-heading-0  text-center uppercase">$15million Secured</h1>
+					<h1 className="text-heading-0  text-center uppercase">in Debt Free Grants.</h1>
+					<h1 className="text-heading-0  text-center uppercase">You Could be Next!</h1>
 				</div>
 				<div className="sm:hidden">
-					<h1 className="text-heading-0 uppercase text-center leading-[1.2]">
+					<h1 className="text-heading-0 uppercase text-center">
 						$15million secured in debt free grants. You could be next!
 					</h1>
 				</div>

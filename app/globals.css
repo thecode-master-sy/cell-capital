@@ -52,9 +52,9 @@
 	--input: oklch(89.49% 0.006 84.57);
 	--ring: oklch(0.708 0 0);
 	--fs-heading-0: clamp(3rem, 4.5vw, 7rem);
-	--fs-heading-one: clamp(1.5rem, 4.5vw, 2.15rem);
+	--fs-heading-one: clamp(1.5rem, 4.5vw, 2.2rem);
 	--fs-heading-two: clamp(1.1rem, 2.55vw, 1.3rem);
-	--fs-base-text: clamp(0.95rem, 2vw, 1.1rem);
+	--fs-base-text: clamp(0.91rem, 2vw, 0.95rem);
 	--fs-caption: clamp(0.6rem, 6.5vw, 0.8rem);
 }
 
@@ -67,14 +67,15 @@
 	}
 
 	h1 {
-		@apply -tracking-[0.2rem] leading-[1.35];
+		@apply -tracking-[0.15rem] leading-[1.35];
 	}
 	h2 {
-		@apply -tracking-[0.035rem] leading-[1.4];
+		@apply -tracking-[0.05rem] leading-[1.35];
 	}
 
 	p {
-		line-height: 1.4;
+		line-height: 1.38;
+		letter-spacing: 0px;
 	}
 	.text-indent {
 		text-indent: 15%;

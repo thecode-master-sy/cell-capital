@@ -7,12 +7,34 @@ export default function SocialProof() {
 	return (
 		<div className="bg-background grid pb-16">
 			<div className="py-16  px-4">
-				<div>
-					<h2 className="text-heading-one col-span-full text-indent max-w-[40ch]">
-						At Cell Capital we are passionate about securing grants for Business
-						and Non-Profits through Expert Consulting, Research, and Compelling
+				<div className="sm:block hidden">
+					<h2 className="text-heading-one col-span-full">
+						At Cell Capital we are passionate about
+					</h2>
+					<h2 className="text-heading-one col-span-full">
+						securing grants for Businesses & Non
+					</h2>
+					<h2 className="text-heading-one col-span-full">
+						- profits through expert consulting,
+					</h2>
+					<h2 className="text-heading-one col-span-full">
+						research, and compelling
+					</h2>
+					<h2 className="text-heading-one col-span-full">
 						Grant Proposals or Business Plan
 					</h2>
+				</div>
+
+				<div className="sm:hidden">
+					<h2 className="text-heading-one col-span-full">
+						At Cell Capital we are passionate about securing grants for
+						Businesses & Non - profits through expert consulting, research, and
+						compelling Grant Proposals or Business Plan
+					</h2>
+					<h2 className="text-heading-one col-span-full"></h2>
+					<h2 className="text-heading-one col-span-full"></h2>
+					<h2 className="text-heading-one col-span-full"></h2>
+					<h2 className="text-heading-one col-span-full"></h2>
 				</div>
 
 				<CellCapitalPrimaryButton className="mt-4" color="primary">
@@ -85,50 +107,6 @@ export default function SocialProof() {
 					/>
 				</div>
 			</div>
-			{/* <
-
-			<div className="flex  border-t border-b">
-				<div className="col-span-4 border-r flex items-center justify-center px-4 flex-1 py-12">
-					<Image
-						width={70}
-						height={100}
-						src="/social-proof/logo-proof-one.png"
-						alt="boomin university logo"
-					/>
-				</div>
-				<div className="col-span-4  border border-r flex px-4 flex-1 items-center justify-center py-12">
-					<Image
-						width={100}
-						height={100}
-						src="/social-proof/logo-proof-two.png"
-						alt="sistas cohort logo"
-					/>
-				</div>
-				<div className="col-span-4  border border-r flex px-4 flex-1 py-12 items-center justify-center ">
-					<Image
-						width={100}
-						height={100}
-						src="/social-proof/logo-proof-three.png"
-						alt="angels online "
-					/>
-				</div>
-				<div className="col-span-4  border border-r flex items-center px-4 flex-1 py-12">
-					<Image
-						width={100}
-						height={100}
-						src="/social-proof/logo-proof-four.png"
-						alt="boomin university logo"
-					/>
-				</div>
-				<div className="col-span-4  border border-r flex items-center justify-center px-4 flex-1 py-12">
-					<Image
-						width={100}
-						height={100}
-						src="/social-proof/logo-proof-five.png"
-						alt="boomin university logo"
-					/>
-				</div>
-			</div> */}
 		</div>
 	);
 }
