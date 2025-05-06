@@ -1,5 +1,6 @@
 import AboutSection from "@/components/sections/about-section";
 import HeroSection from "@/components/sections/hero-section";
+import MeetOurTeam from "@/components/sections/our-team";
 import SocialProof from "@/components/sections/social-proof";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 			<HeroSection />
 			<SocialProof />
 			<AboutSection />
+			<MeetOurTeam />
 		</div>
 	);
 }

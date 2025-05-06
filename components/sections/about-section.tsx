@@ -106,7 +106,7 @@ export default function AboutSection() {
 						className="min-w-[100px]"
 					/>
 
-					<div className="lg:col-start-6 sm:col-start-3 md:cols-start-4 col-span-full">
+					<div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
 						<div className="flex flex-col gap-2">
 							<span className="text-caption hidden sm:inline">[04]</span>
 							<h2 className="text-heading-one">Speed with Precision</h2>

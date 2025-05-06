@@ -55,7 +55,7 @@ export default function SocialProof() {
 				</div>
 
 				<div className="flex border mt-16">
-					<div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/0.6] min-w-[120px]">
+					<div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/1] min-w-[120px]">
 						<Image
 							width={100}
 							height={100}
@@ -77,7 +77,7 @@ export default function SocialProof() {
 						<Image
 							width={100}
 							height={100}
-							className="w-[35%]  min-w-[60px] mix-blend-luminosity"
+							className="w-[35%]  min-w-[50px] mix-blend-luminosity"
 							src="/social-proof/logo-proof-three.png"
 							alt="angels online "
 						/>
@@ -86,7 +86,7 @@ export default function SocialProof() {
 						<Image
 							width={100}
 							height={100}
-							className="w-[35%]  min-w-[60px] mix-blend-luminosity"
+							className="w-[35%]  min-w-[50px] mix-blend-luminosity"
 							src="/social-proof/logo-proof-four.png"
 							alt="boomin university logo"
 						/>
@@ -95,7 +95,7 @@ export default function SocialProof() {
 						<Image
 							width={100}
 							height={100}
-							className="w-[35%]  min-w-[60px] mix-blend-luminosity"
+							className="w-[35%]  min-w-[50px] mix-blend-luminosity"
 							src="/social-proof/logo-proof-five.png"
 							alt="boomin university logo"
 						/>

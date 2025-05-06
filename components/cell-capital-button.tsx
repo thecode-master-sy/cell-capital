@@ -22,7 +22,7 @@ export default function CellCapitalPrimaryButton({
 		<Button
 			size="lg"
 			className={cn(
-				"uppercase text-caption text-foreground rounded-sm px-7 cursor-pointer mt-4 mx-auto",
+				"uppercase text-caption text-foreground rounded-sm px-7 cursor-pointer mt-4 mx-auto font-normal",
 				containerStyles[color],
 				className
 			)}
@@ -39,7 +39,7 @@ export function CellCapitalSecondaryButton() {
 	return (
 		<Button
 			size="sm"
-			className="uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer hidden md:flex"
+			className="uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer hidden md:flex font-normal"
 		>
 			Book a free consultation
 		</Button>
