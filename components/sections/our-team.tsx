@@ -1,4 +1,5 @@
 import CellCapitalPrimaryButton from "../cell-capital-button";
+import Image from "next/image";
 
 export default function MeetOurTeam() {
 	return (
@@ -27,8 +28,301 @@ export default function MeetOurTeam() {
 				</div>
 			</div>
 
-			<div className="py-16 px-4">
-				<h2 className="text-heading-one">The Faces Behind The Brand</h2>
+			<div className="py-16">
+				<h2 className="text-heading-one px-4">The Faces Behind The Brand</h2>
+
+				<div className="border-t hidden gap-4 mt-4 px-4 py-4 lg:grid lg:grid-cols-[2fr_1.45fr]">
+					<div className="grid grid-cols-3 gap-2">
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/ceo.png"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Tochi Chimeremeze</span>
+								<span className="text-muted-foreground text-caption">
+									Founder and CEO
+								</span>
+							</div>
+						</div>
+
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/vice.png"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Nwankwo Nancy</span>
+								<span className="text-muted-foreground text-caption">
+									Vice President, Grant Writer
+								</span>
+							</div>
+						</div>
+
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/director-of-media.png"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Chineye Nwakego</span>
+								<span className="text-muted-foreground text-caption">
+									Director of Media and
+								</span>
+								<span className="text-muted-foreground text-caption">
+									Communiations
+								</span>
+							</div>
+						</div>
+
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/director-of-adminstration.png"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Stephanie Nkemakolam</span>
+								<span className="text-muted-foreground text-caption">
+									Grant Writer, Director of
+								</span>
+								<span className="text-muted-foreground text-caption">
+									adminstration
+								</span>
+							</div>
+						</div>
+
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/director-of-marketing.jpeg"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Oluchi Laura</span>
+								<span className="text-muted-foreground text-caption">
+									Director of Marketing
+								</span>
+							</div>
+						</div>
+
+						<div className=" flex flex-col gap-2">
+							<div>
+								<Image
+									src="/director-of-adminstration.png"
+									alt="value four"
+									width={100}
+									height={100}
+									className="w-[200px] h-[300px]"
+								/>
+							</div>
+
+							<div className="flex flex-col">
+								<span>Promise Nwaegerue</span>
+								<span className="text-muted-foreground text-caption">
+									Grant Writer
+								</span>
+								<span className="text-muted-foreground text-caption">
+									Financial Plans Expert
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div className="grid">
+						<div className="flex justify-between text-caption ">
+							<span>[ FOUNDER AND CEO ]</span>
+							<span>[ TOCHI CHIMEREMEZE ]</span>
+						</div>
+
+						<div className="flex flex-col gap-4">
+							<p>
+								Tochi Chimeremeze is the founder and driving force behind Cell
+								Capital. With a deep passion for community development and a
+								strong track record in Grant consulting, He launched Cell
+								Capital to address the gap between funders and the organizations
+								doing critical work on the ground. Prior to founding Cell
+								Capital, Tochi worked with local and regional profit businesses,
+								helping them develop project proposals, navigate complex funding
+								processes, and align their goals with funder priorities.
+							</p>
+
+							<p>
+								As a leader, Tochi is both strategic and effective, guiding
+								clients through funding strategy sessions, reviewing narratives,
+								and mentoring early-stage nonprofits on organizational growth.
+								His work is rooted in the belief that financial access can
+								unlock generational change, and he brings that philosophy to
+								every partnership. He continues to work closely with small
+								business owners and executives to ensure their mission is
+								fundable and impactful, bringing their ideas into life.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div className="lg:hidden border-t border-b px-4 mt-4 py-4 flex gap-4 overflow-hidden">
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/ceo.png"
+								alt="ceo png"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Tochi Chimeremeze</span>
+							<span className="text-muted-foreground text-caption">
+								[ Founder and Ceo ]
+							</span>
+						</div>
+					</div>
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/vice.png"
+								alt="ceo png"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Nwankwo Nancy</span>
+							<span className="text-muted-foreground text-caption">
+								[ Vice President, Grant Writer ]
+							</span>
+						</div>
+					</div>
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/director-of-media.png"
+								alt="director of media"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Chineye Nwakego</span>
+							<span className="text-muted-foreground text-caption">
+								[ Director of Media and Communiations ]
+							</span>
+						</div>
+					</div>
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/director-of-adminstration.png"
+								alt="vice president"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Stephanie Nkemakolam</span>
+							<span className="text-muted-foreground text-caption">
+								[ Grant Writer, Director of Adminstration ]
+							</span>
+						</div>
+					</div>
+
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/ceo.png"
+								alt="ceo png"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Laura Oluchi</span>
+							<span className="text-muted-foreground">[ Founder and Ceo ]</span>
+						</div>
+					</div>
+					<div className="min-w-[350px] flex gap-4">
+						<div>
+							<Image
+								src="/director-of-media.png"
+								alt="ceo png"
+								width={100}
+								height={100}
+								className="w-[100px] h-[120px]"
+							/>
+						</div>
+
+						<div className="flex flex-col justify-between">
+							<span>Nwaegerue Promise</span>
+							<span className="text-muted-foreground">
+								[ Grant Writer and Financial Plans Expert ]
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div className="py-4 px-4 flex flex-col gap-4 lg:hidden">
+					<p>
+						Tochi Chimeremeze is the founder and driving force behind Cell
+						Capital. With a deep passion for community development and a strong
+						track record in Grant consulting, He launched Cell Capital to
+						address the gap between funders and the organizations doing critical
+						work on the ground. Prior to founding Cell Capital, Tochi worked
+						with local and regional profit businesses, helping them develop
+						project proposals, navigate complex funding processes, and align
+						their goals with funder priorities.
+					</p>
+
+					<p>
+						{" "}
+						As a leader, Tochi is both strategic and effective, guiding clients
+						through funding strategy sessions, reviewing narratives, and
+						mentoring early-stage nonprofits on organizational growth. His work
+						is rooted in the belief that financial access can unlock
+						generational change, and he brings that philosophy to every
+						partnership. He continues to work closely with small business owners
+						and executives to ensure their mission is fundable and impactful,
+						bringing their ideas into life.
+					</p>
+				</div>
 			</div>
 		</div>
 	);
