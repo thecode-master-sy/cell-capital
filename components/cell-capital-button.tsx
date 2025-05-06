@@ -22,7 +22,7 @@ export default function CellCapitalPrimaryButton({
 		<Button
 			size="lg"
 			className={cn(
-				"uppercase text-caption text-foreground rounded-sm px-7 cursor-pointer mt-4 mx-auto font-normal",
+				"uppercase text-caption text-foreground rounded-sm px-7 cursor-pointer mt-4 mx-auto ",
 				containerStyles[color],
 				className
 			)}
@@ -35,13 +35,22 @@ export default function CellCapitalPrimaryButton({
 	);
 }
 
-export function CellCapitalSecondaryButton() {
+export function CellCapitalSecondaryButton({
+	children,
+	className,
+}: {
+	className?: string;
+	children: React.ReactNode;
+}) {
 	return (
 		<Button
 			size="sm"
-			className="uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer hidden md:flex font-normal"
+			className={cn(
+				"uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer",
+				className
+			)}
 		>
-			Book a free consultation
+			{children}
 		</Button>
 	);
 }

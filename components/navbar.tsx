@@ -28,7 +28,9 @@ export default function NavBar() {
 					<Box size={16} />
 				</div>
 
-				<CellCapitalSecondaryButton />
+				<CellCapitalSecondaryButton className="hidden md:flex">
+					Book a free consultation
+				</CellCapitalSecondaryButton>
 				<Button
 					size="sm"
 					className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden"
