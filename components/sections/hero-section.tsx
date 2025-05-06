@@ -46,8 +46,12 @@ const MainHero = () => {
 				<CellCapitalPrimaryButton color="white">
 					Book a free consultation
 				</CellCapitalPrimaryButton>
+
+				<p className=" md:hidden uppercase text-caption mt-4 mx-auto">
+					[ scroll to see more ]
+				</p>
 			</div>
-			<div className="md:self-end flex">
+			<div className="md:self-end hidden md:flex">
 				<p className="uppercase text-caption hidden md:block">
 					[ sucess oriented grant writing agency ]
 				</p>
