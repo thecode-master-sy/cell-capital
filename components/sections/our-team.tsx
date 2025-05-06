@@ -5,7 +5,7 @@ export default function MeetOurTeam() {
 		<div className="bg-background">
 			<div className="py-16">
 				<div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4 gap-4">
-					<p className="uppercase text-caption col-span-2">
+					<p className="uppercase text-caption col-span-full sm:col-span-2">
 						[ what sets us apart ]
 					</p>
 

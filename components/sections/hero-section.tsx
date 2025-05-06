@@ -25,12 +25,18 @@ export default function HeroSection() {
 
 const MainHero = () => {
 	return (
-		<div className="grid grid-rows-[1fr_min-content]  px-4 pb-4">
+		<div className="grid grid-rows-[2fr_0.2fr]  px-4 pb-4">
 			<div className="justify-self-center self-center flex flex-col">
 				<div className="hidden sm:block ">
-					<h1 className="text-heading-0  text-center uppercase">$15million Secured</h1>
-					<h1 className="text-heading-0  text-center uppercase">in Debt Free Grants.</h1>
-					<h1 className="text-heading-0  text-center uppercase">You Could be Next!</h1>
+					<h1 className="text-heading-0  text-center uppercase">
+						$15million Secured
+					</h1>
+					<h1 className="text-heading-0  text-center uppercase">
+						in Debt Free Grants.
+					</h1>
+					<h1 className="text-heading-0  text-center uppercase">
+						You Could be Next!
+					</h1>
 				</div>
 				<div className="sm:hidden">
 					<h1 className="text-heading-0 uppercase text-center">
@@ -41,11 +47,13 @@ const MainHero = () => {
 					Book a free consultation
 				</CellCapitalPrimaryButton>
 			</div>
-			<div className="self-end flex">
+			<div className="md:self-end flex">
 				<p className="uppercase text-caption hidden md:block">
 					[ sucess oriented grant writing agency ]
 				</p>
-				<p className="uppercase text-caption ml-auto">[ scroll to see more ]</p>
+				<p className="uppercase text-caption md:ml-auto md:mr-0 mx-auto">
+					[ scroll to see more ]
+				</p>
 			</div>
 		</div>
 	);
