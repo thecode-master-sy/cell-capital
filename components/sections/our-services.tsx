@@ -16,11 +16,15 @@ export default function OurServices() {
 
 			<div>
 				<div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6 border-b px-4 ">
-					<span className="text-heading-two pt-8">01</span>
+					<div className="pt-8 flex justify-between w-full col-span-full lg:col-span-1">
+						<span className="text-heading-two ">01</span>
+						<Minus className="md:hidden" />
+					</div>
+
 					<div className="lg:col-start-6 col-span-full py-8">
 						<div className="flex justify-between w-full">
 							<h2 className="text-heading-one">Expert Grant Writing</h2>
-							<Minus />
+							<Minus className="hidden lg:inline-block self-start" />
 						</div>
 
 						<div className="mt-2 mb-4">
@@ -33,11 +37,14 @@ export default function OurServices() {
 				</div>
 
 				<div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6 border-b px-4 ">
-					<span className="text-heading-two pt-8">02</span>
+					<div className="pt-8 flex justify-between w-full col-span-full lg:col-span-1">
+						<span className="text-heading-two ">02</span>
+						<Plus className="md:hidden" />
+					</div>
 					<div className="lg:col-start-6 col-span-full py-8">
 						<div className="flex justify-between w-full">
 							<h2 className="text-heading-one">Grant Alerts Program</h2>
-							<Plus className="self-start" />
+							<Plus className="hidden lg:inline-block self-start" />
 						</div>
 
 						<div className="hidden">
@@ -52,11 +59,14 @@ export default function OurServices() {
 				</div>
 
 				<div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6 border-b px-4 ">
-					<span className="text-heading-two pt-8">03</span>
+					<div className="pt-8 flex justify-between w-full col-span-full lg:col-span-1">
+						<span className="text-heading-two ">03</span>
+						<Plus className="md:hidden" />
+					</div>
 					<div className="lg:col-start-6 col-span-full py-8">
 						<div className="flex justify-between w-full">
 							<h2 className="text-heading-one">Business Plans & Pitch Decks</h2>
-							<Plus />
+							<Plus className="hidden lg:inline-block self-start" />
 						</div>
 
 						<div className="hidden">

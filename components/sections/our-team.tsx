@@ -299,7 +299,7 @@ export default function MeetOurTeam() {
 					</div>
 				</div>
 
-				<div className="py-4 px-4 flex flex-col gap-4 lg:hidden">
+				<div className="py-8 px-4 flex flex-col gap-4 lg:hidden">
 					<p>
 						Tochi Chimeremeze is the founder and driving force behind Cell
 						Capital. With a deep passion for community development and a strong
