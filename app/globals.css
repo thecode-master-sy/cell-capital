@@ -4,91 +4,85 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--color-background: var(--background);
-	--color-background-gray: var(--background-gray);
-	--color-background-black: var(--background-black);
-	--color-background-black-foreground: var(--background-black-foreground);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-primary: var(--primary);
-	--color-foreground: var(--foreground);
-	--color-cellcapital-light: var(--cellcapital-light);
-	--font-sans: var(--font-helvetica-neue);
-	--color-ring: var(--ring);
-	--color-input: var(--input);
-	--color-border: var(--border);
-	--color-border-background-black: var(--background-black-border);
-	--color-destructive: var(--destructive);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-accent: var(--accent);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-muted: var(--muted);
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--text-heading-0: var(--fs-heading-0);
-	--text-heading-one: var(--fs-heading-one);
-	--text-heading-two: var(--fs-heading-two);
-	--text-base: var(--fs-base-text);
-	--text-caption: var(--fs-caption);
-	--text-logo: var(--fs-logo);
+  --color-background: var(--background);
+  --color-background-gray: var(--background-gray);
+  --color-background-black: var(--background-black);
+  --color-background-black-foreground: var(--background-black-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-foreground: var(--foreground);
+  --color-cellcapital-light: var(--cellcapital-light);
+  --font-sans: var(--font-helvetica-neue);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-background-black: var(--background-black-border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --text-body: 14px;
+  --text-caption: 14px;
+  --text-logo: var(--fs-logo);
 }
 
 :root {
-	--radius: 0.625rem;
-	--background: oklch(98.91% 0.003 67.78);
-	--background-gray: oklch(96.13% 0.007 88.64);
-	--background-black: oklch(23.5% 0 0);
-	--background-black-foreground: oklch(0.985 0 0);
-	--cellcapital-light: oklch(43.83% 0.002 106.47);
-	--foreground: oklch(0.145 0 0);
-	--primary: oklch(67.91% 0.145 50.4);
-	--primary-foreground: var(--foreground);
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(50.96% 0.003 106.51);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(82.34% 0 0);
-	--background-black-border: var(--cellcapital-light);
-	--input: oklch(89.49% 0.006 84.57);
-	--ring: oklch(0.708 0 0);
-	--fs-heading-0: clamp(3rem, 4.5vw, 7rem);
-	--fs-heading-one: clamp(1.5rem, 4.5vw, 2rem);
-	--fs-heading-two: clamp(1.1rem, 2.55vw, 1.3rem);
-	--fs-base-text: clamp(0.91rem, 2vw, 0.95rem);
-	--fs-caption: clamp(0.6rem, 6.5vw, 0.8rem);
+  --radius: 0.625rem;
+  --background: oklch(98.91% 0.003 67.78);
+  --background-gray: oklch(96.13% 0.007 88.64);
+  --background-black: oklch(23.5% 0 0);
+  --background-black-foreground: oklch(0.985 0 0);
+  --cellcapital-light: oklch(43.83% 0.002 106.47);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(67.91% 0.145 50.4);
+  --primary-foreground: var(--foreground);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(50.96% 0.003 106.51);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(82.34% 0 0);
+  --background-black-border: var(--cellcapital-light);
+  --input: oklch(89.49% 0.006 84.57);
+  --ring: oklch(0.708 0 0);
 }
 
 @layer base {
-	* {
-		@apply border-border outline-ring/50;
-	}
-	body {
-		@apply bg-background text-foreground text-base;
-	}
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground text-body;
+  }
 
-	h1 {
-		@apply -tracking-[0.15rem] leading-[1.35];
-	}
-	h2 {
-		@apply -tracking-[0.05rem] leading-[1.35];
-	}
+  .text-heading-0 {
+    font-size: 128px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -5.12px;
+  }
 
-	p {
-		line-height: 1.38;
-		letter-spacing: 0px;
-	}
-	.text-indent {
-		text-indent: 15%;
-	}
+  .text-heading-one {
+    font-size: 48px;
+    line-height: 1.25;
+    letter-spacing: -2.4px;
+  }
 }
 
 .backdrop-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: hsl(23, 88%, 60%);
-	z-index: -1;
-	mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(23, 88%, 60%);
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+.blob-wrapper {
+  filter: blur(4px) contrast(15);
 }

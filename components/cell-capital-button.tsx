@@ -2,55 +2,58 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 export default function CellCapitalPrimaryButton({
-	children,
-	color,
-	className,
+  children,
+  color,
+  className,
+  size,
 }: {
-	children: React.ReactNode;
-	color: "primary" | "white";
-	className?: string;
+  children: React.ReactNode;
+  color: "primary" | "white";
+  className?: string;
+  size?: "sm" | "lg" | "default" | null;
 }) {
-	const containerStyles = {
-		primary: "bg-primary",
-		white: "bg-white",
-	};
-	const objectStyles = {
-		white: "bg-primary",
-		primary: "hidden",
-	};
-	return (
-		<Button
-			size="lg"
-			className={cn(
-				"uppercase text-caption text-foreground rounded-sm px-7 cursor-pointer mt-4 mx-auto ",
-				containerStyles[color],
-				className
-			)}
-		>
-			<span>{children}</span>
-			<span
-				className={cn("h-2 w-2 rounded-full bg-primary", objectStyles[color])}
-			></span>
-		</Button>
-	);
+  const containerStyles = {
+    primary: "bg-primary",
+    white: "bg-white",
+  };
+  const objectStyles = {
+    white: "bg-primary",
+    primary: "hidden",
+  };
+  return (
+    <Button
+      size={size}
+      className={cn(
+        "uppercase text-caption cursor-pointer mx-auto text-foreground rounded-full",
+        containerStyles[color],
+        className
+      )}
+    >
+      <span>{children}</span>
+      <span
+        className={cn("h-2 w-2 rounded-full bg-primary", objectStyles[color])}
+      ></span>
+    </Button>
+  );
 }
 
 export function CellCapitalSecondaryButton({
-	children,
-	className,
+  children,
+  className,
 }: {
-	className?: string;
-	children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 }) {
-	return (
-		<Button
-			size="sm"
-			className={cn(
-				"uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer",
-				className
-			)}
-		>
-			{children}
-		</Button>
-	);
+  return (
+    <Button
+      size="sm"
+      className={cn(
+        "uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer",
+
+        className
+      )}
+    >
+      {children}
+    </Button>
+  );
 }

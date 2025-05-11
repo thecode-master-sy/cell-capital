@@ -4,7 +4,6 @@ export default function Logo() {
 	return (
 		<div className="flex w-full items-center">
 			<Image
-				className="dark:invert"
 				src="/cell-capital-logo.svg"
 				alt="Cell capital logo"
 				width={16}
@@ -12,9 +11,7 @@ export default function Logo() {
 				priority
 			/>
 
-			<span className="text-base font-bold uppercase text-white">
-				ell Capital
-			</span>
+			<span className="text-body font-bold uppercase">ell Capital</span>
 		</div>
 	);
 }
