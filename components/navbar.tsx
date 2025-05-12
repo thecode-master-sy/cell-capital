@@ -8,10 +8,12 @@ import CellCapitalPrimaryButton, {
 
 export default function NavBar() {
   return (
-    <nav className="px-4 py-2 gap-8 grid grid-cols-[0.8fr_auto_1fr] border-b">
-      <Logo />
+    <nav className="px-4 py-2 md:gap-8 gap-4 grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 border-b">
+      <div className="lg:col-span-2 col-span-3 flex items-center">
+        <Logo />
+      </div>
 
-      <ul className="hidden lg:flex items-center gap-3 uppercase text-caption">
+      <ul className="hidden lg:flex items-center gap-3 uppercase text-caption lg:col-start-5 lg:col-span-5">
         <li>Get free updates</li>
         <li>
           <Link href="/grant">Grants</Link>{" "}
@@ -24,19 +26,11 @@ export default function NavBar() {
         </li>
       </ul>
 
-      <div className="flex gap-4 col-start-3 items-center  ml-auto">
+      <div className="flex gap-4  items-center col-start-4 col-span-full  lg:col-span-3 ml-auto">
         <div className="uppercase text-caption flex items-center gap-2">
           <span>packages</span>
           <Box size={16} />
         </div>
-
-        <CellCapitalPrimaryButton
-          color="primary"
-          size="sm"
-          className="hidden md:flex px-4"
-        >
-          Book a free consultation
-        </CellCapitalPrimaryButton>
         <Button
           size="sm"
           className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden text-white"

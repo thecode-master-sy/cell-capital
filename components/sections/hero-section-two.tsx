@@ -7,27 +7,45 @@ export default function HeroSectionTwo() {
     <div className="min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]">
       <NavBar />
 
-      <div className="grid md:grid-cols-2 p-4">
-        <div className="py-2">
-          <div>
-            <h1 className="text-heading-one">$15 million secured in debt </h1>
-            <h1 className="text-heading-one">
+      <div className="grid lg:grid-cols-12 grid-cols-6 md:grid-cols-8 gap-4 md:gap-8 py-4 px-4 self-end">
+        <div className="col-span-full justify-self-center md:justify-self-start md:col-span-4">
+          <BlobHero />
+        </div>
+        <div className="md:col-start-5 col-span-full grid md:block">
+          <div className="md:hidden lg:block">
+            <h1 className="text-heading-one text-center lg:text-left">
+              $15 million secured in debt{" "}
+            </h1>
+            <h1 className="text-heading-one text-center lg:text-left">
               free grants.You could be next!!
             </h1>
           </div>
 
-          <div className="my-3">
-            <p>At Cell Capital we are passionate about securing grants for </p>
-            <p> Businesses & Non-profits through expert consulting,</p>
-            <p>research, and compelling GrantProposals or Business Plan</p>
+          <div className="hidden md:block lg:hidden">
+            <h1 className="text-heading-one ">$15 million secured </h1>
+            <h1 className="text-heading-one"> in debt free grants.</h1>
+            <h1 className="text-heading-one ">You could be next!!</h1>
           </div>
 
-          <CellCapitalPrimaryButton className="px-7" color="primary">
+          <div className="hidden md:block lg:hidden my-3">
+            <p>At Cell Capital we are passionate about securing </p>
+            <p>grants for Businesses & Non-profits through expert</p>
+            <p>consulting, research, and compelling Grant </p>
+            <p>Proposals or Business Plan</p>
+          </div>
+
+          <div className="my-3 text-center lg:text-left md:hidden lg:block">
+            <p>At Cell Capital we are passionate about securing grants for </p>
+            <p> Businesses & Non-profits through expert consulting,</p>
+            <p>research, and compelling Grant Proposals or Business Plan</p>
+          </div>
+
+          <CellCapitalPrimaryButton
+            className="px-7 mx-auto md:mx-0"
+            color="primary"
+          >
             Book a free consultation
           </CellCapitalPrimaryButton>
-        </div>
-        <div className="justify-self-end py-2">
-          <BlobHero />
         </div>
       </div>
 

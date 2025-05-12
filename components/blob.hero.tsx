@@ -4,7 +4,7 @@ interface IBlobHeroProps {}
 
 export const BlobHero: React.FC<IBlobHeroProps> = (props) => {
   return (
-    <div className="min-w-[250px] w-max grid grid-cols-2 grid-rows-2  border-border min-h-[250px] relative overflow-hidden gap-4">
+    <div className="min-w-[250px] w-max grid grid-cols-2 grid-rows-2  border-border min-h-[250px] relative overflow-hidden gap-4 opacity-60">
       <div className="border border-black-500 blob-wrapper bg-background space-y-4 p-2 w-min relative">
         <div className="flex gap-6 relative w-min">
           <div className="w-[50px] h-[50px] absolute z-[2] top-0 left-1/2 border -translate-x-1/2 -translate-y-[70%] bg-background rounded-b-full"></div>
