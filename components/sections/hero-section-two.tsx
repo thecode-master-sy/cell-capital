@@ -12,7 +12,7 @@ export default function HeroSectionTwo() {
           <BlobHero />
         </div>
         <div className="md:col-start-5 col-span-full grid md:block">
-          <div className="md:hidden lg:block">
+          <div className="hidden sm:block md:hidden lg:block">
             <h1 className="text-heading-one text-center lg:text-left">
               $15 million secured in debt{" "}
             </h1>
@@ -21,20 +21,20 @@ export default function HeroSectionTwo() {
             </h1>
           </div>
 
-          <div className="hidden md:block lg:hidden">
+          <div className="sm:hidden text-center md:text-left md:block lg:hidden">
             <h1 className="text-heading-one ">$15 million secured </h1>
             <h1 className="text-heading-one"> in debt free grants.</h1>
             <h1 className="text-heading-one ">You could be next!!</h1>
           </div>
 
-          <div className="hidden md:block lg:hidden my-3">
+          <div className="sm:hidden md:block lg:hidden my-3 text-center md:text-left">
             <p>At Cell Capital we are passionate about securing </p>
             <p>grants for Businesses & Non-profits through expert</p>
             <p>consulting, research, and compelling Grant </p>
             <p>Proposals or Business Plan</p>
           </div>
 
-          <div className="my-3 text-center lg:text-left md:hidden lg:block">
+          <div className="my-3 text-center lg:text-left hidden sm:block md:hidden lg:block">
             <p>At Cell Capital we are passionate about securing grants for </p>
             <p> Businesses & Non-profits through expert consulting,</p>
             <p>research, and compelling Grant Proposals or Business Plan</p>

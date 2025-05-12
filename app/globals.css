@@ -59,7 +59,7 @@
   }
 
   .text-heading-0 {
-    @apply text-[90px] -tracking-[5.17px] md:text-[190px] -tracking-[8px];
+    @apply text-[90px] -tracking-[5.17px] md:text-[150px] -tracking-[8px];
     font-weight: 900;
     line-height: 1;
   }
