@@ -30,6 +30,42 @@ export const BlobHero: React.FC<IBlobHeroProps> = (props) => {
         .add("start")
         .add("mid");
 
+      const secondCellTimeLine = gsap
+        .timeline({
+          repeat: -1,
+          yoyo: true,
+          onRepeat: function () {
+            isForward = !isForward; // Toggle direction
+            this.timeScale(isForward ? 1 : 2); // Slow forward, fast reverse
+          },
+        })
+        .add("start")
+        .add("mid");
+
+      const thirdCellTimeLine = gsap
+        .timeline({
+          repeat: -1,
+          yoyo: true,
+          onRepeat: function () {
+            isForward = !isForward;
+            this.timeScale(isForward ? 1 : 2);
+          },
+        })
+        .add("start")
+        .add("mid");
+
+      const fourthCellTimeline = gsap
+        .timeline({
+          repeat: -1,
+          yoyo: true,
+          onRepeat: function () {
+            isForward = !isForward;
+            this.timeScale(isForward ? 1 : 2);
+          },
+        })
+        .add("start")
+        .add("mid");
+
       firstCellTimeLine.to(
         ".first-cell-second-ball",
         {
@@ -108,6 +144,266 @@ export const BlobHero: React.FC<IBlobHeroProps> = (props) => {
 
       firstCellTimeLine.to(".first-cell-third-ball", {
         translateX: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      firstCellTimeLine.to(".first-cell-third-ball", {
+        translateX: 0,
+        duration: 1.5,
+        ease: "easeInOutCubic",
+      });
+
+      secondCellTimeLine.to(
+        ".second-cell-third-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      secondCellTimeLine.to(
+        ".second-cell-first-ball",
+        {
+          translateY: 74,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      secondCellTimeLine.to(
+        ".second-cell-first-notch",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      secondCellTimeLine.to(
+        ".second-cell-second-notch",
+        {
+          translateY: -14,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      secondCellTimeLine.to(
+        ".second-cell-second-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      secondCellTimeLine.to(".second-cell-second-ball", {
+        translateX: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      secondCellTimeLine.to(
+        ".second-cell-first-notch",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        "-=1"
+      );
+
+      secondCellTimeLine.to(
+        ".second-cell-first-ball",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        "-=1"
+      );
+
+      secondCellTimeLine.to(".second-cell-first-ball", {
+        translateY: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      secondCellTimeLine.to(".second-cell-first-ball", {
+        translateY: 0,
+        duration: 1.5,
+        ease: "easeInOutCubic",
+      });
+
+      thirdCellTimeLine.to(
+        ".third-cell-first-ball",
+        {
+          translateY: 74,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      thirdCellTimeLine.to(
+        ".third-cell-second-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      thirdCellTimeLine.to(
+        ".third-cell-second-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      thirdCellTimeLine.to(
+        ".third-cell-first-notch",
+        {
+          translateY: -14,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      thirdCellTimeLine.to(
+        ".third-cell-third-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      thirdCellTimeLine.to(".third-cell-third-ball", {
+        translateX: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      thirdCellTimeLine.to(
+        ".third-cell-first-ball",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        "-=1"
+      );
+
+      thirdCellTimeLine.to(".third-cell-first-ball", {
+        translateY: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      thirdCellTimeLine.to(".third-cell-first-ball", {
+        translateY: 0,
+        duration: 1.5,
+        ease: "easeInOutCubic",
+      });
+
+      fourthCellTimeline.to(
+        ".fourth-cell-first-ball",
+        {
+          translateY: 74,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      fourthCellTimeline.to(
+        ".fourth-cell-second-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      fourthCellTimeline.to(
+        ".fourth-cell-third-ball",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      fourthCellTimeline.to(
+        ".fourth-cell-first-notch",
+        {
+          translateY: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      fourthCellTimeline.to(
+        ".fourth-cell-second-notch",
+        {
+          translateY: -14,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        0
+      );
+
+      fourthCellTimeline.to(".fourth-cell-third-ball", {
+        translateX: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      fourthCellTimeline.to(
+        ".fourth-cell-first-notch",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        "-=1"
+      );
+
+      fourthCellTimeline.to(
+        ".fourth-cell-first-ball",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "easeInOutCubic",
+        },
+        "-=1"
+      );
+
+      fourthCellTimeline.to(".fourth-cell-first-ball", {
+        translateY: 0,
+        duration: 1,
+        ease: "easeInOutCubic",
+      });
+
+      fourthCellTimeline.to(".fourth-cell-first-ball", {
+        translateY: 0,
         duration: 1,
         ease: "easeInOutCubic",
       });
@@ -214,45 +510,45 @@ export const BlobHero: React.FC<IBlobHeroProps> = (props) => {
       </div>
 
       <div className="relative grid grid-cols-2 gap-6 overflow-hidden">
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4]" />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] translate-x-[74px] second-cell-first-ball" />
         <div className="w-[50px] h-[50px] rounded-full bg-background-black relative " />
 
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4]" />
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative " />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] -translate-y-[74px] translate-x-[74px] second-cell-second-ball" />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative -translate-y-[74px] second-cell-third-ball" />
 
-        <div className="w-[40px] h-[30px] absolute bottom-[10px] left-[40px] bg-background-black bottom-notch"></div>
-        <div className="absolute top-1/2 left-1/2 z-[3] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
+        <div className="w-[40px] h-[30px] absolute bottom-[10px] left-[40px] bg-background-black bottom-notch -translate-y-[74px] translate-x-[40px] second-cell-first-notch"></div>
+        <div className="absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
         <div className="w-[50px] h-[50px] absolute z-[2] bottom-0 left-1/2 border -translate-x-1/2 translate-y-[70%] bg-background rounded-t-full bottom-curve" />
-        <div className="w-[40px] h-[30px] absolute top-1/2 right-0 z-[2]  -translate-y-[50%] bg-background-black left-notch"></div>
+        <div className="w-[40px] h-[30px] absolute top-1/2 right-0 z-[2] -translate-x-[5px]  -translate-y-[50px] bg-background-black left-notch second-cell-second-notch"></div>
         <div className="w-[50px] h-[50px] absolute z-[2] top-1/2 right-0 -translate-y-1/2 translate-x-[70%] bg-background rounded-full right-curve"></div>
       </div>
 
       <div className="relative grid grid-cols-2 gap-6 overflow-hidden">
         <div className="w-[50px] h-[50px] rounded-full bg-background-black relative" />
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] " />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] -translate-x-[74px] third-cell-first-ball" />
 
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4]" />
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative " />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] -translate-y-[74px] third-cell-second-ball" />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative -translate-x-[74px] -translate-y-[74px] third-cell-third-ball" />
 
-        <div className="absolute top-1/2 left-1/2 z-[3] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
+        <div className="absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
 
-        <div className="w-[40px] h-[30px] absolute top-1/2 left-0 z-[2]  -translate-y-[50%] bg-background-black left-notch"></div>
+        <div className="w-[40px] h-[30px] absolute top-1/2 left-0 z-[2] bg-background-black left-notch -translate-y-[50px] translate-x-[5px] third-cell-first-notch"></div>
         <div className="w-[50px] h-[50px] absolute z-[2] top-1/2 left-0 -translate-y-1/2 -translate-x-[70%] bg-background rounded-full left-curve"></div>
       </div>
 
       <div className="relative grid grid-cols-2 gap-6 overflow-hidden">
         <div className="w-[50px] h-[50px] rounded-full bg-background-black relative" />
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4]" />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative z-[4] -translate-x-[74px] fourth-cell-first-ball" />
 
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative" />
-        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative " />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative fourth-cell-second-ball -translate-y-[74px]" />
+        <div className="w-[50px] h-[50px] rounded-full bg-background-black relative fourth-cell-third-ball -translate-x-[74px] -translate-y-[74px]" />
 
-        <div className="w-[40px] h-[30px] absolute bottom-[10px] left-[40px] bg-background-black bottom-notch"></div>
+        <div className="w-[40px] h-[30px] absolute bottom-[10px] left-[40px] bg-background-black bottom-notch -translate-y-[74px] -translate-x-[35px] fourth-cell-first-notch"></div>
         <div className="w-[50px] h-[50px] absolute z-[2] bottom-0 left-1/2 border -translate-x-1/2 translate-y-[70%] bg-background rounded-t-full bottom-curve" />
-        <div className="w-[40px] h-[30px] absolute top-1/2 left-0 z-[2]  -translate-y-[50%] bg-background-black left-notch"></div>
+        <div className="w-[40px] h-[30px] absolute top-1/2 left-0 z-[2] bg-background-black left-notch -translate-y-[50px] translate-x-[5px] fourth-cell-second-notch"></div>
         <div className="w-[50px] h-[50px] absolute z-[2] top-1/2 left-0 -translate-y-1/2 -translate-x-[70%] bg-background rounded-full left-curve"></div>
 
-        <div className="absolute top-1/2 left-1/2 z-[3] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
+        <div className="absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 bg-background w-[60px] h-[60px] rounded-full middle-curve"></div>
       </div>
     </div>
   );
