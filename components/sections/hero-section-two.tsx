@@ -21,10 +21,16 @@ export default function HeroSectionTwo() {
             </h1>
           </div>
 
-          <div className="sm:hidden text-center md:text-left md:block lg:hidden">
+          <div className="hidden text-center md:text-left md:block lg:hidden">
             <h1 className="text-heading-one ">$15 million secured </h1>
             <h1 className="text-heading-one"> in debt free grants.</h1>
             <h1 className="text-heading-one ">You could be next!!</h1>
+          </div>
+
+          <div className="md:hidden text-center">
+            <h1 className="text-heading-one ">
+              $15 million secured in debt free grants. You could be next!!
+            </h1>
           </div>
 
           <div className="sm:hidden md:block lg:hidden my-3 text-center md:text-left">
