@@ -27,10 +27,10 @@ export default function HeroSectionTwo() {
             <h1 className="text-heading-one ">You could be next!!</h1>
           </div>
 
-          <div className="md:hidden text-center">
-            <h1 className="text-heading-one ">
-              $15 million secured in debt free grants. You could be next!!
-            </h1>
+          <div className="sm:hidden text-center">
+            <h1 className="text-heading-one ">$15 million secured in</h1>
+            <h1 className="text-heading-one">debt free grants.</h1>
+            <h1 className="text-heading-one">You could be next!!</h1>
           </div>
 
           <div className="sm:hidden md:block lg:hidden my-3 text-center md:text-left">
@@ -55,7 +55,7 @@ export default function HeroSectionTwo() {
         </div>
       </div>
 
-      <div className="overflow-hidden self-center pt-7">
+      <div className="overflow-hidden self-center pt-12">
         <h1 className="text-heading-0 uppercase w-max">
           Sucess Oriented Grant Writing Agency
         </h1>
