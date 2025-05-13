@@ -49,7 +49,7 @@ export default function HeroSectionTwo() {
         </div>
       </div>
 
-      <div className="overflow-hidden self-center">
+      <div className="overflow-hidden self-center py-2">
         <h1 className="text-heading-0 uppercase w-max">
           Sucess Oriented Grant Writing Agency
         </h1>
