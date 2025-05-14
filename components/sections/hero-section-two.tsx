@@ -30,9 +30,8 @@ export default function HeroSectionTwo() {
       });
 
       ScrollTrigger.create({
-        trigger: ".big-header-wrapper",
-        start: "top 5%",
-        pin: true,
+        trigger: ".big-header",
+        start: "top 10%",
         end: () => `+=${getScrollAmount() * -1}`,
         animation: headerTween,
         scrub: 1,
@@ -97,17 +96,13 @@ export default function HeroSectionTwo() {
         </div>
       </div>
 
-      <div className="overflow-hidden self-center pt-7">
-        <div className=" big-header-wrapper">
-          <h1
-            ref={headerRef}
-            className="text-heading-0 uppercase w-max big-header"
-          >
-            Sucess Oriented Grant Writing Agency
-          </h1>
-
-          <SocialProof />
-        </div>
+      <div className="big-header-wrapper">
+        <h1
+          ref={headerRef}
+          className="text-heading-0 uppercase w-max big-header"
+        >
+          Sucess Oriented Grant Writing Agency
+        </h1>
       </div>
     </div>
   );

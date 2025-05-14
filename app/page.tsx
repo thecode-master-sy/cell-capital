@@ -8,17 +8,17 @@ import SocialProof from "@/components/sections/social-proof";
 import TestimonalSection from "@/components/sections/testimonials-section";
 
 export default function Home() {
-	return (
-		<div>
-			{/* <HeroSection /> */}
-			<HeroSection />
-			
-			<AboutSection />
-			<MeetOurTeam />
-			<OurServices />
-			<TestimonalSection />
-			<CallToActionSection />
-			<Footer />
-		</div>
-	);
+  return (
+    <div>
+      {/* <HeroSection /> */}
+      <HeroSection />
+      <SocialProof />
+      <AboutSection />
+      <MeetOurTeam />
+      <OurServices />
+      <TestimonalSection />
+      <CallToActionSection />
+      <Footer />
+    </div>
+  );
 }
