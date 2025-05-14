@@ -18,9 +18,11 @@ export default function CallToActionSection() {
           </h1>
         </div>
 
-        <CellCapitalPrimaryButton color="primary">
-          Book a free consultation
-        </CellCapitalPrimaryButton>
+        <div className="col-span-full sm:col-start-4 lg:col-start-6 mt-4">
+          <CellCapitalPrimaryButton color="primary">
+            Book a free consultation
+          </CellCapitalPrimaryButton>
+        </div>
       </div>
     </div>
   );

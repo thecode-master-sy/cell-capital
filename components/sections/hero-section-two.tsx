@@ -1,6 +1,12 @@
+"use client"
 import { BlobHero } from "../blob.hero";
 import CellCapitalPrimaryButton from "../cell-capital-button";
 import NavBar from "../navbar";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react"; 
+
+gsap.registerPlugin(useGSAP);
+
 
 export default function HeroSectionTwo() {
   return (

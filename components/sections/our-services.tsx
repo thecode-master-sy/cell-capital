@@ -17,7 +17,7 @@ export default function OurServices() {
       />
 
       <div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6  px-4 ">
-        <div className="lg:col-start-6 col-span-full py-8 border-b">
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
           <div className="flex justify-between">
             <span className="text-heading-two ">01</span>
             <Minus className="md:hidden" />
@@ -38,7 +38,7 @@ export default function OurServices() {
           </div>
         </div>
 
-        <div className="lg:col-start-6 col-span-full py-8 border-b">
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
           <div className="flex justify-between">
             <span className="text-heading-two ">02</span>
             <Plus className="md:hidden" />
@@ -60,7 +60,7 @@ export default function OurServices() {
           </div>
         </div>
 
-        <div className="lg:col-start-6 col-span-full py-8 border-b">
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
           <div className="flex justify-between">
             <span className="text-heading-two ">03</span>
             <Plus className="md:hidden" />

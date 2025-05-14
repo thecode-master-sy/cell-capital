@@ -18,7 +18,7 @@ export default function TestimonalSection() {
             <span>[1/4]</span>
           </div>
 
-          <div className="lg:col-start-6 col-span-full ">
+          <div className="sm:col-start-4 lg:col-start-6 col-span-full ">
             <div>
               <h2 className="uppercase text-heading-two font-medium">
                 Jay Graham
