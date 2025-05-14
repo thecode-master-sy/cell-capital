@@ -1,10 +1,35 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
 import Divider from "../divider";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 export default function Footer() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.set(sectionRef.current, {
+        y: -650,
+      });
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -1000,
+      });
+    },
+    { scope: sectionRef }
+  );
   return (
-    <footer className="bg-background-black text-white pt-16 overflow-hidden">
+    <footer
+      ref={sectionRef}
+      className="bg-background-black text-white pt-16 overflow-hidden"
+    >
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 gap-16 px-4">
         <div className="lg:col-span-4 col-span-full ">
           <h2 className="text-heading-one">Get Free Grant Updates</h2>

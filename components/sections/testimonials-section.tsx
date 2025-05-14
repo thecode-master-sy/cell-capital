@@ -6,10 +6,6 @@ import Image from "next/image";
 export default function TestimonalSection() {
   return (
     <div className="py-16 bg-background-black text-background-black-foreground">
-      <h1 className="uppercase text-heading-one px-4">
-        Dont take our word for it.
-      </h1>
-
       <Divider label="testimonals" className="pt-4" />
 
       <div className="pt-12">

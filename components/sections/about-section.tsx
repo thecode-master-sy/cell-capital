@@ -1,9 +1,31 @@
+"use client";
 import Divider from "../divider";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+
+import { gsap } from "gsap";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP);
 
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -200,
+      });
+    },
+    { scope: sectionRef }
+  );
   return (
-    <div className="bg-background-gray py-16">
+    <div ref={sectionRef} className="bg-background-gray pt-16 pb-30">
       <div className="px-4 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <h1 className="text-heading-0 uppercase text-left  sm:text-center col-span-full">
           About us

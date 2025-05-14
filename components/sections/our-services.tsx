@@ -1,12 +1,40 @@
+"use client";
 import CellCapitalPrimaryButton, {
   CellCapitalSecondaryButton,
 } from "../cell-capital-button";
 import Divider from "../divider";
 import { Minus, Plus } from "lucide-react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import TestimonalSection from "./testimonials-section";
+
+gsap.registerPlugin(useGSAP);
 
 export default function OurServices() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.set(sectionRef.current, {
+        y: -400,
+      });
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -600,
+      });
+    },
+    { scope: sectionRef }
+  );
   return (
-    <div className="py-16 bg-background-black text-white">
+    <div
+      ref={sectionRef}
+      className="pt-16 py-30 bg-background-black text-white"
+    >
       <h1 className="uppercase text-heading-0 px-4 text-center">
         Our Services
       </h1>
@@ -81,6 +109,8 @@ export default function OurServices() {
           </CellCapitalSecondaryButton>
         </div>
       </div>
+
+      <TestimonalSection />
     </div>
   );
 }

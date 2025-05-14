@@ -1,9 +1,33 @@
+"use client";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 import CellCapitalPrimaryButton from "../cell-capital-button";
 import Image from "next/image";
+import { gsap } from "gsap";
+
+gsap.registerPlugin(useGSAP);
 
 export default function MeetOurTeam() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.set(sectionRef.current, {
+        y: -200,
+      });
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -400,
+      });
+    },
+    { scope: sectionRef }
+  );
   return (
-    <div className="bg-background">
+    <div ref={sectionRef} className="bg-background">
       <div className="py-16">
         <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4 gap-4">
           <p className="uppercase text-caption col-span-full sm:col-span-2">
@@ -28,10 +52,10 @@ export default function MeetOurTeam() {
         </div>
       </div>
 
-      <div className="py-16">
+      <div className="pt-16 pb-30">
         <h2 className="text-heading-one px-4">The Faces Behind The Brand</h2>
 
-        <div className="border-t hidden gap-4 mt-4 px-4 py-4 lg:grid lg:grid-cols-[2fr_1.45fr]">
+        <div className="border-t hidden gap-4 mt-4 px-4 py-4 lg:grid lg:grid-cols-[1.5fr_1.45fr]">
           <div className="grid grid-cols-3 gap-2">
             <div className=" flex flex-col gap-2">
               <div>
@@ -40,7 +64,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 
@@ -59,7 +83,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 
@@ -78,7 +102,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 
@@ -100,7 +124,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 
@@ -122,7 +146,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 
@@ -141,7 +165,7 @@ export default function MeetOurTeam() {
                   alt="value four"
                   width={100}
                   height={100}
-                  className="w-[200px] h-[300px]"
+                  className="w-[150px] h-[200px]"
                 />
               </div>
 

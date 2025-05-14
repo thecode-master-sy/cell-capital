@@ -9,14 +9,13 @@ import TestimonalSection from "@/components/sections/testimonials-section";
 
 export default function Home() {
   return (
-    <div>
+    <div className="absolute inset-0">
       {/* <HeroSection /> */}
       <HeroSection />
       <SocialProof />
       <AboutSection />
       <MeetOurTeam />
       <OurServices />
-      <TestimonalSection />
       <CallToActionSection />
       <Footer />
     </div>

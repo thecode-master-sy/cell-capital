@@ -1,10 +1,32 @@
+"use client";
 import Image from "next/image";
 import Divider from "../divider";
 import CellCapitalPrimaryButton from "../cell-capital-button";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 export default function CallToActionSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      gsap.set(sectionRef.current, {
+        y: -600,
+      });
+      gsap.to(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -800,
+      });
+    },
+    { scope: sectionRef }
+  );
   return (
-    <div className="pb-16 pt-4">
+    <div ref={sectionRef} className="pb-16 pt-4 bg-background">
       <Divider label="ready to stand out" />
 
       <div className="px-4 py-24 relative grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
