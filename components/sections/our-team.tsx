@@ -11,9 +11,7 @@ export default function MeetOurTeam() {
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      gsap.set(sectionRef.current, {
-        y: -200,
-      });
+      
       gsap.to(sectionRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -21,7 +19,7 @@ export default function MeetOurTeam() {
           end: "bottom top",
           scrub: true,
         },
-        y: -400,
+        y: -200,
       });
     },
     { scope: sectionRef }

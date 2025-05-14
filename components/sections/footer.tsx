@@ -11,7 +11,7 @@ export default function Footer() {
   useGSAP(
     () => {
       gsap.set(sectionRef.current, {
-        y: -650,
+        y: -550,
       });
       gsap.to(sectionRef.current, {
         scrollTrigger: {
@@ -20,7 +20,7 @@ export default function Footer() {
           end: "bottom top",
           scrub: true,
         },
-        y: -1000,
+        y: -700,
       });
     },
     { scope: sectionRef }

@@ -16,7 +16,7 @@ export default function OurServices() {
   useGSAP(
     () => {
       gsap.set(sectionRef.current, {
-        y: -400,
+        y: -200,
       });
       gsap.to(sectionRef.current, {
         scrollTrigger: {
@@ -25,7 +25,7 @@ export default function OurServices() {
           end: "bottom top",
           scrub: true,
         },
-        y: -600,
+        y: -400,
       });
     },
     { scope: sectionRef }

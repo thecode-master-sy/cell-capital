@@ -11,7 +11,7 @@ export default function CallToActionSection() {
   useGSAP(
     () => {
       gsap.set(sectionRef.current, {
-        y: -600,
+        y: -400,
       });
       gsap.to(sectionRef.current, {
         scrollTrigger: {
@@ -20,7 +20,7 @@ export default function CallToActionSection() {
           end: "bottom top",
           scrub: true,
         },
-        y: -800,
+        y: -600,
       });
     },
     { scope: sectionRef }

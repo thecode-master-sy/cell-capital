@@ -25,7 +25,7 @@ export default function AboutSection() {
     { scope: sectionRef }
   );
   return (
-    <div ref={sectionRef} className="bg-background-gray pt-16 pb-30">
+    <div className="bg-background-gray pt-16 pb-30">
       <div className="px-4 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <h1 className="text-heading-0 uppercase text-left  sm:text-center col-span-full">
           About us
@@ -46,7 +46,7 @@ export default function AboutSection() {
 
       <Divider label="our values" />
       <div>
-        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 gap-4 px-4 py-16">
+        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 gap-4 px-4 py-16 sticky top-0 bg-background-gray">
           <Image
             src="./value-one.svg"
             alt="value one"
@@ -71,7 +71,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16">
+        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16 sticky top-0 z-[2] bg-background-gray">
           <Image
             src="./value-two.svg"
             alt="value one"
@@ -96,7 +96,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16">
+        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16 sticky top-0 z-[3] bg-background-gray">
           <Image
             src="./value-three.svg"
             alt="value three"
@@ -121,7 +121,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16">
+        <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 border-t gap-4 px-4 py-16 sticky top-0 z-[4] bg-background-gray">
           <Image
             src="./value-four.svg"
             alt="value four"
