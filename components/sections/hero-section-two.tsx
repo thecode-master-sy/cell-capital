@@ -1,16 +1,52 @@
-"use client"
+"use client";
 import { BlobHero } from "../blob.hero";
 import CellCapitalPrimaryButton from "../cell-capital-button";
 import NavBar from "../navbar";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react"; 
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import SocialProof from "./social-proof";
 
 gsap.registerPlugin(useGSAP);
-
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSectionTwo() {
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const container = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      function getScrollAmount() {
+        const headerWidth = headerRef.current?.scrollWidth ?? 0;
+
+        return -(headerWidth - window.innerWidth);
+      }
+
+      const headerTween = gsap.to(".big-header", {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: ".big-header-wrapper",
+        start: "top 5%",
+        pin: true,
+        end: () => `+=${getScrollAmount() * -1}`,
+        animation: headerTween,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      });
+    },
+    { scope: container }
+  );
+
   return (
-    <div className="min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]">
+    <div
+      className="min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]"
+      ref={container}
+    >
       <NavBar />
 
       <div className="grid lg:grid-cols-12 grid-cols-6 md:grid-cols-8 gap-4 md:gap-8 py-4 px-4 self-end">
@@ -61,10 +97,17 @@ export default function HeroSectionTwo() {
         </div>
       </div>
 
-      <div className="overflow-hidden self-center pt-12">
-        <h1 className="text-heading-0 uppercase w-max">
-          Sucess Oriented Grant Writing Agency
-        </h1>
+      <div className="overflow-hidden self-center pt-7">
+        <div className=" big-header-wrapper">
+          <h1
+            ref={headerRef}
+            className="text-heading-0 uppercase w-max big-header"
+          >
+            Sucess Oriented Grant Writing Agency
+          </h1>
+
+          <SocialProof />
+        </div>
       </div>
     </div>
   );
