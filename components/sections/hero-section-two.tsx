@@ -96,7 +96,7 @@ export default function HeroSectionTwo() {
         </div>
       </div>
 
-      <div className="big-header-wrapper">
+      <div className="big-header-wrapper overflow-hidden">
         <h1
           ref={headerRef}
           className="text-heading-0 uppercase w-max big-header"
