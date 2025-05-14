@@ -31,7 +31,7 @@ export default function HeroSectionTwo() {
 
       ScrollTrigger.create({
         trigger: ".big-header",
-        start: "top 30%",
+        start: "top 70%",
         end: () => `+=${getScrollAmount() * -1}`,
         animation: headerTween,
         scrub: 1,
