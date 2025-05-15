@@ -46,7 +46,7 @@ export default function HeroSectionTwo() {
 
   return (
     <div ref={container} className="relative">
-      <div className="min-h-[50vh] sm:min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]">
+      <div className="min-h-[80vh] sm:min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]">
         <NavBar />
 
         <div className="grid lg:grid-cols-12 grid-cols-6 md:grid-cols-8 gap-4 md:gap-8 py-4 px-4 self-start  h-full">

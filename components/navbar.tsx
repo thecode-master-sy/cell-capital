@@ -104,7 +104,11 @@ export function HiddenNav() {
 
         <ul className="uppercase text-heading-one space-y-2 mt-16">
           <div className="menu-link-item">
-            <li className="menu-link-item-holder">Home</li>
+            <li className="menu-link-item-holder">
+              <Link href="/" onClick={() => toggleNav()}>
+                Home
+              </Link>
+            </li>
           </div>
 
           <div className="menu-link-item">
@@ -114,19 +118,23 @@ export function HiddenNav() {
 
           <div className="menu-link-item">
             <li className="menu-link-item-holder">
-              <Link href="/grant">Grants</Link>{" "}
+              <Link href="/grants" onClick={() => toggleNav()}>
+                Grants
+              </Link>{" "}
             </li>
           </div>
 
           <div className="menu-link-item">
             <li className="menu-link-item-holder">
-              <Link href="/grant">Business Plan</Link>{" "}
+              <Link href="/business-plan" onClick={() => toggleNav()}>
+                Business Plan
+              </Link>{" "}
             </li>
           </div>
 
           <div className="menu-link-item">
             <li className="menu-link-item-holder">
-              <Link href="/grant">About</Link>
+              <a href="#about">About</a>
             </li>
           </div>
         </ul>
