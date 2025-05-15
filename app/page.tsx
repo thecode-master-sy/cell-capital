@@ -1,3 +1,4 @@
+import { HiddenNav } from "@/components/navbar";
 import AboutSection from "@/components/sections/about-section";
 import CallToActionSection from "@/components/sections/call-to-action";
 import Footer from "@/components/sections/footer";
@@ -12,7 +13,7 @@ export default function Home() {
     <div className="absolute inset-0 z-[1]">
       {/* <HeroSection /> */}
       <HeroSection />
-
+      <HiddenNav />
       <AboutSection />
       <MeetOurTeam />
       <OurServices />

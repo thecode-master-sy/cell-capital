@@ -87,3 +87,11 @@
 .blob-wrapper {
   filter: blur(4px) contrast(15);
 }
+
+.menu-overlay {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+.menu-link-item {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
