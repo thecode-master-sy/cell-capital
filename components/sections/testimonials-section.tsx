@@ -43,7 +43,7 @@ export default function TestimonalSection() {
                 <p>done and will do future business with them.</p>
               </div>
 
-              <div className="md:hidden text-heading-two uppercase mt-3">
+              <div className="md:hidden text-heading-two mt-3">
                 <h2>
                   My work with Cell Capital was exceptional, they were very
                   detailed and delivered well before the deadline. I will do a
