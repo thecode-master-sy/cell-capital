@@ -25,7 +25,7 @@ export default function AboutSection() {
     { scope: sectionRef }
   );
   return (
-    <div className="bg-background-gray pt-16 pb-30">
+    <section className="bg-background-gray pt-16 pb-30" id="about">
       <div className="px-4 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <h1 className="text-heading-0 uppercase text-left  sm:text-center col-span-full">
           About us
@@ -145,6 +145,6 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

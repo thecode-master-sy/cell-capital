@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Logo() {
   return (
-    <div className="flex w-full items-center">
+    <Link href="/" className="flex w-full items-center">
       <Image
         className="dark:invert"
         src="/cell-capital-logo.svg"
@@ -15,6 +16,6 @@ export default function Logo() {
       <span className="md:text-body text-[12px] font-bold uppercase">
         ell Capital
       </span>
-    </div>
+    </Link>
   );
 }

@@ -1,9 +1,9 @@
 import FloatingNav from "@/components/floating-nav";
 import { HiddenNav } from "@/components/navbar";
-import AboutSection from "@/components/sections/about-section";
+import AboutSection from "@/components/sections/about-section.homepage";
 import CallToActionSection from "@/components/sections/call-to-action";
 import Footer from "@/components/sections/footer";
-import HeroSection from "@/components/sections/hero-section-two";
+import HeroSection from "@/components/sections/hero-section-two.homepage";
 import OurServices from "@/components/sections/our-services";
 import MeetOurTeam from "@/components/sections/our-team";
 import SocialProof from "@/components/sections/social-proof";

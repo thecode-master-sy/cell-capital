@@ -26,13 +26,13 @@ export default function NavBar() {
       <ul className="hidden lg:flex items-center gap-3 uppercase text-caption lg:col-start-5 lg:col-span-5">
         <li>Get free updates</li>
         <li>
-          <Link href="/grant">Grants</Link>{" "}
+          <Link href="/grants">Grants</Link>{" "}
         </li>
         <li>
-          <Link href="/grant">Business Plan</Link>{" "}
+          <Link href="/business-plan">Business Plan</Link>{" "}
         </li>
         <li>
-          <Link href="/grant">About</Link>
+          <a href="#about">About</a>
         </li>
       </ul>
 
