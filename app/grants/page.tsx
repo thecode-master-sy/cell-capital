@@ -1,4 +1,5 @@
 import NavBar, { HiddenNav } from "@/components/navbar";
+import CallToActionGrantSection from "@/components/sections/call-to-action.grant";
 import GrantPackages from "@/components/sections/grant-packages.grant";
 import GrantsHeroSection from "@/components/sections/hero-section.grants";
 
@@ -10,6 +11,8 @@ export default function Grant() {
       <GrantsHeroSection />
 
       <GrantPackages />
+
+      <CallToActionGrantSection />
     </div>
   );
 }
