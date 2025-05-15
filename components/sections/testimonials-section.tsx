@@ -25,25 +25,25 @@ export default function TestimonalSection() {
                   <CornerDownRight size={16} className="mt-2" />
                   <span>
                     My work with Cell Capital was exceptional, they were very
+                    detailed
                   </span>
                 </p>
 
                 <p>
-                  detailed and delivered well before the deadline. I will do a
-                  follow up
+                  and delivered well before the deadline. I will do a follow up
+                  once review
                 </p>
 
                 <p>
-                  review once I receive feedback from grantors. Overall, I am
+                  {" "}
+                  I receive feedback from grantors. Overall, I am satisfied with
+                  the work
                 </p>
 
-                <p>
-                  satisfied with the work done and will do future business with
-                  them.
-                </p>
+                <p>done and will do future business with them.</p>
               </div>
 
-              <div className="md:hidden text-heading-two mt-3">
+              <div className="md:hidden text-heading-two uppercase mt-3">
                 <h2>
                   My work with Cell Capital was exceptional, they were very
                   detailed and delivered well before the deadline. I will do a
@@ -83,25 +83,6 @@ export default function TestimonalSection() {
               </h2>
             </div> */}
           </div>
-        </div>
-
-        <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4 mt-4">
-          <div className="md:flex gap-2 items-center self-end hidden">
-            <MoveLeft />
-            <MoveRight />
-          </div>
-
-          {/* <div className="gap-2 flex lg:col-start-6 col-span-full justify-between">
-            <div className="flex flex-col gap-1">
-              <div className="w-[80px] h-[80px] bg-white"></div>
-              <span className="self-end">Jay Graham</span>
-            </div>
-
-            <div className="flex gap-2 items-center self-end md:hidden">
-              <MoveLeft />
-              <MoveRight />
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

@@ -39,42 +39,40 @@ export default function OurServices() {
         Our Services
       </h1>
 
-      <Divider
-        className="border-cellcapital-light mt-7"
-        label="what we offer"
-      />
-
-      <div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6  px-4 ">
-        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
+      <div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6  px-4 mt-4 ">
+        <p className="sm:col-start-4 lg:col-start-6 col-span-full text-heading-two">
+          Our services include:
+        </p>
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-t border-cellcapital-light border-b mt-4 flex gap-4">
           <div className="flex justify-between">
             <span className="text-heading-two ">01</span>
-            <Minus className="md:hidden" />
           </div>
 
-          <div>
+          <div className="flex-1">
             <div className="flex justify-between w-full">
               <h2 className="text-heading-two">Expert Grant Writing</h2>
-              <Minus className="hidden lg:inline-block self-start" />
+              <Plus className="inline-block self-start" />
             </div>
 
-            <div className="mt-2 mb-4">
+            <div className="mt-2 mb-4 hidden">
               <p>Focus on running your business, while our experts</p>
               <p>focus on securing the funds to keep you at the top</p>
             </div>
 
-            <CellCapitalSecondaryButton>learn more</CellCapitalSecondaryButton>
+            <CellCapitalSecondaryButton className="hidden">
+              learn more
+            </CellCapitalSecondaryButton>
           </div>
         </div>
 
-        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b border-cellcapital-light flex gap-4">
           <div className="flex justify-between">
             <span className="text-heading-two ">02</span>
-            <Plus className="md:hidden" />
           </div>
-          <div>
+          <div className="flex-1">
             <div className="flex justify-between w-full">
               <h2 className="text-heading-two">Grant Alerts Program</h2>
-              <Plus className="hidden lg:inline-block self-start" />
+              <Plus className="inline-block self-start" />
             </div>
 
             <div className="hidden">
@@ -88,15 +86,14 @@ export default function OurServices() {
           </div>
         </div>
 
-        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b">
+        <div className="sm:col-start-4 lg:col-start-6 col-span-full py-8 border-b border-cellcapital-light flex gap-4">
           <div className="flex justify-between">
             <span className="text-heading-two ">03</span>
-            <Plus className="md:hidden" />
           </div>
-          <div>
+          <div className="flex-1">
             <div className="flex justify-between w-full">
               <h2 className="text-heading-two">Business Plans & Pitch Decks</h2>
-              <Plus className="hidden lg:inline-block self-start" />
+              <Plus className="inline-block self-start" />
             </div>
 
             <div className="hidden">

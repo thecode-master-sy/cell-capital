@@ -39,9 +39,6 @@ export default function FloatingNav() {
       className="fixed top-0 left-0 right-0 z-[9] flex justify-end floating-nav"
     >
       <div className="flex gap-1 p-4">
-        <CellCapitalPrimaryButton size="sm" color="primary">
-          Book a free consultation
-        </CellCapitalPrimaryButton>
         <CellCapitalSecondaryButton
           className="rounded-full text-white"
           onClick={() => toggleNav()}

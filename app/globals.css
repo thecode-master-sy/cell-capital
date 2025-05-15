@@ -69,7 +69,7 @@
   }
 
   .text-heading-two {
-    @apply text-[20px] -tracking-[0.8px] leading-[1.4];
+    @apply text-[20px] -tracking-[0.5px] leading-[1.5];
   }
 }
 
