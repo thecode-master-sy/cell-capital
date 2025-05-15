@@ -1,3 +1,4 @@
+import FloatingNav from "@/components/floating-nav";
 import { HiddenNav } from "@/components/navbar";
 import AboutSection from "@/components/sections/about-section";
 import CallToActionSection from "@/components/sections/call-to-action";
@@ -14,6 +15,7 @@ export default function Home() {
       {/* <HeroSection /> */}
       <HeroSection />
       <HiddenNav />
+      <FloatingNav />
       <AboutSection />
       <MeetOurTeam />
       <OurServices />

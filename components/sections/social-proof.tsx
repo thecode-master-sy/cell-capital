@@ -1,12 +1,17 @@
 "use client";
 import Image from "next/image";
 import Divider from "../divider";
-import CellCapitalPrimaryButton from "../cell-capital-button";
+import CellCapitalPrimaryButton, {
+  CellCapitalSecondaryButton,
+} from "../cell-capital-button";
+
 
 export default function SocialProof() {
+
   return (
-    <div className="bg-background grid">
+    <div className="bg-background grid relative">
       <div className="py-16 overflow-hidden">
+        
         <Divider label="our funding sucess" />
         <div className="hidden sm:block px-4 mt-16">
           <p>We have helped a diverse group of clients secure over 15million</p>

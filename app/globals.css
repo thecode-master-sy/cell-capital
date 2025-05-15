@@ -88,7 +88,8 @@
   filter: blur(4px) contrast(15);
 }
 
-.menu-overlay {
+.menu-overlay,
+.floating-nav {
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
 

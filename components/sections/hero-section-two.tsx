@@ -1,12 +1,15 @@
 "use client";
 import { BlobHero } from "../blob.hero";
-import CellCapitalPrimaryButton from "../cell-capital-button";
+import CellCapitalPrimaryButton, {
+  CellCapitalSecondaryButton,
+} from "../cell-capital-button";
 import NavBar from "../navbar";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import SocialProof from "./social-proof";
+import { useNavBarContext } from "../providers/navbar-provider";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HeroSectionTwo() {
   const headerRef = useRef<HTMLHeadingElement>(null);
   const container = useRef<HTMLDivElement>(null);
+ 
 
   useGSAP(
     () => {
@@ -115,6 +119,8 @@ export default function HeroSectionTwo() {
           </h1>
         </div>
       </div>
+
+     
       <SocialProof />
     </div>
   );
