@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function TestimonalSection() {
   return (
     <div className="py-16 bg-background-black text-background-black-foreground">
-      <Divider label="testimonals" className="pt-4" />
+      <Divider label="testimonals" className="pt-4" dark/>
 
       <div className="pt-12">
         <div className="grid gap-y-2 grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4">

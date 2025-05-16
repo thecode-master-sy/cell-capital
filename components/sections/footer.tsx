@@ -6,12 +6,18 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
-export default function Footer() {
+export default function Footer({
+  moveValue,
+  initial,
+}: {
+  initial?: number;
+  moveValue?: number;
+}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
       gsap.set(sectionRef.current, {
-        y: -550,
+        y: initial ? initial : -550,
       });
       gsap.to(sectionRef.current, {
         scrollTrigger: {
@@ -20,7 +26,7 @@ export default function Footer() {
           end: "bottom top",
           scrub: true,
         },
-        y: -700,
+        y: moveValue ? moveValue : -700,
       });
     },
     { scope: sectionRef }
@@ -31,7 +37,7 @@ export default function Footer() {
       className="bg-background-black text-white pt-16 overflow-hidden"
     >
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 gap-16 px-4">
-        <div className="lg:col-span-4 col-span-full ">
+        <div className="lg:col-span-5 col-span-full">
           <h2 className="text-heading-one">Get Free Grant Updates</h2>
 
           <form className="flex gap-2 mt-4 items-center max-w-[500px]">
@@ -69,7 +75,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16">
-        <div className=" border-t border-cell-capital-light"></div>
+        <div className=" border-t border-cellcapital-light"></div>
         <div className="mt-2 md:flex justify-between text-caption hidden">
           <span>[ 2025COPY RIGHT ]</span>
           <span>[ PERMISSIONS AND TERMS ]</span>

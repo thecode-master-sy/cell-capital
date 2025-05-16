@@ -9,7 +9,7 @@ export default function WorkingWithUs() {
       className="bg-background-black text-background-black-foreground pt-4 pb-30"
       id="about"
     >
-      <Divider label="our values" />
+      <Divider label="working with us" dark />
       <div>
         <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 gap-4 px-4 py-16 sticky top-0 bg-background-black text-background-black-foreground border-cellcapital-light">
           <Image
@@ -21,17 +21,17 @@ export default function WorkingWithUs() {
           />
 
           <div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
-            <div className="flex flex-col gap-2">
-              <span className="text-caption hidden sm:inline">[01]</span>
-              <h2 className="text-heading-two">Clarity in every step</h2>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline text-heading-two">01</span>
+              <h2 className="text-heading-two">Effortless Funding</h2>
             </div>
 
             <div className="mt-4">
-              <p>We simplify the funding process with clear</p>
+              <p>Our all-in-one grant solution handles </p>
 
-              <p>guidance, ensuring clients understand their</p>
+              <p>everything, freeing you to concentrate on </p>
 
-              <p>path to grants or capital without confusion.</p>
+              <p>scaling your organization with confidence</p>
             </div>
           </div>
         </div>
@@ -46,17 +46,19 @@ export default function WorkingWithUs() {
           />
 
           <div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
-            <div className="flex flex-col gap-2">
-              <span className="text-caption hidden sm:inline">[02]</span>
-              <h2 className="text-heading-two"> Results over promises</h2>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline text-heading-two">02</span>
+              <h2 className="text-heading-two"> Premium Opportunities</h2>
             </div>
 
             <div className="mt-4">
-              <p>We focus on delivering measurable outcomes,</p>
+              <p>Unlock premium grants crafted specifically,</p>
 
-              <p>like winning grants or securing loans, rather </p>
+              <p> for small business, non-profits or social </p>
 
-              <p>than just offering plans.</p>
+              <p>enterprises empowering your vision with.</p>
+
+              <p>the funding you deserve.</p>
             </div>
           </div>
         </div>
@@ -71,17 +73,17 @@ export default function WorkingWithUs() {
           />
 
           <div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
-            <div className="flex flex-col gap-2">
-              <span className="text-caption hidden sm:inline">[03]</span>
-              <h2 className="text-heading-two"> Partnership with purpose</h2>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline text-heading-two">03</span>
+              <h2 className="text-heading-two">Remain Unique</h2>
             </div>
 
             <div className="mt-4">
-              <p>We work alongside clients as true partners, </p>
+              <p>Secure funding with a expertly crafted </p>
 
-              <p>aligning every strategy with their unique </p>
+              <p>proposal and strategic plan designed to make </p>
 
-              <p>vision and goals.</p>
+              <p>your application shine.</p>
             </div>
           </div>
         </div>
@@ -96,16 +98,16 @@ export default function WorkingWithUs() {
           />
 
           <div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
-            <div className="flex flex-col gap-2">
-              <span className="text-caption hidden sm:inline">[04]</span>
-              <h2 className="text-heading-two">Speed with Precision</h2>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline text-heading-two">04</span>
+              <h2 className="text-heading-two">Join the Winning Team</h2>
             </div>
 
             <div className="mt-4">
-              <p>We move quickly to meet deadlines but </p>
+              <p>Join countless entrepreneurs & change makers in</p>
 
-              <p>never cut corners, delivering high-quality </p>
-              <p>work on time</p>
+              <p>leveraging our proven strategies to unlock </p>
+              <p>funding and achieve their dreams.</p>
             </div>
           </div>
         </div>
