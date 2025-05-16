@@ -16,7 +16,7 @@ export default function Faq() {
           Still not sure? See the most commonly asked questions
         </h1>
 
-        <div className="mt-8 max-w-[700px] text-heading-two ">
+        <div className="mt-8 max-w-[700px]">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
@@ -88,7 +88,7 @@ export default function Faq() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5">
+            <AccordionItem value="item-6">
               <AccordionTrigger>What do you need from me?</AccordionTrigger>
               <AccordionContent>
                 Once you sign up we will send you a questionnaire to understand

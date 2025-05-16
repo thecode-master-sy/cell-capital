@@ -40,11 +40,13 @@ export default function CellCapitalPrimaryButton({
 export function CellCapitalSecondaryButton({
   children,
   className,
-  onClick
+  onClick,
+  asChild,
 }: {
   className?: string;
   children: React.ReactNode;
-  onClick?: () => void
+  onClick?: () => void;
+  asChild?: boolean;
 }) {
   return (
     <Button
@@ -55,6 +57,7 @@ export function CellCapitalSecondaryButton({
         className
       )}
       onClick={onClick}
+      asChild={asChild}
     >
       {children}
     </Button>

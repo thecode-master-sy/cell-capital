@@ -39,7 +39,7 @@ export default function NavBar() {
       <div className="flex gap-4  items-center col-start-4 col-span-full  lg:col-span-3 ml-auto">
         <div className="uppercase text-caption flex items-center gap-2">
           <span>packages</span>
-          <Box size={16} />
+          <Box size={14} />
         </div>
         <Button
           size="sm"

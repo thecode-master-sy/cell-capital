@@ -1,18 +1,20 @@
 import { ArrowRight, Check } from "lucide-react";
 import { CellCapitalSecondaryButton } from "./cell-capital-button";
 import Divider from "./divider";
+import Link from "next/link";
 
-type grantPackage =  {
-  title: string,
-  label: string
-  price: string,
-  perks: string[]
-}
+type grantPackage = {
+  title: string;
+  label: string;
+  price: string;
+  perks: string[];
+  packageLink: string;
+};
 
 export default function PricingComponent({
-    grantPackage
+  grantPackage,
 }: {
-    grantPackage: grantPackage
+  grantPackage: grantPackage;
 }) {
   return (
     <div className="border rounded-sm p-4">
@@ -34,9 +36,14 @@ export default function PricingComponent({
       </div>
 
       <div className="mt-4">
-        <CellCapitalSecondaryButton className="w-full bg-background-black flex justify-between py-7 text-background-black-foreground">
-          <span>Add to cart</span>
-          <ArrowRight size={14} />
+        <CellCapitalSecondaryButton
+          className="w-full bg-background-black justify-between flex  py-7 text-background-black-foreground"
+          asChild
+        >
+          <Link href={`/grants/${grantPackage.packageLink}`}>
+            <span>Add to cart</span>
+            <ArrowRight size={14} />
+          </Link>
         </CellCapitalSecondaryButton>
       </div>
 
@@ -44,14 +51,12 @@ export default function PricingComponent({
         <p className="uppercase">[what is included]</p>
 
         <div className="space-y-4 mt-4">
-          {
-            grantPackage.perks.map((perk, index) => (
-              <div className="flex gap-2 items-center" key={index}>
-                <Check size={14} className="text-muted-foreground" />
-                <span>{perk}</span>
-              </div>
-            ))
-          }
+          {grantPackage.perks.map((perk, index) => (
+            <div className="flex gap-2 items-center" key={index}>
+              <Check size={14} className="text-muted-foreground" />
+              <span>{perk}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

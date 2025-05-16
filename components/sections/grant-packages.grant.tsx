@@ -13,6 +13,7 @@ const grantPackages = [
       "Free Consultation ( 30 minutes )",
       "3 Revision Rounds",
     ],
+    packageLink: "bronze",
   },
   {
     title: "Get On The Move!",
@@ -26,6 +27,7 @@ const grantPackages = [
       "Free Consultation( 30 minutes )",
       "3 Revision Rounds",
     ],
+    packageLink: "get-on-the-move",
   },
   {
     title: "Go All The Way!!",
@@ -39,6 +41,7 @@ const grantPackages = [
       "Free Consultation( 45 minutes )",
       "3 Revision Rounds",
     ],
+    packageLink: "go-all-the-way",
   },
 ];
 
@@ -62,11 +65,9 @@ export default function GrantPackages() {
         </div>
 
         <div className="grid md:grid-cols-3 mt-16 gap-4">
-            {
-                grantPackages.map((grantPackage, index) => (
-                    <PricingComponent grantPackage={grantPackage} key={index}/>
-                ))
-            }
+          {grantPackages.map((grantPackage, index) => (
+            <PricingComponent grantPackage={grantPackage} key={index} />
+          ))}
         </div>
       </div>
     </div>
