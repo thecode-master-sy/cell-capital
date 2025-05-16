@@ -1,7 +1,7 @@
 import Divider from "../divider";
 import PricingComponent from "../pricing-component";
 
-const packages = [
+const grantPackages = [
   {
     title: "Bronze Starter Pack",
     label:
@@ -31,7 +31,7 @@ const packages = [
     title: "Go All The Way!!",
     label:
       "Perfect For organizations committed to pursuing every funding opportunity with maximum impact",
-    price: "$300",
+    price: "$1000",
     perks: [
       "Comprehensive Grant Proposal",
       "A List of 5 Premium Grants",
@@ -62,9 +62,11 @@ export default function GrantPackages() {
         </div>
 
         <div className="grid md:grid-cols-3 mt-16 gap-4">
-          <PricingComponent />
-          <PricingComponent />
-          <PricingComponent />
+            {
+                grantPackages.map((grantPackage, index) => (
+                    <PricingComponent grantPackage={grantPackage} key={index}/>
+                ))
+            }
         </div>
       </div>
     </div>
