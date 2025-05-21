@@ -4,9 +4,7 @@ import Link from "next/link";
 import Logo from "./logo";
 import { Box } from "lucide-react";
 import { Button } from "./ui/button";
-import CellCapitalPrimaryButton, {
-  CellCapitalSecondaryButton,
-} from "./cell-capital-button";
+import { CellCapitalSecondaryButton } from "./cell-capital-button";
 import { useContext, createContext, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -18,12 +16,12 @@ gsap.registerPlugin(CustomEase);
 export default function NavBar() {
   const { toggleNav } = useNavBarContext();
   return (
-    <nav className="px-4 py-2 md:gap-8 gap-4 grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 border-b">
-      <div className="lg:col-span-2 col-span-3 flex items-center">
+    <nav className="flex items-center justify-between px-4 py-2 border-b border-black">
+      <div className="flex items-center">
         <Logo />
       </div>
 
-      <ul className="hidden lg:flex items-center gap-3 uppercase text-caption lg:col-start-5 lg:col-span-5">
+      <ul className="hidden md:flex md:text-caption lg:text-body items-center gap-3 uppercase">
         <li>Get free updates</li>
         <li>
           <Link href="/grants">Grants</Link>{" "}
@@ -36,14 +34,20 @@ export default function NavBar() {
         </li>
       </ul>
 
-      <div className="flex gap-4  items-center col-start-4 col-span-full  lg:col-span-3 ml-auto">
-        <div className="uppercase text-caption flex items-center gap-2">
+      <div className="flex gap-4  items-center">
+        <button className="uppercase flex items-center gap-2 bg-white px-2 border rounded-sm border-black">
           <span>packages</span>
-          <Box size={14} />
-        </div>
+          <Box size={16} />
+        </button>
+        {/* <Button
+          size="sm"
+          className="hidden md:flex uppercase bg-white hover:bg-white cursor-pointer rounded-sm text-caption"
+        >
+          Book a free Consultation
+        </Button> */}
         <Button
           size="sm"
-          className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden text-white cursor-pointer rounded-full"
+          className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden text-white cursor-pointer"
           onClick={() => toggleNav()}
         >
           menu

@@ -3,7 +3,8 @@ import { HiddenNav } from "@/components/navbar";
 import AboutSection from "@/components/sections/about-section.homepage";
 import CallToActionSection from "@/components/sections/call-to-action";
 import Footer from "@/components/sections/footer";
-import HeroSection from "@/components/sections/hero-section-two.homepage";
+import HeroSection from "@/components/sections/hero-section";
+import HeroSectionThree from "@/components/sections/hero-section-three.homepage";
 import OurServices from "@/components/sections/our-services";
 import MeetOurTeam from "@/components/sections/our-team";
 import SocialProof from "@/components/sections/social-proof";
@@ -12,10 +13,11 @@ import TestimonalSection from "@/components/sections/testimonials-section";
 export default function Home() {
   return (
     <div className="absolute inset-0 z-[1]">
+      <HeroSectionThree />
       {/* <HeroSection /> */}
-      <HeroSection />
+      {/* <HeroSection /> */}
       <HiddenNav />
-      <FloatingNav />
+      {/* <FloatingNav /> */}
       <AboutSection />
       <MeetOurTeam />
       <OurServices />

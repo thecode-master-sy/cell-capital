@@ -13,9 +13,7 @@ export default function Logo() {
         priority
       />
 
-      <span className="md:text-body text-[12px] font-bold uppercase">
-        ell Capital
-      </span>
+      <span className="font-bold uppercase">ell Capital</span>
     </Link>
   );
 }
