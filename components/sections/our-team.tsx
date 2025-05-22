@@ -11,7 +11,6 @@ export default function MeetOurTeam() {
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      
       gsap.to(sectionRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -25,7 +24,7 @@ export default function MeetOurTeam() {
     { scope: sectionRef }
   );
   return (
-    <div ref={sectionRef} className="bg-background">
+    <div className="bg-background">
       <div className="py-16">
         <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4 gap-4">
           <p className="uppercase text-caption col-span-full sm:col-span-2">

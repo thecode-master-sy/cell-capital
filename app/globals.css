@@ -59,13 +59,13 @@
   }
 
   .text-heading-0 {
-    @apply text-[32px] sm:text-[48px] -tracking-[2px] lg:text-[64px] md:-tracking-[4px];
+    @apply text-[32px] sm:text-[48px] -tracking-[2px] lg:text-[68px] md:-tracking-[4px];
     font-weight: 900;
     line-height: 1;
   }
 
   .text-heading-one {
-    @apply lg:text-[48px] text-[24px] sm:text-[24px] lg:leading-[1.2] leading-[1.2] lg:-tracking-[2px];
+    @apply lg:text-[36px] text-[24px] sm:text-[24px] lg:leading-[1.2] leading-[1.2] lg:-tracking-[2px];
   }
 
   .text-heading-two {
