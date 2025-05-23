@@ -30,18 +30,6 @@ export default function HeroSectionThree() {
       gsap.set(nextImageRef.current, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", // Fully hidden at top
       });
-
-      if (bannerRef.current) {
-        gsap.to(bannerRef.current, {
-          xPercent: -50, // Move half the content width (since content is duplicated)
-          duration: 15, // Adjusted for smooth speed (tune as needed)
-          ease: "none",
-          repeat: -1, // Infinite loop
-          modifiers: {
-            xPercent: gsap.utils.wrap(-50, 0), // Seamless loop
-          },
-        });
-      }
     },
     { scope: currentImageRef }
   );
