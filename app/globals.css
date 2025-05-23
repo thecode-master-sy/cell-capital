@@ -12,7 +12,7 @@
   --color-primary: var(--primary);
   --color-foreground: var(--foreground);
   --color-cellcapital-light: var(--cellcapital-light);
-  --font-sans: var(--font-helvetica-neue);
+  --font-sans: var(--font-pp-neue);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -27,7 +27,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --text-body: 16px;
-  --text-caption: 14px;
+  --text-caption: 12px;
   --text-logo: var(--fs-logo);
 }
 
@@ -39,7 +39,7 @@
   --background-black-foreground: oklch(0.985 0 0);
   --cellcapital-light: oklch(43.83% 0.002 106.47);
   --foreground: oklch(0.145 0 0);
-  --primary: oklch(67.91% 0.145 50.4);
+  --primary: oklch(77.55% 0.126 52.21);
   --primary-foreground: var(--foreground);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(50.96% 0.003 106.51);
@@ -55,21 +55,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground text-body;
+    @apply bg-background text-foreground;
   }
 
   .text-heading-0 {
-    @apply text-[32px] sm:text-[48px] -tracking-[2px] lg:text-[68px] md:-tracking-[4px];
-    font-weight: 900;
-    line-height: 1;
+    @apply text-[36px] md:text-[48px] -tracking-[1px] lg:text-[60px] leading-[1.1] md:-tracking-[2px];
   }
 
   .text-heading-one {
-    @apply lg:text-[36px] text-[24px] sm:text-[24px] lg:leading-[1.2] leading-[1.2] lg:-tracking-[2px];
+    @apply lg:text-[32px] md:text-[26px] text-[20px];
   }
 
-  .text-heading-two {
-    @apply text-[18px] md:text-[22px];
+  .text-paragraph {
+    @apply lg:text-[20px] text-[16px];
   }
 }
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import helveticaNeue from "@/lib/font";
 import "./globals.css";
 import { ReactLenis } from "@/lib/smooth-scroll";
 import NavBarProvider from "@/components/providers/navbar-provider";
+import ppNeueMonteralBook from "@/lib/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactLenis root>
-        <body className={`${helveticaNeue.variable} font-sans heantialiased`}>
+        <body
+          className={`${ppNeueMonteralBook.variable} font-sans heantialiased text-paragraph`}
+        >
           <NavBarProvider>{children}</NavBarProvider>
         </body>
       </ReactLenis>

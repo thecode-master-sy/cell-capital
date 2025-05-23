@@ -21,7 +21,10 @@ export default function NavBar() {
         <Logo />
       </div>
 
-      <ul className="hidden md:flex md:text-caption lg:text-body items-center gap-3 uppercase">
+      <ul className="hidden lg:flex text-heading-two  items-center gap-4 text-body">
+        <li>
+          <Link href="/">Overview</Link>
+        </li>
         <li>Get free updates</li>
         <li>
           <Link href="/grants">Grants</Link>{" "}
@@ -35,8 +38,8 @@ export default function NavBar() {
       </ul>
 
       <div className="flex gap-4  items-center">
-        <button className="uppercase flex items-center gap-2 bg-white px-2 border rounded-sm border-black">
-          <span>packages</span>
+        <button className="flex items-center gap-2 text-body bg-white px-2 border rounded-sm border-black">
+          <span>Packages</span>
           <Box size={16} />
         </button>
         {/* <Button
