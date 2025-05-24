@@ -10,31 +10,49 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { CustomEase } from "gsap/CustomEase";
 import { useNavBarContext } from "./providers/navbar-provider";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+
+const siteLinks = [
+  {
+    label: "Overview",
+    pathname: "/",
+  },
+  {
+    label: "Grants",
+    pathname: "/grants",
+  },
+  {
+    label: "Business Plan",
+    pathname: "/business-plan",
+  },
+];
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(CustomEase);
 export default function NavBar() {
   const { toggleNav } = useNavBarContext();
+  const pathname = usePathname();
   return (
     <nav className="flex items-center justify-between px-4 py-2">
       <div className="flex items-center">
         <Logo />
       </div>
 
-      <ul className="hidden lg:flex text-heading-two  items-center gap-4 text-body">
-        <li>
-          <Link href="/">Overview</Link>
-        </li>
-        <li>Get free updates</li>
-        <li>
-          <Link href="/grants">Grants</Link>{" "}
-        </li>
-        <li>
-          <Link href="/business-plan">Business Plan</Link>{" "}
-        </li>
+      <ul className="hidden lg:flex text-heading-two  items-center gap-7 text-body font-semibold">
+        {siteLinks.map((siteLink, index) => (
+          <li className="py-1 relative" key={index}>
+            <Link href={siteLink.pathname}>{siteLink.label}</Link>
+            {pathname == siteLink.pathname && (
+              <span className="absolute top-[100%] w-full left-0 bg-background-black h-[1px]" />
+            )}
+          </li>
+        ))}
+
         <li>
           <a href="#about">About</a>
         </li>
+        <li>Get Free Updates</li>
       </ul>
 
       <div className="flex gap-4  items-center">

@@ -114,7 +114,7 @@ export default function HeroSectionThree() {
     <div className="bg-background-gray">
       <NavBar />
 
-      <h1 className="text-heading-0  text-center mt-7 max-w-[15ch] sm:max-w-[22ch] px-4 mx-auto pb-2">
+      <h1 className="text-heading-0  text-center pt-16 max-w-[15ch] sm:max-w-[22ch] px-4 mx-auto font-bold">
         $15 million secured in debt free grants. You could be next!
       </h1>
 
@@ -128,14 +128,8 @@ export default function HeroSectionThree() {
 
       <div className="flex relative h-[600px] z-1 overflow-hidden">
         <div className="flex  flex-col absolute w-full top-0 z-[1]">
-          <Button
-            size="lg"
-            className="bg-primary border border-black mx-auto mt-2  text-black rounded-sm cursor-pointer items-center h-auto px-4 py-2 text-paragraph text-[20px]"
-          >
+          <Button className="bg-primary border border-black  mx-auto mt-2   text-primary rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
             <span className="mr-2">Book a free consultation</span>
-            <div className="p-1 rounded-full border border-black">
-              <ArrowUpRight strokeWidth={1} />
-            </div>
           </Button>
         </div>
         <div className="absolute bottom-0 left-0 right-0 uppercase font-bold z-1">
