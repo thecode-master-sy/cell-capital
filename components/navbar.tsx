@@ -61,8 +61,8 @@ export default function NavBar() {
           <Box size={16} />
         </button>
         <AlignJustify
-          size={16}
-          className="cursor-pointer md:hidden"
+          size={25}
+          className="cursor-pointer lg:hidden"
           onClick={() => toggleNav()}
         />
       </div>

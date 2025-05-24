@@ -16,7 +16,7 @@ export default function SocialProof() {
 
         <div className="flex w-max">
           <div className="flex gap-4 mt-16 px-4">
-            <div className="py-4 flex-1 flex items-center justify-center min-w-[250px] bg-background aspect-[1/1] border border-primary rounded-md cursor-pointer">
+            <div className="py-4 flex-1 flex items-center justify-center min-w-[250px] bg-background aspect-[1/1] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -25,7 +25,7 @@ export default function SocialProof() {
                 alt="boomin university logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md cursor-pointer">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -34,7 +34,7 @@ export default function SocialProof() {
                 alt="sistas cohort logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -43,7 +43,7 @@ export default function SocialProof() {
                 alt="angels online "
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -52,7 +52,7 @@ export default function SocialProof() {
                 alt="boomin university logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -64,7 +64,7 @@ export default function SocialProof() {
           </div>
 
           <div className="flex gap-4 mt-16 px-4">
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -73,7 +73,7 @@ export default function SocialProof() {
                 alt="boomin university logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -82,7 +82,7 @@ export default function SocialProof() {
                 alt="sistas cohort logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -91,7 +91,7 @@ export default function SocialProof() {
                 alt="angels online "
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -100,7 +100,7 @@ export default function SocialProof() {
                 alt="boomin university logo"
               />
             </div>
-            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
