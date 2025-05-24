@@ -8,12 +8,12 @@ export default function Logo() {
         className="dark:invert"
         src="/cell-capital-logo.svg"
         alt="Cell capital logo"
-        width={16}
-        height={18}
+        width={14}
+        height={13}
         priority
       />
 
-      <span className="font-bold uppercase">ell Capital</span>
+      <span className="font-bold text-caption uppercase">ell Capital</span>
     </Link>
   );
 }

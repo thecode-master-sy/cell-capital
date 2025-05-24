@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./logo";
-import { Box } from "lucide-react";
+import { AlignJustify, Box } from "lucide-react";
 import { Button } from "./ui/button";
 import { CellCapitalSecondaryButton } from "./cell-capital-button";
 import { useContext, createContext, useRef, useEffect } from "react";
@@ -16,7 +16,7 @@ gsap.registerPlugin(CustomEase);
 export default function NavBar() {
   const { toggleNav } = useNavBarContext();
   return (
-    <nav className="flex items-center justify-between px-4 py-2 border-b border-black">
+    <nav className="flex items-center justify-between px-4 py-2">
       <div className="flex items-center">
         <Logo />
       </div>
@@ -38,23 +38,15 @@ export default function NavBar() {
       </ul>
 
       <div className="flex gap-4  items-center">
-        <button className="flex items-center gap-2 text-body bg-white px-2 border rounded-sm border-black">
+        <button className="flex items-center gap-2 text-body cursor-pointer">
           <span>Packages</span>
           <Box size={16} />
         </button>
-        {/* <Button
-          size="sm"
-          className="hidden md:flex uppercase bg-white hover:bg-white cursor-pointer rounded-sm text-caption"
-        >
-          Book a free Consultation
-        </Button> */}
-        <Button
-          size="sm"
-          className="uppercase max-w-[200px] bg-cellcapital-light text-caption lg:hidden text-white cursor-pointer"
+        <AlignJustify
+          size={16}
+          className="cursor-pointer md:hidden"
           onClick={() => toggleNav()}
-        >
-          menu
-        </Button>
+        />
       </div>
     </nav>
   );
