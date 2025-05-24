@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SocialProof() {
   const firstBannerRef = useRef(null);
   const secondBannerRef = useRef<HTMLDivElement | null>(null);
+  const thirdBannerRef = useRef(null);
   const bannerContainer = useRef(null);
   let xPercent = 0;
   let direction = -1;
@@ -47,6 +48,8 @@ export default function SocialProof() {
     gsap.set(firstBannerRef.current, { xPercent: xPercent });
 
     gsap.set(secondBannerRef.current, { xPercent: xPercent });
+
+    gsap.set(thirdBannerRef.current, { xPercent: xPercent });
 
     requestAnimationFrame(animate);
 
@@ -150,6 +153,89 @@ export default function SocialProof() {
           </div>
 
           <div ref={secondBannerRef} className="flex gap-4 mt-16">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%] min-w-[50px]"
+                src="/social-proof/logo-proof-one.png"
+                alt="boomin university logo"
+              />
+              <Button
+                size="sm"
+                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+              >
+                <span>Learn more</span>
+                <ArrowRight />
+              </Button>
+            </div>
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-two.png"
+                alt="sistas cohort logo"
+              />
+              <Button
+                size="sm"
+                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+              >
+                <span>Learn more</span>
+                <ArrowRight />
+              </Button>
+            </div>
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-three.png"
+                alt="angels online "
+              />
+              <Button
+                size="sm"
+                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+              >
+                <span>Learn more</span>
+                <ArrowRight />
+              </Button>
+            </div>
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-four.png"
+                alt="boomin university logo"
+              />
+              <Button
+                size="sm"
+                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+              >
+                <span>Learn more</span>
+                <ArrowRight />
+              </Button>
+            </div>
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px] "
+                src="/social-proof/logo-proof-five.png"
+                alt="boomin university logo"
+              />
+              <Button
+                size="sm"
+                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+              >
+                <span>Learn more</span>
+                <ArrowRight />
+              </Button>
+            </div>
+          </div>
+
+          <div ref={thirdBannerRef} className="flex gap-4 mt-16">
             <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}

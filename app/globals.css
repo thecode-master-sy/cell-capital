@@ -59,7 +59,7 @@
   }
 
   .text-heading-0 {
-    @apply text-[36px] md:text-[48px] -tracking-[1px] lg:text-[60px] leading-[1.1] md:-tracking-[2px];
+    @apply text-[36px] md:text-[48px] -tracking-[0.8px] lg:text-[60px] leading-[1.1] md:-tracking-[1.5px];
   }
 
   .text-heading-one {
