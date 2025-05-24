@@ -5,14 +5,10 @@ import CellCapitalPrimaryButton, {
   CellCapitalSecondaryButton,
 } from "../cell-capital-button";
 
-
 export default function SocialProof() {
-
   return (
-    <div className="bg-background grid relative">
+    <div className="bg-white grid relative">
       <div className="py-16 overflow-hidden">
-        
-        <Divider label="our funding sucess" />
         <div className="hidden sm:block px-4 mt-16">
           <p>We have helped a diverse group of clients secure over 15million</p>
           <p>in grant funding to grow and scale their operations and have a </p>

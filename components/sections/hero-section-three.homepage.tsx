@@ -66,51 +66,49 @@ export default function HeroSectionThree() {
     xPercent += 0.1 * direction;
   };
 
-  const { contextSafe } = useGSAP(
-    () => {
-      // Initial setup: Ensure next image is hidden
-      gsap.set(nextImageRef.current, { opacity: 0 });
-    },
-    { scope: currentImageRef }
-  );
+  // const { contextSafe } = useGSAP(
+  //   () => {
+  //     gsap.set(nextImageRef.current, { opacity: 0 });
+  //   },
+  //   { scope: currentImageRef }
+  // );
 
-  const crossfade = contextSafe(() => {
-    const nextIndex = (currentIndex + 1) % images.length;
+  // const crossfade = contextSafe(() => {
+  //   const nextIndex = (currentIndex + 1) % images.length;
 
-    // Update next image source
-    nextImageRef.current!.src = images[nextIndex];
+  //   nextImageRef.current!.src = images[nextIndex];
 
-    // GSAP timeline for crossfade
-    gsap
-      .timeline({
-        onComplete: () => {
-          // Update current image to next image
-          currentImageRef.current!.src = images[nextIndex];
-          gsap.set(currentImageRef.current, { opacity: 1 });
-          gsap.set(nextImageRef.current, { opacity: 0 });
-          setCurrentIndex(nextIndex); // Update index
-        },
-      })
-      .to(currentImageRef.current, {
-        opacity: 0,
-        duration: 1,
-        ease: "power2.inOut",
-      })
-      .to(
-        nextImageRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power2.inOut",
-        },
-        "-=1"
-      );
-  });
+  //   // GSAP timeline for crossfade
+  //   gsap
+  //     .timeline({
+  //       onComplete: () => {
+  //         // Update current image to next image
+  //         currentImageRef.current!.src = images[nextIndex];
+  //         gsap.set(currentImageRef.current, { opacity: 1 });
+  //         gsap.set(nextImageRef.current, { opacity: 0 });
+  //         setCurrentIndex(nextIndex); // Update index
+  //       },
+  //     })
+  //     .to(currentImageRef.current, {
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: "power2.inOut",
+  //     })
+  //     .to(
+  //       nextImageRef.current,
+  //       {
+  //         opacity: 1,
+  //         duration: 1,
+  //         ease: "power2.inOut",
+  //       },
+  //       "-=1"
+  //     );
+  // });
 
-  useEffect(() => {
-    const interval = setInterval(crossfade, 5000);
-    return () => clearInterval(interval); // Cleanup
-  }, [crossfade]);
+  // useEffect(() => {
+  //   const interval = setInterval(crossfade, 5000);
+  //   return () => clearInterval(interval); // Cleanup
+  // }, [crossfade]);
 
   return (
     <div className="bg-background-gray">
