@@ -1,73 +1,114 @@
 "use client";
 import Image from "next/image";
-import Divider from "../divider";
-import CellCapitalPrimaryButton, {
-  CellCapitalSecondaryButton,
-} from "../cell-capital-button";
 
 export default function SocialProof() {
   return (
-    <div className="bg-white grid relative">
+    <div className="bg-white  relative">
       <div className="py-16 overflow-hidden">
-        <div className="hidden sm:block px-4 mt-16">
-          <p>We have helped a diverse group of clients secure over 15million</p>
-          <p>in grant funding to grow and scale their operations and have a </p>
-          <p>positive impact on their communities, and we can help you too!</p>
+        <div className="px-4 flex flex-col md:flex-row gap-y-4 gap-x-4 justify-between">
+          <h1 className="text-heading-0 font-bold">Our Funding Success</h1>
+          <p className="max-w-[45ch] md:max-w-[35ch]">
+            We have helped a diverse group of clients secure over 15million in
+            grant funding to grow and scale their operations and have a positive
+            impact on their communities and we can help you too!
+          </p>
         </div>
 
-        <div className="sm:hidden px-4 mt-16 col-span-full max-w-[60ch]">
-          <p>We have helped a diverse group of clients</p>
-          <p>secure over 15million in grant funding to </p>
-          <p>grow and scale their operations and have </p>
-          <p>a positive impact on their communities,</p>
-          <p> and we can help you too!</p>
-        </div>
+        <div className="flex w-max">
+          <div className="flex gap-4 mt-16 px-4">
+            <div className="py-4 flex-1 flex items-center justify-center min-w-[250px] bg-background aspect-[1/1] border border-primary rounded-md cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%] min-w-[50px]"
+                src="/social-proof/logo-proof-one.png"
+                alt="boomin university logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md cursor-pointer">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-two.png"
+                alt="sistas cohort logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-three.png"
+                alt="angels online "
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-four.png"
+                alt="boomin university logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px]"
+                src="/social-proof/logo-proof-five.png"
+                alt="boomin university logo"
+              />
+            </div>
+          </div>
 
-        <div className="flex border mt-16">
-          <div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/1] min-w-[120px]">
-            <Image
-              width={100}
-              height={100}
-              className="w-[35%] min-w-[50px] mix-blend-luminosity "
-              src="/social-proof/logo-proof-one.png"
-              alt="boomin university logo"
-            />
-          </div>
-          <div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/0.6] min-w-[120px]">
-            <Image
-              width={100}
-              height={100}
-              className="w-[35%]  min-w-[50px] mix-blend-luminosity"
-              src="/social-proof/logo-proof-two.png"
-              alt="sistas cohort logo"
-            />
-          </div>
-          <div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/0.6] min-w-[120px]">
-            <Image
-              width={100}
-              height={100}
-              className="w-[35%]  min-w-[50px] mix-blend-luminosity"
-              src="/social-proof/logo-proof-three.png"
-              alt="angels online "
-            />
-          </div>
-          <div className="border-r flex-1 px-1 flex items-center justify-center aspect-[1/0.6] min-w-[120px]">
-            <Image
-              width={100}
-              height={100}
-              className="w-[35%]  min-w-[50px] mix-blend-luminosity"
-              src="/social-proof/logo-proof-four.png"
-              alt="boomin university logo"
-            />
-          </div>
-          <div className="flex-1	 px-1 flex items-center justify-center aspect-[1/0.6] min-w-[120px]">
-            <Image
-              width={100}
-              height={100}
-              className="w-[35%]  min-w-[50px] mix-blend-luminosity"
-              src="/social-proof/logo-proof-five.png"
-              alt="boomin university logo"
-            />
+          <div className="flex gap-4 mt-16 px-4">
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%] min-w-[50px]"
+                src="/social-proof/logo-proof-one.png"
+                alt="boomin university logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px] mix-blend-luminosity"
+                src="/social-proof/logo-proof-two.png"
+                alt="sistas cohort logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px] mix-blend-luminosity"
+                src="/social-proof/logo-proof-three.png"
+                alt="angels online "
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px] mix-blend-luminosity"
+                src="/social-proof/logo-proof-four.png"
+                alt="boomin university logo"
+              />
+            </div>
+            <div className="py-4 flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-md">
+              <Image
+                width={100}
+                height={100}
+                className="w-[35%]  min-w-[50px] mix-blend-luminosity"
+                src="/social-proof/logo-proof-five.png"
+                alt="boomin university logo"
+              />
+            </div>
           </div>
         </div>
       </div>
