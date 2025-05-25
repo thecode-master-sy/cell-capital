@@ -27,7 +27,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --text-body: 16px;
-  --text-caption: 12px;
+  --text-caption: 14px;
   --text-logo: var(--fs-logo);
 }
 
@@ -63,7 +63,7 @@
   }
 
   .text-heading-one {
-    @apply lg:text-[32px] md:text-[26px] text-[20px];
+    @apply lg:text-[32px] md:text-[26px] text-[18px];
   }
 
   .text-paragraph {
@@ -77,8 +77,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: hsl(23, 88%, 70%);
+  background-color: hsl(23, 88%, 60%);
   mix-blend-mode: multiply;
+  backdrop-filter: blur(15px);
 }
 
 .blob-wrapper {
