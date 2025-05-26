@@ -24,12 +24,24 @@ export default function MeetOurTeam() {
     { scope: sectionRef }
   );
   return (
-    <div className="bg-background">
-      <div className="py-16">
+    <div className="bg-background-gray py-16">
+      <div className="px-4">
+        <h2 className="text-heading-0 font-bold ">
+          The faces behind the brand
+        </h2>
+
+        <p className="max-w-[60ch] mt-4">
+          At Cell Capital, we don’t just chase funding, we make it happen with a
+          difference. Our hands-on approach crafts every grant proposal and
+          business plan to fit your unique goals, saving you time and boosting
+          your odds. With clear steps, fast delivery, and a focus on real
+          results, we’re your partner in turning big dreams into reality. No
+          fluff, just funding success tailored for you. Ready to stand out?
+        </p>
+      </div>
+      {/* <div className="py-16">
         <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12 px-4 gap-4">
-          <p className="uppercase text-caption col-span-full sm:col-span-2">
-            [ what sets us apart ]
-          </p>
+       
 
           <div className="lg:col-start-6 sm:col-start-3 md:col-start-4 col-span-full">
             <p className="max-w-[60ch]">
@@ -47,10 +59,10 @@ export default function MeetOurTeam() {
             </CellCapitalPrimaryButton>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="pt-16 pb-30">
-        <h2 className="text-heading-one px-4">The Faces Behind The Brand</h2>
+      {/* <div className="pt-16 pb-30">
+       
 
         <div className="border-t hidden gap-4 mt-4 px-4 py-4 lg:grid lg:grid-cols-[1.5fr_1.45fr]">
           <div className="grid grid-cols-3 gap-2">
@@ -344,7 +356,7 @@ export default function MeetOurTeam() {
             bringing their ideas into life.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

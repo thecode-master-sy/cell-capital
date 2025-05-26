@@ -31,10 +31,7 @@ export default function OurServices() {
     { scope: sectionRef }
   );
   return (
-    <div
-      ref={sectionRef}
-      className="pt-16 py-30 bg-background-black text-white"
-    >
+    <div className="pt-16 py-30 bg-background-black text-white">
       <h1 className="uppercase text-heading-0 px-4 text-center">
         Our Services
       </h1>

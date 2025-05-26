@@ -5,7 +5,9 @@ import { useGSAP } from "@gsap/react";
 
 import { gsap } from "gsap";
 import { useRef } from "react";
-import { Diamond, Gem } from "lucide-react";
+import { ArrowRight, Diamond, Gem } from "lucide-react";
+import { Button } from "../ui/button";
+import MeetOurTeam from "./our-team";
 
 gsap.registerPlugin(useGSAP);
 
@@ -26,54 +28,20 @@ export default function AboutSection() {
     { scope: sectionRef }
   );
   return (
-    <section className="py-16 bg-white" id="about">
-      <div className="px-4 flex justify-between">
-        <h1 className="text-heading-0 font-bold">About us</h1>
+    <section className="py-16 bg-background-gray" id="about">
+      <div className="px-4 grid sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
+        <span className="font-bold col-span-2">About Cell capital</span>
 
-        <p className="max-w-[40ch]">
-          At Cell Capital, we believe that there are no limits to our ability in
-          helping businesses & nonprofits get funded! We guide businesses and
-          nonprofits to bold wins with clarity.
-        </p>
-      </div>
-
-      <div className="min-h-screen overflow-hidden relative mt-16 grid grid-rows-[min-content_1fr] z-2">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 min-w-full min-h-full object-cover z-[-1] blur-video"
-        >
-          <source src="/video/cell-capital-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="backdrop-overlay"></div>
-
-        <div className="w-full min-h-screen grid text-white relative z-[5] px-4 py-4">
-          <div className="flex justify-between">
-            <h1 className="text-heading-0 hidden sm:block uppercase font-bold">
-              Clarity in Every Step
-            </h1>
-
-            <span className="text-heading-0 hidden sm:inline-block font-bold">
-              0 1
-            </span>
-
-            <h1 className="text-heading-one sm:hidden uppercase font-bold">
-              Clarity in Every Step
-            </h1>
-
-            <span className="text-heading-one sm:hidden font-bold">0 1</span>
-          </div>
-
-          <div className="border-t border-white py-4">
-            <p className="max-w-[30ch] text-heading-one">
-              We simplify the funding process with clear guidance, ensuring
-              clients understand their path to grants or capital without
-              confusion.
-            </p>
-          </div>
+        <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
+          <p className="max-w-[40ch]">
+            At Cell Capital, we believe that there are no limits to our ability
+            in helping businesses & nonprofits get funded! We guide businesses
+            and nonprofits to bold wins with clarity.
+          </p>
+          <Button className="bg-primary  mt-4 rounded-sm cursor-pointer items-center h-auto py-1 text-black  font-bold">
+            <span className="mr-2">Book a free consultation</span>
+            <ArrowRight />
+          </Button>
         </div>
       </div>
 

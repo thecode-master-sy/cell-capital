@@ -128,7 +128,7 @@ export default function HeroSectionThree() {
 
       <div className="flex relative h-[600px] z-1 overflow-hidden">
         <div className="flex  flex-col absolute w-full top-0 z-[1]">
-          <Button className="bg-primary border border-black  mx-auto mt-2   text-primary rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
+          <Button className="bg-primary   mx-auto mt-2   text-primary rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
             <span className="mr-2">Book a free consultation</span>
           </Button>
         </div>
@@ -136,7 +136,7 @@ export default function HeroSectionThree() {
           <div ref={bannerContainer} className="relative flex w-max">
             <div
               ref={firstBannerRef}
-              className="bg-white p-4 border-y border-black flex items-center gap-4 w-max text-primary"
+              className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
             >
               <h2 className="text-heading-0">
                 Success Oriented Grant Writing Agency
@@ -156,7 +156,7 @@ export default function HeroSectionThree() {
 
             <div
               ref={secondBannerRef}
-              className="bg-white p-4 border-y border-black flex items-center gap-4 w-max text-primary"
+              className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
             >
               <h2 className="text-heading-0">
                 Success Oriented Grant Writing Agency
