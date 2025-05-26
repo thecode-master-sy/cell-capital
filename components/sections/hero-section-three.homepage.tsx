@@ -132,8 +132,11 @@ export default function HeroSectionThree() {
             <span className="mr-2">Book a free consultation</span>
           </Button>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 uppercase font-bold z-1">
-          <div ref={bannerContainer} className="relative flex w-max">
+        <div className="absolute bottom-0 left-0 right-0 font-bold uppercase z-1">
+          <div
+            ref={bannerContainer}
+            className="relative grid grid-cols-2 w-max"
+          >
             <div
               ref={firstBannerRef}
               className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
@@ -152,11 +155,19 @@ export default function HeroSectionThree() {
               <h2 className="text-heading-0">
                 Success Oriented Grant Writing Agency
               </h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
             </div>
 
             <div
               ref={secondBannerRef}
-              className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
+              className="bg-white p-4 border-y relative -translate-x-0.5  border-primary flex items-center gap-4 w-max text-primary"
             >
               <h2 className="text-heading-0">
                 Success Oriented Grant Writing Agency
@@ -172,6 +183,14 @@ export default function HeroSectionThree() {
               <h2 className="text-heading-0">
                 Success Oriented Grant Writing Agency
               </h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
             </div>
           </div>
         </div>

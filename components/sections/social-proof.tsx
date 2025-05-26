@@ -70,7 +70,7 @@ export default function SocialProof() {
 
         <div ref={bannerContainer} className="flex w-max px-4 gap-4">
           <div ref={firstBannerRef} className="flex gap-4 mt-16">
-            <div className="py-4 relative flex-1 flex items-center justify-center min-w-[250px] bg-background aspect-[1/1] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center min-w-[250px] bg-white aspect-[1/1] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -80,13 +80,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -96,13 +96,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -112,13 +112,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -128,13 +128,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -144,7 +144,7 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
@@ -153,7 +153,7 @@ export default function SocialProof() {
           </div>
 
           <div ref={secondBannerRef} className="flex gap-4 mt-16">
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -163,13 +163,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -179,13 +179,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -195,13 +195,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -211,13 +211,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -227,7 +227,7 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
@@ -236,7 +236,7 @@ export default function SocialProof() {
           </div>
 
           <div ref={thirdBannerRef} className="flex gap-4 mt-16">
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -246,13 +246,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -262,13 +262,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -278,13 +278,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -294,13 +294,13 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
               </Button>
             </div>
-            <div className="py-4 relative flex-1 flex items-center justify-center bg-background min-w-[250px] border border-primary rounded-sm cursor-pointer">
+            <div className="py-4 relative flex-1 flex items-center justify-center bg-white min-w-[250px] border border-primary rounded-sm cursor-pointer">
               <Image
                 width={100}
                 height={100}
@@ -310,7 +310,7 @@ export default function SocialProof() {
               />
               <Button
                 size="sm"
-                className="absolute cursor-pointer bg-white bottom-2 right-2 text-sm rounded-sm border-primary border"
+                className="absolute cursor-pointer bg-background bottom-2 right-2 text-sm rounded-sm border-primary border"
               >
                 <span>Learn more</span>
                 <ArrowRight />
