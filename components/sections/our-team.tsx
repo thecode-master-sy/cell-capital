@@ -5,8 +5,10 @@ import CellCapitalPrimaryButton from "../cell-capital-button";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ArrowDownRight } from "lucide-react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MeetOurTeam() {
   const firstBannerRef = useRef(null);
@@ -14,13 +16,6 @@ export default function MeetOurTeam() {
   const bannerContainer = useRef(null);
   let xPercent = 0;
   let direction = -1;
-
-  // Array of image sources for cycling
-  const images = [
-    "/hero-image-one.jpg",
-    "/hero-image-seven.jpg",
-    "/hero-image-six.jpg",
-  ];
 
   useEffect(() => {
     gsap.to(bannerContainer.current, {
@@ -36,7 +31,7 @@ export default function MeetOurTeam() {
         onUpdate: (e) => (direction = e.direction * -1),
       },
 
-      x: "-500px",
+      x: "-800px",
     });
 
     const animationFrame = requestAnimationFrame(animate);
@@ -62,9 +57,12 @@ export default function MeetOurTeam() {
   return (
     <div className="bg-background-gray py-16">
       <div className="px-4">
-        <h2 className="text-heading-0 font-bold ">
+        <h2 className="text-heading-0 font-bold sm-media-hidden">
           The faces behind the brand
         </h2>
+
+        <h2 className="text-heading-0 font-bold sm-media">The faces</h2>
+        <h2 className="text-heading-0 font-bold sm-media">behind the brand</h2>
 
         <p className="max-w-[60ch] mt-4">
           At Cell Capital, we don’t just chase funding, we make it happen with a

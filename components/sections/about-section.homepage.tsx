@@ -29,7 +29,7 @@ export default function AboutSection() {
   );
   return (
     <section className="py-16 bg-background-gray" id="about">
-      <div className="px-4 grid sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
+      <div className="px-4 grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <span className="font-bold col-span-2">About Cell capital</span>
 
         <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">

@@ -32,10 +32,7 @@ export default function Footer({
     { scope: sectionRef }
   );
   return (
-    <footer
-      ref={sectionRef}
-      className="bg-background-black text-white pt-16 overflow-hidden"
-    >
+    <footer className="bg-background-black text-white pt-16 overflow-hidden">
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 gap-16 px-4">
         <div className="lg:col-span-5 col-span-full">
           <h2 className="text-heading-one">Get Free Grant Updates</h2>

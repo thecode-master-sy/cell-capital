@@ -63,11 +63,23 @@
   }
 
   .text-heading-one {
-    @apply lg:text-[32px] md:text-[26px] text-[18px];
+    @apply lg:text-[24px] md:text-[24px] text-[18px];
   }
 
   .text-paragraph {
     @apply lg:text-[18px] text-[16px];
+  }
+
+  @media screen and (min-width: 450px) {
+    .sm-media {
+      @apply hidden;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .sm-media-hidden {
+      @apply hidden;
+    }
   }
 }
 

@@ -59,13 +59,15 @@ export default function SocialProof() {
   return (
     <div className="bg-background  relative">
       <div className="py-16 overflow-hidden">
-        <div className="px-4 flex flex-col md:flex-row gap-y-4 gap-x-4 justify-between">
-          <h1 className="text-heading-0 font-bold">Our funding success</h1>
-          <p className="max-w-[45ch] md:max-w-[35ch]">
-            We have helped a diverse group of clients secure over 15million in
-            grant funding to grow and scale their operations and have a positive
-            impact on their communities and we can help you too!
-          </p>
+        <div className="px-4 grid sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12   gap-y-4 gap-x-4">
+          <span className="font-bold col-span-2">Our funding success</span>
+          <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
+            <p className="max-w-[45ch] md:max-w-[35ch]">
+              We have helped a diverse group of clients secure over 15million in
+              grant funding to grow and scale their operations and have a
+              positive impact on their communities and we can help you too!
+            </p>
+          </div>
         </div>
 
         <div ref={bannerContainer} className="flex w-max px-4 gap-4">

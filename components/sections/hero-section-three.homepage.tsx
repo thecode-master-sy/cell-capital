@@ -111,14 +111,14 @@ export default function HeroSectionThree() {
   // }, [crossfade]);
 
   return (
-    <div className="bg-background-gray">
+    <div className="bg-background">
       <NavBar />
 
       <h1 className="text-heading-0  text-center pt-16 max-w-[15ch] sm:max-w-[22ch] px-4 mx-auto font-bold">
         $15 million secured in debt free grants. You could be next!
       </h1>
 
-      <div className="bg-background-gray flex justify-center">
+      <div className="bg-background flex justify-center">
         <p className="max-w-[40ch] sm:max-w-[50ch] text-center p-4">
           At Cell Capital we are passionate about securing grants for business &
           non-profits through expert consulting, research, and compelling Grant

@@ -26,7 +26,7 @@ export default function CallToActionSection() {
     { scope: sectionRef }
   );
   return (
-    <div ref={sectionRef} className="pb-16 pt-4 bg-background">
+    <div className="pb-16 pt-4 bg-background">
       <Divider label="ready to stand out" />
 
       <div className="px-4 py-24 relative grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">

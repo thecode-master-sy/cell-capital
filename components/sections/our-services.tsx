@@ -3,40 +3,272 @@ import CellCapitalPrimaryButton, {
   CellCapitalSecondaryButton,
 } from "../cell-capital-button";
 import Divider from "../divider";
-import { Minus, Plus } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, Minus, Plus } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import TestimonalSection from "./testimonials-section";
+import { Button } from "../ui/button";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP);
 
 export default function OurServices() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
-      gsap.set(sectionRef.current, {
-        y: -200,
-      });
-      gsap.to(sectionRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: -400,
-      });
-    },
-    { scope: sectionRef }
-  );
-  return (
-    <div className="pt-16 py-30 bg-background-black text-white">
-      <h1 className="uppercase text-heading-0 px-4 text-center">
-        Our Services
-      </h1>
+  const firstBannerRef = useRef(null);
+  const secondBannerRef = useRef<HTMLDivElement | null>(null);
+  const bannerContainer = useRef(null);
+  let xPercent = 0;
+  let direction = -1;
 
-      <div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6  px-4 mt-4 ">
+  useEffect(() => {
+    gsap.to(bannerContainer.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+
+        scrub: 0.5,
+
+        start: 0,
+
+        end: window.innerHeight,
+
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+
+      x: "-800px",
+    });
+
+    const animationFrame = requestAnimationFrame(animate);
+
+    () => cancelAnimationFrame(animationFrame);
+  }, []);
+
+  const animate = () => {
+    if (xPercent < -100) {
+      xPercent = 0;
+    } else if (xPercent > 0) {
+      xPercent = -100;
+    }
+
+    gsap.set(firstBannerRef.current, { xPercent: xPercent });
+
+    gsap.set(secondBannerRef.current, { xPercent: xPercent });
+
+    requestAnimationFrame(animate);
+
+    xPercent += 0.1 * direction;
+  };
+
+  return (
+    <div className="bg-background-gray">
+      <div>
+        <div className="overflow-hidden w-full font-bold uppercase">
+          <div
+            ref={bannerContainer}
+            className="relative grid grid-cols-2 w-max "
+          >
+            <div
+              ref={firstBannerRef}
+              className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
+            >
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+            </div>
+
+            <div
+              ref={secondBannerRef}
+              className="bg-white p-4 border-y relative -translate-x-0.5 border-primary flex items-center gap-4 w-max text-primary"
+            >
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+              <h2 className="text-heading-0">Our Services</h2>
+              <span>
+                <Image
+                  width={30}
+                  height={30}
+                  src="/icons/asterisk-solid.svg"
+                  alt="asterisk"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-4 py-16">
+          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
+            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+              Expert grant writing
+            </h1>
+
+            <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
+              <p className="text-heading-one max-w-[25ch]">
+                Focus on running your business, while our experts focus on
+                securing the funds to keep you at the top
+              </p>
+              <Button
+                size="lg"
+                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
+              >
+                <span>Learn more</span>
+                <ArrowRight size={16} />
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
+            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+              Grant alerts program
+            </h1>
+
+            <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
+              <p className="text-heading-one max-w-[25ch]">
+                Focus on running your business, while our experts focus on
+                securing the funds to keep you at the top
+              </p>
+              <Button
+                size="lg"
+                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
+              >
+                <span>Learn more</span>
+                <ArrowRight size={16} />
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary  py-7">
+            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+              Business Plans & Pitch Decks
+            </h1>
+
+            <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
+              <p className="text-heading-one max-w-[25ch]">
+                Focus on running your business, while our experts focus on
+                securing the funds to keep you at the top
+              </p>
+              <Button
+                size="lg"
+                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
+              >
+                <span>Learn more</span>
+                <ArrowRight size={16} />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="grid sm:grid-cols-8 lg:grid-cols-12 grid-cols-6  px-4 mt-4 ">
         <p className="sm:col-start-4 lg:col-start-6 col-span-full text-heading-two">
           Our services include:
         </p>
@@ -104,7 +336,8 @@ export default function OurServices() {
         </div>
       </div>
 
-      <TestimonalSection />
+      <TestimonalSection /> */}
+      </div>
     </div>
   );
 }
