@@ -38,7 +38,7 @@ export default function AboutSection() {
             in helping businesses & nonprofits get funded! We guide businesses
             and nonprofits to bold wins with clarity.
           </p>
-          <Button className="bg-primary mt-4 rounded-sm cursor-pointer items-center h-auto py-1 text-black  font-bold">
+          <Button className="bg-primary mt-4 rounded-sm cursor-pointer items-center h-auto py-1 text-black border border-black  font-bold">
             <span className="mr-2">Book a free consultation</span>
             <ArrowRight />
           </Button>

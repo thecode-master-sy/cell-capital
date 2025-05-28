@@ -63,7 +63,7 @@
   }
 
   .text-heading-one {
-    @apply lg:text-[24px] md:text-[24px] text-[18px];
+    @apply lg:text-[22px]  text-[18px];
   }
 
   .text-paragraph {

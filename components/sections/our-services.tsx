@@ -207,8 +207,8 @@ export default function OurServices() {
         </div>
 
         <div className="px-4 py-16">
-          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
-            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+          <div className="grid gap-y-4 gap-x-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
+            <h1 className="font-bold col-span-2 md:col-span-3 text-heading-one">
               Expert grant writing
             </h1>
 
@@ -227,15 +227,15 @@ export default function OurServices() {
             </div>
           </div>
 
-          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
-            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+          <div className="grid gap-y-4 gap-x-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
+            <h1 className="font-bold col-span-2 md:col-span-3 text-heading-one">
               Grant alerts program
             </h1>
 
             <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
               <p className="text-heading-one max-w-[25ch]">
-                Focus on running your business, while our experts focus on
-                securing the funds to keep you at the top
+                Stay updated with the latest grant openings, so you don’t miss
+                out on mouth-watering opportunities
               </p>
               <Button
                 size="lg"
@@ -247,15 +247,17 @@ export default function OurServices() {
             </div>
           </div>
 
-          <div className="grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary  py-7">
-            <h1 className="font-bold col-span-2 lg:col-span-3 text-[22px]">
+          <div className="grid gap-y-4 gap-x-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary  py-7">
+            <h1 className="font-bold col-span-2 md:col-span-3 text-heading-one">
               Business Plans & Pitch Decks
             </h1>
 
             <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
               <p className="text-heading-one max-w-[25ch]">
-                Focus on running your business, while our experts focus on
-                securing the funds to keep you at the top
+                Secure capital with professional plans that showcase your vision
+                and strategy with clarity and confidence. Captivate investors
+                with compelling, visually stunning decks designed to secure the
+                funding you need.
               </p>
               <Button
                 size="lg"

@@ -128,7 +128,7 @@ export default function HeroSectionThree() {
 
       <div className="flex relative h-[600px] z-1 overflow-hidden">
         <div className="flex  flex-col absolute w-full top-0 z-[1]">
-          <Button className="bg-primary   mx-auto mt-2   text-primary rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
+          <Button className="bg-primary   mx-auto mt-2 border border-black   text-primary rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
             <span className="mr-2">Book a free consultation</span>
           </Button>
         </div>

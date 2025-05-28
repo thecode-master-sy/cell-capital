@@ -22,6 +22,7 @@ export default function Home() {
       <AboutSection />
       <MeetOurTeam />
       <OurServices />
+      <TestimonalSection />
       <CallToActionSection />
       <Footer />
     </div>
