@@ -20,18 +20,18 @@ export default function MeetOurTeam() {
   useEffect(() => {
     gsap.to(bannerContainer.current, {
       scrollTrigger: {
-        trigger: document.documentElement,
+        trigger: bannerContainer.current,
 
         scrub: 0.5,
 
-        start: 0,
+        start: "top bottom",
 
-        end: window.innerHeight,
+        end: "bottom top",
 
         onUpdate: (e) => (direction = e.direction * -1),
       },
 
-      x: "-800px",
+      x: "-200px",
     });
 
     const animationFrame = requestAnimationFrame(animate);
@@ -55,7 +55,7 @@ export default function MeetOurTeam() {
     xPercent += 0.1 * direction;
   };
   return (
-    <div className="bg-background-gray py-16">
+    <div className="bg-background py-16">
       <div className="px-4">
         <h2 className="text-heading-0 font-bold sm-media-hidden">
           The faces behind the brand

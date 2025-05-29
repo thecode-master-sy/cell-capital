@@ -17,22 +17,6 @@ export default function SocialProof() {
   let direction = -1;
 
   useEffect(() => {
-    gsap.to(bannerContainer.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-
-        scrub: 0.5,
-
-        start: 0,
-
-        end: window.innerHeight,
-
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-
-      x: "-500px",
-    });
-
     const animationFrame = requestAnimationFrame(animate);
 
     () => cancelAnimationFrame(animationFrame);

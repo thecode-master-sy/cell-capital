@@ -23,18 +23,18 @@ export default function OurServices() {
   useEffect(() => {
     gsap.to(bannerContainer.current, {
       scrollTrigger: {
-        trigger: document.documentElement,
+        trigger: bannerContainer.current,
 
         scrub: 0.5,
 
-        start: 0,
+        start: "top bottom",
 
-        end: window.innerHeight,
+        end: "bottom top",
 
         onUpdate: (e) => (direction = e.direction * -1),
       },
 
-      x: "-800px",
+      x: "-200px",
     });
 
     const animationFrame = requestAnimationFrame(animate);
@@ -59,7 +59,7 @@ export default function OurServices() {
   };
 
   return (
-    <div className="bg-background-gray">
+    <div className="bg-background">
       <div>
         <div className="overflow-hidden w-full font-bold uppercase">
           <div
@@ -213,14 +213,11 @@ export default function OurServices() {
             </h1>
 
             <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
-              <p className="text-heading-one max-w-[25ch]">
+              <p className="max-w-[25ch]">
                 Focus on running your business, while our experts focus on
                 securing the funds to keep you at the top
               </p>
-              <Button
-                size="lg"
-                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
-              >
+              <Button className="font-bold mt-2 bg-white border border-primary cursor-pointer">
                 <span>Learn more</span>
                 <ArrowRight size={16} />
               </Button>
@@ -233,14 +230,11 @@ export default function OurServices() {
             </h1>
 
             <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
-              <p className="text-heading-one max-w-[25ch]">
+              <p className="max-w-[25ch]">
                 Stay updated with the latest grant openings, so you don’t miss
                 out on mouth-watering opportunities
               </p>
-              <Button
-                size="lg"
-                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
-              >
+              <Button className="font-bold mt-2 bg-white border border-primary cursor-pointer">
                 <span>Learn more</span>
                 <ArrowRight size={16} />
               </Button>
@@ -253,16 +247,13 @@ export default function OurServices() {
             </h1>
 
             <div className="sm:col-start-3 md:col-start-4 lg:col-start-6 col-span-full">
-              <p className="text-heading-one max-w-[25ch]">
+              <p className="max-w-[25ch]">
                 Secure capital with professional plans that showcase your vision
                 and strategy with clarity and confidence. Captivate investors
                 with compelling, visually stunning decks designed to secure the
                 funding you need.
               </p>
-              <Button
-                size="lg"
-                className="font-bold mt-2 bg-white border border-primary cursor-pointer"
-              >
+              <Button className="font-bold mt-2 bg-white border border-primary cursor-pointer">
                 <span>Learn more</span>
                 <ArrowRight size={16} />
               </Button>

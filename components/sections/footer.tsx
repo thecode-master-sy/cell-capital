@@ -1,10 +1,12 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUp } from "lucide-react";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
 import Divider from "../divider";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Footer({
   moveValue,
@@ -32,56 +34,85 @@ export default function Footer({
     { scope: sectionRef }
   );
   return (
-    <footer className="bg-background-black text-white pt-16 overflow-hidden">
-      <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 gap-16 px-4">
-        <div className="lg:col-span-5 col-span-full">
-          <h2 className="text-heading-one">Get Free Grant Updates</h2>
+    <footer className="bg-background-black text-white  pt-16 overflow-hidden">
+      <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 px-4 gap-y-16">
+        <div className="lg:col-span-7 col-span-full">
+          <h2 className="text-heading-0 font-bold">Get Free Grant Updates</h2>
 
-          <form className="flex gap-2 mt-4 items-center max-w-[500px]">
-            <input
-              placeholder="Your Email"
-              className="text-heading-two flex-1 border-cellcapital-light border-b"
-            />
-            <CellCapitalSecondaryButton>
-              <ArrowRight />
-            </CellCapitalSecondaryButton>
+          <form className="mt-7 max-w-[600px]">
+            <div className="w-full border-b border-cellcapital-light pb-4 justify-between flex">
+              <input
+                placeholder="Your Email"
+                className="text-heading-two flex-1 focus:outline-none foucs:border-none text-heading-one"
+              />
+              <button className="cursor-pointer text-heading-one">
+                <ArrowRight size={30} />
+              </button>
+            </div>
+            <p className="text-caption text-muted-foreground max-w-[45ch] mt-4">
+              By submitting your email, you’llget grant updates directly in your
+              inbox from cell capital. You can unsubscribe at any time.
+            </p>
           </form>
         </div>
 
-        <div className="uppercase text-caption lg:col-start-7">
+        <div className="uppercase text-caption lg:col-start-9 lg:col-span-2">
           <span className="text-muted-foreground">Pages</span>
 
           <ul className="flex gap-1 flex-col mt-2">
-            <li>Home</li>
-            <li>Secure grants</li>
-            <li>Business plans</li>
-            <li>Custom quote</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/grants">Secure grants</Link>
+            </li>
+            <li>
+              <Link href="/business-plans">Business plans</Link>
+            </li>
+            <li>
+              <Link href="/custom-quote">Custom quote</Link>
+            </li>
           </ul>
         </div>
 
-        <div className="uppercase text-caption lg:col-start-9 col-start-3">
+        <div className="uppercase text-caption lg:col-start-11 col-start-3">
           <span className="text-muted-foreground">social</span>
 
           <ul className="flex gap-1 flex-col mt-2">
-            <li>Linkedin</li>
-            <li> x(twitter)</li>
-            <li>Instagram</li>
-            <li>Tiktok</li>
+            <li>
+              <a href="https://linkedin.com">Linkedin</a>
+            </li>
+            <li>
+              <a href="https://twitter.com"> x(twitter)</a>
+            </li>
+            <li>
+              <a href="https://instagram.com">Instagram</a>
+            </li>
+            <li>
+              <a href="https://tiktok.com">Tiktok</a>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="mt-16">
-        <div className=" border-t border-cellcapital-light"></div>
-        <div className="mt-2 md:flex justify-between text-caption hidden">
-          <span>[ 2025COPY RIGHT ]</span>
-          <span>[ PERMISSIONS AND TERMS ]</span>
-          <span>[ PRIVACY POLICY ]</span>
+        <div className="px-4 pb-4 flex justify-between">
+          <span>©2025 Cell Capital</span>
+          <span className="uppercase  text-caption cursor-pointer">
+            Privacy Policy
+          </span>
+          <span className="flex gap-2 items-center cursor-pointer">
+            <span>Back to top</span>
+            <ArrowUp size={16} />
+          </span>
         </div>
+        <div className=" border-t border-cellcapital-light"></div>
       </div>
 
       <div className="py-3">
-        <h1 className="font-bold text-heading-0 text-center">Cell Capital</h1>
+        <h1 className="font-bold text-[20vw] leading-[100%] text-primary text-center">
+          Cell Capital
+        </h1>
       </div>
     </footer>
   );

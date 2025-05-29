@@ -17,7 +17,7 @@ export default function Home() {
       {/* <HeroSection /> */}
       {/* <HeroSection /> */}
       <HiddenNav />
-      {/* <FloatingNav /> */}
+      <FloatingNav />
       <SocialProof />
       <AboutSection />
       <MeetOurTeam />

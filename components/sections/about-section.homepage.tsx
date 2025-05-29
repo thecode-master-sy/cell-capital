@@ -28,7 +28,7 @@ export default function AboutSection() {
     { scope: sectionRef }
   );
   return (
-    <section className="py-16 bg-background-gray" id="about">
+    <section className="py-16 bg-background" id="about">
       <div className="px-4 grid gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <span className="font-bold col-span-2">About Cell capital</span>
 

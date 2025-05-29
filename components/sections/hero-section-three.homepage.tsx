@@ -31,18 +31,18 @@ export default function HeroSectionThree() {
   useEffect(() => {
     gsap.to(bannerContainer.current, {
       scrollTrigger: {
-        trigger: document.documentElement,
+        trigger: bannerContainer.current,
 
         scrub: 0.5,
 
-        start: 0,
+        start: "top bottom",
 
-        end: window.innerHeight,
+        end: "bottom top",
 
         onUpdate: (e) => (direction = e.direction * -1),
       },
 
-      x: "-500px",
+      x: "-200px",
     });
 
     const animationFrame = requestAnimationFrame(animate);
