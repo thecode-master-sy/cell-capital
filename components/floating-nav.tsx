@@ -6,6 +6,8 @@ import CellCapitalPrimaryButton, {
 import { useNavBarContext } from "./providers/navbar-provider";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import { AlignJustify } from "lucide-react";
+import { Button } from "./ui/button";
 
 gsap.registerPlugin(useGSAP);
 
@@ -36,15 +38,18 @@ export default function FloatingNav() {
   return (
     <div
       ref={container}
-      className="fixed top-0 left-0 right-0 z-[9] flex justify-end floating-nav"
+      className="fixed top-2 left-2 right-2 z-[9] flex justify-end floating-nav"
     >
-      <div className="flex gap-1 p-4">
-        <CellCapitalSecondaryButton
-          className="rounded-full text-white"
+      <div className="flex gap-1 items-center p-1 bg-white border border-primary rounded-sm">
+        <Button size="sm" className="rounded-sm font-semibold text-sm">
+          Book a consultation
+        </Button>
+        <AlignJustify
+          size={25}
+          strokeWidth={1}
+          className="cursor-pointer"
           onClick={() => toggleNav()}
-        >
-          Menu
-        </CellCapitalSecondaryButton>
+        />
       </div>
     </div>
   );

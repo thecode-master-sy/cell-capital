@@ -96,12 +96,12 @@ export default function Footer({
       </div>
 
       <div className="mt-16">
-        <div className="px-4 pb-4 flex justify-between">
-          <span>©2025 Cell Capital</span>
+        <div className="px-4 pb-2 flex justify-between items-center ">
+          <span className="text-caption uppercase">©2025 Cell Capital</span>
           <span className="uppercase  text-caption cursor-pointer">
             Privacy Policy
           </span>
-          <span className="flex gap-2 items-center cursor-pointer">
+          <span className="flex gap-2 items-center cursor-pointer text-caption  uppercase">
             <span>Back to top</span>
             <ArrowUp size={16} />
           </span>
