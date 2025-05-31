@@ -90,7 +90,15 @@ export function HiddenNav() {
       gsap.set(".menu-link-item-holder", { y: 75 });
 
       tl.current = gsap
-        .timeline({ paused: true })
+        .timeline({
+          paused: true,
+          onStart: () => {
+            gsap.set(".menu-backdrop", { display: "block" });
+          },
+          onReverseComplete: () => {
+            gsap.set(".menu-backdrop", { display: "none" });
+          },
+        })
         .to(".menu-overlay", {
           duration: 1.24,
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -127,10 +135,7 @@ export function HiddenNav() {
   return (
     <div ref={containerRef}>
       <div
-        className={cn(
-          "fixed inset-0 z-[5] menu-backdrop opacity-0",
-          isOpen ? "block" : "hidden"
-        )}
+        className={cn("fixed inset-0 z-[5] menu-backdrop opacity-0 hidden")}
       ></div>
 
       <div className="fixed ml-auto inset-2 md:w-[60%] z-[10] bg-white py-4 pl-7 pr-4  grid grid-rows-[auto_1fr_auto] rounded-sm menu-overlay">
