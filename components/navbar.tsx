@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./logo";
-import { AlignJustify, Box } from "lucide-react";
+import { AlignJustify, Box, Instagram, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { CellCapitalSecondaryButton } from "./cell-capital-button";
 import { useContext, createContext, useRef, useEffect } from "react";
@@ -12,6 +12,12 @@ import { CustomEase } from "gsap/CustomEase";
 import { useNavBarContext } from "./providers/navbar-provider";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import {
+  InstagramLogoIcon,
+  TwitterLogoIcon,
+  LinkedinLogoIcon,
+  TiktokLogoIcon,
+} from "@phosphor-icons/react";
 
 const siteLinks = [
   {
@@ -71,6 +77,7 @@ export default function NavBar() {
 }
 
 export function HiddenNav() {
+  const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { isOpen, toggleNav } = useNavBarContext();
@@ -88,6 +95,15 @@ export function HiddenNav() {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           ease: "power4.inOut",
         })
+        .to(
+          ".menu-backdrop",
+          {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power4.inOut",
+          },
+          "-=1"
+        )
         .to(".menu-link-item-holder", {
           y: 0,
           duration: 1,
@@ -109,58 +125,84 @@ export function HiddenNav() {
 
   return (
     <div ref={containerRef}>
-      <div className="fixed inset-0 z-[10] bg-background-black p-4 text-background-black-foreground grid grid-rows-[auto_1fr_auto] menu-overlay">
+      <div className="fixed inset-0 z-[5] menu-backdrop opacity-0"></div>
+
+      <div className="fixed ml-auto inset-2 md:w-[60%] z-[10] bg-white py-4 pl-7 pr-4  grid grid-rows-[auto_1fr_auto] rounded-sm menu-overlay">
         <div className="flex justify-end items-center">
-          <CellCapitalSecondaryButton
-            className="text-white rounded-full"
-            onClick={() => toggleNav()}
-          >
-            Close
-          </CellCapitalSecondaryButton>
+          <X size={40} className="cursor-pointer" onClick={() => toggleNav()} />
         </div>
 
-        <ul className="uppercase text-heading-one space-y-2 mt-16">
-          <div className="menu-link-item">
-            <li className="menu-link-item-holder">
-              <Link href="/" onClick={() => toggleNav()}>
-                Home
-              </Link>
-            </li>
-          </div>
+        <ul className="text-heading-0 font-bold space-y-5 mt-4">
+          {siteLinks.map((siteLink, index) => (
+            <div
+              key={index}
+              className={cn(
+                "menu-link-item",
+                pathname === siteLink.pathname
+                  ? "text-primary"
+                  : "text-muted-foreground"
+              )}
+            >
+              <li className="menu-link-item-holder">
+                <Link
+                  href={siteLink.pathname}
+                  onClick={() => toggleNav()}
+                  className="flex gap-7"
+                >
+                  <span>0{index + 1}</span>
+                  <span>{siteLink.label}</span>
+                </Link>
+              </li>
+            </div>
+          ))}
 
-          <div className="menu-link-item">
+          <div className="menu-link-item text-muted-foreground">
             {" "}
-            <li className="menu-link-item-holder">Get free updates</li>
-          </div>
-
-          <div className="menu-link-item">
-            <li className="menu-link-item-holder">
-              <Link href="/grants" onClick={() => toggleNav()}>
-                Grants
-              </Link>{" "}
+            <li className="menu-link-item-holder flex gap-7">
+              <span>04</span>
+              <span>Get free updates</span>
             </li>
           </div>
 
-          <div className="menu-link-item">
+          <div className="menu-link-item text-muted-foreground">
             <li className="menu-link-item-holder">
-              <Link href="/business-plan" onClick={() => toggleNav()}>
-                Business Plan
-              </Link>{" "}
-            </li>
-          </div>
-
-          <div className="menu-link-item">
-            <li className="menu-link-item-holder">
-              <a href="#about">About</a>
+              <a href="#about" className="flex gap-7">
+                <span>05</span>
+                <span>About</span>
+              </a>
             </li>
           </div>
         </ul>
 
-        <div className="text-caption uppercase flex gap-4">
-          <span>instagram</span>
-          <span>X (twitter)</span>
-          <span>Linkedin</span>
-          <span>Tiktok</span>
+        <div className="text-caption uppercase flex flex-wrap gap-4 border-t border-primary py-4">
+          <Button
+            size="sm"
+            className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
+          >
+            <InstagramLogoIcon />
+            <span>instagram</span>
+          </Button>
+          <Button
+            size="sm"
+            className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
+          >
+            <TwitterLogoIcon />
+            <span>X (twitter)</span>
+          </Button>
+          <Button
+            size="sm"
+            className="py-1 px-3 bg-background border border-primary cursor-pointer"
+          >
+            <LinkedinLogoIcon />
+            <span>Linkedin</span>
+          </Button>
+          <Button
+            size="sm"
+            className="py-1 px-3 bg-background border border-primary cursor-pointer"
+          >
+            <TiktokLogoIcon />
+            <span>Tiktok</span>
+          </Button>
         </div>
       </div>
     </div>

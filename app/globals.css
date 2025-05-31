@@ -98,11 +98,19 @@
   filter: blur(4px) contrast(15);
 }
 
-.menu-overlay,
 .floating-nav {
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
 
+.menu-overlay {
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+
 .menu-link-item {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-backdrop {
+  background-color: hsla(0, 0%, 0%, 0.2);
+  backdrop-filter: blur(5px);
 }
