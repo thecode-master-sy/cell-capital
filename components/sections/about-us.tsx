@@ -6,75 +6,135 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ArrowDownRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+import { Button } from "../ui/button";
 
 export default function MeetOurTeam() {
-  const firstBannerRef = useRef(null);
-  const secondBannerRef = useRef<HTMLDivElement | null>(null);
-  const bannerContainer = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
-
-  useEffect(() => {
-    gsap.to(bannerContainer.current, {
-      scrollTrigger: {
-        trigger: bannerContainer.current,
-
-        scrub: 0.5,
-
-        start: "top bottom",
-
-        end: "bottom top",
-
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-
-      x: "-200px",
-    });
-
-    const animationFrame = requestAnimationFrame(animate);
-
-    () => cancelAnimationFrame(animationFrame);
-  }, []);
-
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
-    }
-
-    gsap.set(firstBannerRef.current, { xPercent: xPercent });
-
-    gsap.set(secondBannerRef.current, { xPercent: xPercent });
-
-    requestAnimationFrame(animate);
-
-    xPercent += 0.1 * direction;
-  };
   return (
-    <div className="bg-background py-16">
-      <div className="px-4">
-        <h2 className="text-heading-0 font-bold sm-media-hidden">
-          The faces behind the brand
-        </h2>
+    <div className="bg-background-gray py-16 px-4">
+      <div className="w-full grid md:grid-cols-[1fr_1.8fr] gap-4">
+        <div className="bg-[#54514d] text-white  p-4">
+          <span className="bg-white text-primary p-3 uppercase font-bold block text-base w-max">
+            About our group
+          </span>
+          <div className="mt-4 grid">
+            <div className="mx-auto">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="23"
+                  viewBox="0 0 28 23"
+                  fill="none"
+                >
+                  <path
+                    d="M7.344 0.855999L11.696 4.312C10.0747 5.976 8.88 7.55466 8.112 9.048C7.344 10.4987 6.96 12.0773 6.96 13.784L4.464 10.904H12.848V22.808H0.752V15.384C0.752 12.6533 1.24267 10.1787 2.224 7.96C3.248 5.69866 4.95467 3.33066 7.344 0.855999ZM21.808 0.855999L26.16 4.312C24.5387 5.976 23.344 7.55466 22.576 9.048C21.808 10.4987 21.424 12.0773 21.424 13.784L18.928 10.904H27.312V22.808H15.216V15.384C15.216 12.6533 15.7067 10.1787 16.688 7.96C17.712 5.69866 19.4187 3.33066 21.808 0.855999Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </div>
+              <p className="max-w-[30ch] mt-7">
+                At Cell Capital, we believe that there are no limits to our
+                ability in helping businesses & nonprofits get funded! We guide
+                businesses and nonprofits to bold wins with clarity.
+              </p>
+            </div>
 
-        <h2 className="text-heading-0 font-bold sm-media">The faces</h2>
-        <h2 className="text-heading-0 font-bold sm-media">behind the brand</h2>
+            <Button
+              size="lg"
+              className="ml-auto uppercase font-bold bg-white rounded-none text-base text-primary mt-7 cursor-pointer hover:bg-white"
+            >
+              Learn more
+            </Button>
+          </div>
+        </div>
 
-        <p className="max-w-[60ch] mt-4">
-          At Cell Capital, we don’t just chase funding, we make it happen with a
-          difference. Our hands-on approach crafts every grant proposal and
-          business plan to fit your unique goals, saving you time and boosting
-          your odds. With clear steps, fast delivery, and a focus on real
-          results, we’re your partner in turning big dreams into reality. No
-          fluff, just funding success tailored for you. Ready to stand out?
-        </p>
+        <div className="bg-white flex gap-4 p-4">
+          <div>
+            <img
+              src="/ceo.png"
+              alt="value four"
+              width={100}
+              height={100}
+              className="w-[300px] h-full"
+            />
+          </div>
+
+          <div>
+            <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2 w-max">
+              founder and ceo
+            </span>
+
+            <p className="max-w-[40ch] text-base mt-4">
+              Tochi Chimeremeze is the founder and driving force behind Cell
+              Capital. With a deep passion for community development and a
+              strong track record in Grant consulting, He launched Cell Capital
+              to address the gap between funders and the organizations doing
+              critical work on the ground. Prior to founding Cell Capital, Tochi
+              worked with local and regional profit businesses, helping them
+              develop project proposals, navigate complex funding processes, and
+              align their goals with funder priorities.
+            </p>
+
+            <p className="max-w-[40ch] text-base mt-4">
+              As a leader, Tochi is both strategic and effective, guiding
+              clients through funding strategy sessions, reviewing narratives,
+              and mentoring early-stage nonprofits on organizational growth.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-white flex gap-4 p-4 relative">
+          <span className="block bg-white z-2 absolute inset-4 h-max text-primary uppercase text-base font-bold px-7 py-2 w-max">
+            Grant Writer
+          </span>
+          <div className="absolute inset-0">
+            <img
+              src="/vice.png"
+              alt="value four"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="bg-white flex gap-4 p-4">
+          <div>
+            <img
+              src="/director-of-media.png"
+              alt="value four"
+              width={100}
+              height={100}
+              className="w-[300px] h-full"
+            />
+          </div>
+
+          <div>
+            <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2 w-max">
+              founder and ceo
+            </span>
+
+            <p className="max-w-[40ch] text-base mt-4">
+              Tochi Chimeremeze is the founder and driving force behind Cell
+              Capital. With a deep passion for community development and a
+              strong track record in Grant consulting, He launched Cell Capital
+              to address the gap between funders and the organizations doing
+              critical work on the ground. Prior to founding Cell Capital, Tochi
+              worked with local and regional profit businesses, helping them
+              develop project proposals, navigate complex funding processes, and
+              align their goals with funder priorities.
+            </p>
+
+            <p className="max-w-[40ch] text-base mt-4">
+              As a leader, Tochi is both strategic and effective, guiding
+              clients through funding strategy sessions, reviewing narratives,
+              and mentoring early-stage nonprofits on organizational growth.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="px-4 pt-7 overflow-hidden">
+      {/* <div className="px-4 pt-7 overflow-hidden">
         <div className="flex gap-4 w-max">
           <div className="bg-white p-4 border-primary border rounded-sm">
             <div>
@@ -121,7 +181,7 @@ export default function MeetOurTeam() {
                   Nwankwo Nancy
                 </span>
                 <span className="text-muted-foreground text-caption">
-                  Grant Writer
+
                 </span>
               </div>
 
@@ -242,154 +302,10 @@ export default function MeetOurTeam() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="py-16">
-        <div className="overflow-hidden w-full font-bold uppercase">
-          <div
-            ref={bannerContainer}
-            className="relative grid grid-cols-2 w-max "
-          >
-            <div
-              ref={firstBannerRef}
-              className="bg-white p-4 border-y border-primary flex items-center gap-4 w-max text-primary"
-            >
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-            </div>
-
-            <div
-              ref={secondBannerRef}
-              className="bg-white p-4 border-y relative -translate-x-0.5 border-primary flex items-center gap-4 w-max text-primary"
-            >
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-              <h2 className="text-heading-0">Our Values</h2>
-              <span>
-                <Image
-                  width={30}
-                  height={30}
-                  src="/icons/asterisk-solid.svg"
-                  alt="asterisk"
-                />
-              </span>
-            </div>
-          </div>
-        </div>
-
+        <h1 className="text-heading-0 px-4 font-bold">Our values</h1>
         <div className="grid sm:grid-cols-2 gap-y-16 py-16 px-4">
           <div className="grid gap-4">
             <div>

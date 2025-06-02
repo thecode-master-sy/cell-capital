@@ -9,7 +9,7 @@ export default function Logo() {
     >
       <img
         className="dark:invert absolute top-1/2 object-cover scale-250 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        src="/cell-capital-logo.png"
+        src="/cell-capital-logo.svg"
         alt="Cell capital logo"
         width={250}
         height={250}

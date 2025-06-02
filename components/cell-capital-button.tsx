@@ -24,7 +24,7 @@ export default function CellCapitalPrimaryButton({
     <Button
       size={size}
       className={cn(
-        "uppercase text-caption cursor-pointer mx-auto text-foreground rounded-full",
+        "uppercase text-sm cursor-pointer mx-auto text-foreground rounded-sm font-bold",
         containerStyles[color],
         className
       )}

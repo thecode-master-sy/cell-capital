@@ -40,8 +40,8 @@ export default function NavBar() {
   const { toggleNav } = useNavBarContext();
   const pathname = usePathname();
   return (
-    <nav className="flex items-center justify-between px-4 py-2">
-      <div className="flex items-center">
+    <nav className="flex items-center justify-between px-4 py-2 relative z-1">
+      <div className="flex items-center ">
         <Logo />
       </div>
 
@@ -50,7 +50,7 @@ export default function NavBar() {
           <li className="py-1 relative" key={index}>
             <Link href={siteLink.pathname}>{siteLink.label}</Link>
             {pathname == siteLink.pathname && (
-              <span className="absolute top-[100%] w-full left-0 bg-background-black h-[1px]" />
+              <span className="absolute top-[100%] w-full left-0 bg-white h-[1px]" />
             )}
           </li>
         ))}
