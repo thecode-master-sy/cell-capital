@@ -89,7 +89,7 @@ export default function MeetOurTeam() {
           </span>
           <div className="absolute inset-0">
             <img
-              src="/vice.png"
+              src="/vice.jpeg"
               alt="value four"
               width={100}
               height={100}
