@@ -11,7 +11,7 @@ import { Button } from "../ui/button";
 export default function MeetOurTeam() {
   return (
     <div className="bg-background-gray py-16 px-4">
-      <div className="w-full grid md:grid-cols-[1fr_1.8fr] gap-4">
+      <div className="w-full grid lg:grid-cols-[1fr_1.8fr] gap-4">
         <div className="bg-[#54514d] text-white  p-4">
           <span className="bg-white text-primary p-3 uppercase font-bold block text-base w-max">
             About our group
@@ -48,8 +48,8 @@ export default function MeetOurTeam() {
           </div>
         </div>
 
-        <div className="bg-white flex gap-4 p-4">
-          <div>
+        <div className="bg-white flex flex-col md:flex-row gap-4 p-4">
+          <div className="mx-auto md:m-0">
             <img
               src="/ceo.png"
               alt="value four"
@@ -64,7 +64,7 @@ export default function MeetOurTeam() {
               founder and ceo
             </span>
 
-            <p className="max-w-[40ch] text-base mt-4">
+            <p className="md:max-w-[40ch] text-base mt-4">
               Tochi Chimeremeze is the founder and driving force behind Cell
               Capital. With a deep passion for community development and a
               strong track record in Grant consulting, He launched Cell Capital
@@ -75,7 +75,7 @@ export default function MeetOurTeam() {
               align their goals with funder priorities.
             </p>
 
-            <p className="max-w-[40ch] text-base mt-4">
+            <p className="md:max-w-[40ch] text-base mt-4">
               As a leader, Tochi is both strategic and effective, guiding
               clients through funding strategy sessions, reviewing narratives,
               and mentoring early-stage nonprofits on organizational growth.
@@ -83,7 +83,7 @@ export default function MeetOurTeam() {
           </div>
         </div>
 
-        <div className="bg-white flex gap-4 p-4 relative">
+        <div className="bg-white flex gap-4 p-4 relative min-h-[400px]">
           <span className="block bg-white z-2 absolute inset-4 h-max text-primary uppercase text-base font-bold px-7 py-2 w-max">
             Grant Writer
           </span>
@@ -98,8 +98,8 @@ export default function MeetOurTeam() {
           </div>
         </div>
 
-        <div className="bg-white flex gap-4 p-4">
-          <div>
+        <div className="bg-white flex flex-col md:flex-row gap-4 p-4">
+          <div className="mx-auto md:m-0">
             <img
               src="/director-of-media.png"
               alt="value four"
@@ -114,7 +114,7 @@ export default function MeetOurTeam() {
               founder and ceo
             </span>
 
-            <p className="max-w-[40ch] text-base mt-4">
+            <p className="md:max-w-[40ch] text-base mt-4">
               Tochi Chimeremeze is the founder and driving force behind Cell
               Capital. With a deep passion for community development and a
               strong track record in Grant consulting, He launched Cell Capital
@@ -125,7 +125,7 @@ export default function MeetOurTeam() {
               align their goals with funder priorities.
             </p>
 
-            <p className="max-w-[40ch] text-base mt-4">
+            <p className="md:max-w-[40ch] text-base mt-4">
               As a leader, Tochi is both strategic and effective, guiding
               clients through funding strategy sessions, reviewing narratives,
               and mentoring early-stage nonprofits on organizational growth.
