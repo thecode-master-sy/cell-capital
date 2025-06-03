@@ -3,7 +3,7 @@ import { StarIcon } from "@phosphor-icons/react";
 
 export default function TestimonalSection() {
   return (
-    <div className="pt-16 pb-48 bg-background">
+    <div className="pt-16 pb-48 bg-background-gray">
       <div className="px-4 justify-between items-center gap-y-4 grid md:grid-cols-8 lg:grid-cols-12">
         <h1 className="text-heading-0 font-bold col-span-full">Testimonials</h1>
 

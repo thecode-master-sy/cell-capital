@@ -15,7 +15,7 @@ gsap.registerPlugin(useGSAP);
 
 export default function OurServices() {
   return (
-    <div className="bg-background">
+    <div className="bg-background-gray">
       <h1 className="text-heading-0 px-4 font-bold">Our Services</h1>
       <div className="px-4 py-16">
         <div className="grid gap-y-4 gap-x-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 border-t border-primary py-7">
