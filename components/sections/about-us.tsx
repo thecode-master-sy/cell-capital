@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 
 export default function MeetOurTeam() {
   return (
-    <div className="bg-background-gray py-16 px-4 overflow-x-hidden">
+    <div className="bg-background-gray py-16 px-4">
       <div className="w-full grid lg:grid-cols-[1fr_1.8fr] gap-4">
         <div className="bg-[#54514d] text-white  p-4">
           <span className="bg-white text-primary p-3 uppercase font-bold block text-base w-max">
@@ -110,7 +110,7 @@ export default function MeetOurTeam() {
           </div>
 
           <div>
-            <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2 w-max">
+            <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2">
               Director of media and communications
             </span>
 
