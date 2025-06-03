@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 
 export default function MeetOurTeam() {
   return (
-    <div className="bg-background-gray py-16 px-4">
+    <div className="bg-background-gray py-16 px-4 overflow-x-hidden">
       <div className="w-full grid lg:grid-cols-[1fr_1.8fr] gap-4">
         <div className="bg-[#54514d] text-white  p-4">
           <span className="bg-white text-primary p-3 uppercase font-bold block text-base w-max">
@@ -111,24 +111,75 @@ export default function MeetOurTeam() {
 
           <div>
             <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2 w-max">
-              founder and ceo
+              Director of media and communications
             </span>
 
             <p className="md:max-w-[40ch] text-base mt-4">
-              Tochi Chimeremeze is the founder and driving force behind Cell
-              Capital. With a deep passion for community development and a
-              strong track record in Grant consulting, He launched Cell Capital
-              to address the gap between funders and the organizations doing
-              critical work on the ground. Prior to founding Cell Capital, Tochi
-              worked with local and regional profit businesses, helping them
-              develop project proposals, navigate complex funding processes, and
-              align their goals with funder priorities.
+              Chinenye leads all media and communications at Cell Capital,
+              managing both client-facing content and the public voice of the
+              brand. With a background in digital storytelling, media
+              production, and nonprofit advocacy, she ensures that every message
+              Cell Capital puts out is aligned with its mission, values, and
+              audience.
             </p>
 
             <p className="md:max-w-[40ch] text-base mt-4">
-              As a leader, Tochi is both strategic and effective, guiding
-              clients through funding strategy sessions, reviewing narratives,
-              and mentoring early-stage nonprofits on organizational growth.
+              Her work includes overseeing social media campaigns, creating
+              internal and external communications strategies, and working
+              closely with clients to refine how they speak about their work.
+              She also plays a critical role in developing thought leadership
+              content for the team and maintaining communication flow between
+              departments.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-white flex gap-4 p-4 relative min-h-[400px]">
+          <span className="block bg-white z-2 absolute inset-4 h-max text-primary uppercase text-base font-bold px-7 py-2 w-max">
+            Director of adminstration
+          </span>
+          <div className="absolute inset-0">
+            <img
+              src="/director-of-adminstration.png"
+              alt="team image"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+        </div>
+
+        <div className="bg-white flex flex-col md:flex-row gap-4 p-4">
+          <div className="mx-auto md:m-0">
+            <img
+              src="/director-of-marketing.jpeg"
+              alt="value four"
+              width={100}
+              height={100}
+              className="w-[300px] h-full"
+            />
+          </div>
+
+          <div>
+            <span className="block bg-primary text-white uppercase text-base font-bold px-7 py-2 w-max">
+              Director of Marketing
+            </span>
+
+            <p className="md:max-w-[40ch] text-base mt-4">
+              Laura combines her skills in branding, storytelling, and grant
+              writing to lead Cell Capital’s marketing efforts. With a
+              background in communications and a natural eye for design, she’s
+              helped countless organizations present themselves with clarity and
+              confidence to funders and partners. Laura joined Cell Capital with
+              a dual mission: to elevate how clients tell their stories and to
+              ensure the Cell Capital brand reflects the strength of its
+              services.
+            </p>
+
+            <p className="md:max-w-[40ch] text-base mt-4">
+              She plays a key role in shaping both grant narratives and external
+              communications, including case studies, client spotlights, and
+              educational resources.
             </p>
           </div>
         </div>
