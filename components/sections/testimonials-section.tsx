@@ -15,7 +15,7 @@ export default function TestimonalSection() {
       </div>
 
       <div>
-        <div className="px-4 gap-4 mt-7 min-h-[450px] relative ">
+        <div className="px-4 gap-4 mt-7 min-h-[450px] overflow-y-hidden relative ">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2">
             <span className="block cursor-pointer bg-white p-4  border rounded-sm my-auto border-primary text-primary">
               <ArrowFatLeftIcon size={40} />
