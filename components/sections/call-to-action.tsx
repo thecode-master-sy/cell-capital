@@ -9,7 +9,7 @@ export default function CallToActionSection() {
   return (
     <div className="bg-background-black text-background-black-foreground overflow-hidden pb-16">
       <div className="bg-background-gray">
-        <h1 className="text-[5.6vw] font-bold uppercase leading-[100%] text-primary text-center">
+        <h1 className="text-heading-0 md:text-[5.6vw] font-bold uppercase leading-[100%] text-primary text-center">
           Secure the funding you deserve
         </h1>
       </div>
