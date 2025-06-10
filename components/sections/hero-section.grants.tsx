@@ -1,102 +1,60 @@
 "use client";
-import { BlobHero } from "../blob.hero";
-import CellCapitalPrimaryButton, {
-  CellCapitalSecondaryButton,
-} from "../cell-capital-button";
+import CellCapitalPrimaryButton from "../cell-capital-button";
 import NavBar from "../navbar";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-import SocialProof from "./social-proof";
-import { useNavBarContext } from "../providers/navbar-provider";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
-export default function HeroSectionTwo() {
-  const headerRef = useRef<HTMLHeadingElement>(null);
-  const container = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      function getScrollAmount() {
-        const headerWidth = headerRef.current?.scrollWidth ?? 0;
-
-        return -(headerWidth - window.innerWidth);
-      }
-
-      const headerTween = gsap.to(".big-header", {
-        x: getScrollAmount,
-        duration: 3,
-        ease: "none",
-      });
-
-      ScrollTrigger.create({
-        trigger: ".big-header",
-        start: "top 70%",
-        end: () => `+=${getScrollAmount() * -1}`,
-        animation: headerTween,
-        scrub: 1,
-        invalidateOnRefresh: true,
-      });
-    },
-    { scope: container }
-  );
-
+export default function HeroGrantsSection() {
   return (
-    <div ref={container} className="relative">
-      <div className="min-h-[80vh] sm:min-h-screen bg-background grid grid-rows-[min-content_1fr_auto]">
-        <NavBar />
+    <div className="min-h-screen overflow-hidden relative text-white grid grid-rows-[min-content_1fr]">
+      <NavBar />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 min-w-full min-h-full object-cover z-[-1] blur-video"
+      >
+        <source src="/video/cell-capital-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="backdrop-overlay"></div>
+      <MainHero />
+    </div>
+  );
+}
 
-        <div className="grid lg:grid-cols-12 grid-cols-6 md:grid-cols-8 gap-4 md:gap-8 py-4 px-4 self-start  h-full">
-          <div className="md:col-start-3 lg:col-start-5 col-start-2 col-span-full grid h-full">
-            <div className="hidden lg:block">
-              <h1 className="text-heading-one ">Scale your business while</h1>
-              <h1 className="text-heading-one ">we secure funding to keep</h1>
-              <h1 className="text-heading-one ">you at the top.</h1>
-            </div>
-
-            <div className="hidden sm:block lg:hidden">
-              <h1 className="text-heading-one ">Scale your business while</h1>
-              <h1 className="text-heading-one ">we secure funding to keep</h1>
-              <h1 className="text-heading-one ">you at the top.</h1>
-            </div>
-
-            <div className=" sm:hidden ">
-              <h1 className="text-heading-one ">
-                Scale your business while we secure funding to keep you at the
-                top.
-              </h1>
-            </div>
-
-            <div className="hidden md:block text-heading-two mt-auto">
-              <p>
-                Our all-in-one grant solution handles everything freeing you{" "}
-              </p>
-              <p>
-                {" "}
-                to concentrate on scaling your organization with confidence.
-              </p>
-            </div>
-
-            <div className="md:hidden  text-heading-two mt-auto">
-              <p>
-                Our all-in-one grant solution handles everything freeing you to
-                concentrate on scaling your organization with confidence.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="big-header-wrapper overflow-hidden ">
-          <h1
-            ref={headerRef}
-            className="text-heading-0 uppercase w-max big-header"
-          >
-            Sucess Oriented Grant Writing Agency
+function MainHero() {
+  return (
+    <div className="grid grid-rows-[2fr_0.2fr]  px-4 pb-4">
+      <div className="justify-self-center self-center flex flex-col">
+        <div className="mx-auto">
+          <h1 className="text-heading-0 font-bold max-w-[20ch]  text-center uppercase mx-auto">
+            Scale your business while we secure the funding to keep you at the
+            top
           </h1>
         </div>
+
+        <CellCapitalPrimaryButton color="white" className="mt-2">
+          See Our Grant Plans
+        </CellCapitalPrimaryButton>
+
+        <p className="max-w-[45ch] mx-auto text-center mt-10 text-heading-one">
+          Our all in one grant program handles everything freeing you to
+          concentrate on scaling your organization with confidence.
+        </p>
+      </div>
+      <div className="md:self-end flex">
+        <p className="uppercase text-caption hidden md:block">
+          ( sucess oriented grant writing agency)
+        </p>
+        <Button
+          size="icon"
+          className="uppercase ml-auto bg-white rounded-sm cursor-pointer"
+          asChild
+        >
+          <ArrowDown size={20} strokeWidth={1} />
+        </Button>
       </div>
     </div>
   );
