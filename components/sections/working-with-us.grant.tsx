@@ -5,12 +5,78 @@ import TestimonalSection from "./testimonials-section";
 
 export default function WorkingWithUs() {
   return (
-    <section
-      className="bg-background-black text-background-black-foreground pt-4 pb-30"
-      id="about"
-    >
-      <Divider label="working with us" dark />
-      <div>
+    <section className="pt-4">
+      <div className="py-16">
+        <h1 className="text-heading-0 px-4 font-bold">Working with us</h1>
+        <div className="grid sm:grid-cols-2 gap-y-16 py-16 px-4">
+          <div className="grid gap-4">
+            <div>
+              <span className="text-heading-0 font-bold">01.</span>
+            </div>
+            <div>
+              <h1 className="font-bold">Effortless Funding</h1>
+            </div>
+
+            <div>
+              <p className="max-w-[30ch]">
+                Our all-in-one grant solution handles everything, freeing you to
+                concentrate on scaling your organization with confidence.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <div>
+              <span className="text-heading-0 font-bold">02.</span>
+            </div>
+            <div>
+              <h1 className="font-bold">Premium Opportunities</h1>
+            </div>
+
+            <div>
+              <p className="max-w-[30ch]">
+                Unlock premium grants crafted specifically, for small business,
+                non-profits or social enterprises empowering your vision with.
+                the funding you deserve.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <div>
+              <span className="text-heading-0 font-bold">03.</span>
+            </div>
+            <div>
+              <h1 className="font-bold">Remain Unique</h1>
+            </div>
+
+            <div>
+              <p className="max-w-[30ch]">
+                Secure funding with a expertly crafted proposal and strategic
+                plan designed to make your application shine.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <div>
+              <span className="text-heading-0 font-bold">04.</span>
+            </div>
+            <div>
+              <h1 className="font-bold">Join the Winning Team</h1>
+            </div>
+
+            <div>
+              <p className="max-w-[30ch]">
+                Join countless entrepreneurs & change makers in leveraging our
+                proven strategies to unlock funding and achieve their dreams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div>
         <div className="grid lg:grid-cols-12 md:grid-cols-8 grid-cols-6 gap-4 px-4 py-16 sticky top-0 bg-background-black text-background-black-foreground border-cellcapital-light">
           <Image
             src="./value-one.svg"
@@ -111,7 +177,7 @@ export default function WorkingWithUs() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <TestimonalSection />
     </section>
   );

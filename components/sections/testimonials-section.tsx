@@ -9,9 +9,7 @@ export default function TestimonalSection() {
   return (
     <div className="pt-16 pb-48 bg-background-gray">
       <div className="px-4">
-        <h1 className="text-heading-0 font-bold col-span-full text-center">
-          Testimonials
-        </h1>
+        <h1 className="text-heading-0 font-bold">Testimonials</h1>
       </div>
 
       <Slider className="mt-7">

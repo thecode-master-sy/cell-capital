@@ -50,11 +50,11 @@ export default function GrantPackages() {
   return (
     <div className="py-16">
       <div className="py-16 px-4">
-        <div className="hidden md:block">
-          <h1 className="text-heading-0">Our grant packages</h1>
+        <div>
+          <h1 className="text-heading-0 font-bold">Our grant packages</h1>
         </div>
 
-        <p className="text-heading-one max-w-[30ch] mt-2">
+        <p className="text-heading-one max-w-[33ch] mt-2">
           We offer grant packages simplify the complex grant application process
         </p>
 

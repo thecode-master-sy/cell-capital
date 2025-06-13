@@ -9,10 +9,8 @@ import {
 export default function Faq() {
   return (
     <div className="bg-background-gray py-4">
-      <Divider label="frequently asked questions" />
-
       <div className="py-16 px-4">
-        <h1 className="text-heading-one max-w-[25ch]">
+        <h1 className="text-heading-0 font-bold max-w-[22ch]">
           Still not sure? See the most commonly asked questions
         </h1>
 

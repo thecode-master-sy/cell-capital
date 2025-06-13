@@ -5,7 +5,7 @@ export default function CallToActionGrantSection() {
   return (
     <div className=" bg-background">
       <div className="px-4 py-16">
-        <h1 className="text-heading-0 max-w-[25ch]">
+        <h1 className="text-heading-0 font-bold max-w-[25ch]">
           Do you have a special request not outlined in our packages?
         </h1>
 
