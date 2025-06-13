@@ -28,6 +28,7 @@ const grantPackages = [
       "3 Revision Rounds",
     ],
     packageLink: "get-on-the-move",
+    isRecommended: true,
   },
   {
     title: "Go All The Way!!",
@@ -48,21 +49,14 @@ const grantPackages = [
 export default function GrantPackages() {
   return (
     <div className="py-16">
-      <Divider label="grant packages" />
-
       <div className="py-16 px-4">
         <div className="hidden md:block">
-          <h1 className="text-heading-one">Our grant packages simplify the</h1>
-          <h1 className="text-heading-one">
-            complex grant application process
-          </h1>
+          <h1 className="text-heading-0">Our grant packages</h1>
         </div>
 
-        <div className=" sm:hidden">
-          <h1 className="text-heading-one">
-            Our grant packages simplify the complex grant application process
-          </h1>
-        </div>
+        <p className="text-heading-one max-w-[30ch] mt-2">
+          We offer grant packages simplify the complex grant application process
+        </p>
 
         <div className="grid md:grid-cols-3 mt-16 gap-4">
           {grantPackages.map((grantPackage, index) => (
