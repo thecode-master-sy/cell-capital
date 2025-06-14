@@ -85,7 +85,7 @@ function RemainingHeroTextContent() {
 
 const MainHero = () => {
   return (
-    <div className="grid  px-4 pt-30">
+    <div className="grid  px-4 pt-35">
       <div className="justify-self-center self-center flex flex-col">
         <div className="mx-auto">
           <h1 className="text-heading-0 font-bold max-w-[20ch]  text-center mx-auto">

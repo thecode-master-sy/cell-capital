@@ -52,7 +52,7 @@
   --background-black-border: var(--cellcapital-light);
   --input: oklch(89.49% 0.006 84.57);
   --text-heading-0: clamp(2.6em, 6vw + 0.5rem, 8em);
-  --text-navbar: clamp(1em, 1.4vw, 1.25em);
+  --text-navbar: clamp(1em, 1.2vw + 0.2rem, 2em);
   --text-heading-one: clamp(1.4em, 2vw + 0.5rem, 3em);
   --text-paragraph: clamp(1.1em, 1.2vw + 0.3rem, 1.3em);
   --ring: oklch(0.708 0 0);

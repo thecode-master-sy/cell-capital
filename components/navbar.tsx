@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Logo from "./logo";
-import { AlignJustify, Box, Instagram, X } from "lucide-react";
+import { AlignJustify, ShoppingBag, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { CellCapitalSecondaryButton } from "./cell-capital-button";
-import { useContext, createContext, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { CustomEase } from "gsap/CustomEase";
@@ -18,6 +18,7 @@ import {
   LinkedinLogoIcon,
   TiktokLogoIcon,
 } from "@phosphor-icons/react";
+import { motion, useInView } from "motion/react";
 
 const siteLinks = [
   {
@@ -36,35 +37,77 @@ const siteLinks = [
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(CustomEase);
+
+const navItemContainer = {
+  onscreen: {
+    translateY: 0,
+  },
+  offscreen: {
+    translateY: -10,
+  },
+};
+
+// Variants for individual nav items
+const itemVariants = {
+  onscreen: {
+    opacity: 1,
+    translateY: 0,
+  },
+  offscreen: {
+    opacity: 0,
+    translateY: -5,
+  },
+};
+
 export default function NavBar() {
+  const elementRef = useRef(null);
+  const isInView = useInView(elementRef, { once: false, initial: true });
   const { toggleNav } = useNavBarContext();
   const pathname = usePathname();
   return (
-    <nav className="flex items-center justify-between relative bg-background-gray text-navbar">
+    <nav
+      ref={elementRef}
+      className="flex items-center justify-between absolute top-0 h-[40vh] bg-background-gray text-navbar"
+    >
       <div className="flex items-center fixed left-4 top-4 z-10">
         <Logo />
       </div>
 
-      <ul className="hidden lg:flex items-center gap-7 z-10 font-semibold mix-blend-difference text-white fixed top-2 left-1/2 right-1/2 -translate-x-1/2 w-max">
+      <motion.ul
+        variants={navItemContainer}
+        animate={isInView ? "onscreen" : "offscreen"}
+        transition={{
+          staggerChildren: 0.1,
+          staggerDirection: -1,
+          duration: 0.5,
+        }}
+        className="hidden lg:flex items-center gap-7 z-10 font-semibold mix-blend-difference text-white fixed top-2 left-1/2 right-1/2 -translate-x-1/2 w-max"
+      >
         {siteLinks.map((siteLink, index) => (
-          <li className="py-1 relative " key={index}>
+          <motion.li
+            className="py-1 relative "
+            key={index}
+            variants={itemVariants}
+          >
             <Link href={siteLink.pathname}>{siteLink.label}</Link>
             {pathname == siteLink.pathname && (
               <span className="absolute top-[100%] w-full left-0 bg-white h-[2px]" />
             )}
-          </li>
+          </motion.li>
         ))}
 
-        <li>
+        <motion.li variants={itemVariants} key={"item-one"}>
           <a href="#about">About</a>
-        </li>
+        </motion.li>
 
-        <li>Get free updates</li>
-      </ul>
+        <motion.li variants={itemVariants} key={"item-two"}>
+          Get free updates
+        </motion.li>
+      </motion.ul>
 
       <div className="flex gap-4  items-center fixed top-2 right-4 z-10">
         <button className="flex items-center gap-2 text-body cursor-pointer">
-          <Box size={16} />
+          <ShoppingBag size={16} />
         </button>
         <div className="flex gap-1 items-center rounded-sm">
           <Button
