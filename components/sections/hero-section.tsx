@@ -8,10 +8,11 @@ import { useRef } from "react";
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen bg-background-gray">
+    <div className="min-h-screen bg-background-gray pb-16 md:pb-0">
       <MainHero />
       <VideoBackground />
       <MobileVideoBackground />
+      <RemainingHeroTextContent />
     </div>
   );
 }
@@ -23,11 +24,11 @@ function VideoBackground() {
 
     offset: ["30% 80%", "end end"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.9]);
   return (
-    <div ref={container} className="relative h-[200vh] hidden md:block">
-      <div className="sticky h-screen top-0">
-        <div className="w-full h-full top-16 absolute flex justify-center align-center">
+    <div ref={container} className="relative h-[300vh] hidden md:block">
+      <div className="sticky h-[88vh] top-0">
+        <div className="w-full h-full top-16 absolute flex flex-col items-center">
           <motion.div
             style={{ scale }}
             className="relative w-[50vw] h-[50vh] rounded-md overflow-hidden"
@@ -70,6 +71,18 @@ function MobileVideoBackground() {
   );
 }
 
+function RemainingHeroTextContent() {
+  return (
+    <div className="pb-30 hidden md:block">
+      <h2 className="text-heading-one font-bold text-center mx-auto max-w-[40ch]">
+        At Cell Capital we are passionate about securing grants for business &
+        non-profits through expert consulting, research, and compelling Grant
+        Proposals or Business Plan
+      </h2>
+    </div>
+  );
+}
+
 const MainHero = () => {
   return (
     <div className="grid  px-4 pt-30">
@@ -80,7 +93,7 @@ const MainHero = () => {
           </h1>
         </div>
 
-        <p className="max-w-[45ch] md:hidden mt-4 text-center mx-auto">
+        <p className="max-w-[40ch] md:hidden mt-4 text-center mx-auto">
           At Cell Capital we are passionate about securing grants for business &
           non-profits through expert consulting, research, and compelling Grant
           Proposals or Business Plan

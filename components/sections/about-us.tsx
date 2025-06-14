@@ -242,7 +242,9 @@ export default function MeetOurTeam() {
               <span className="text-heading-0 font-bold">04.</span>
             </div>
             <div>
-              <h1 className="font-bold">Speed with precision</h1>
+              <h2 className="font-bold text-heading-one">
+                Speed with precision
+              </h2>
             </div>
 
             <div>
