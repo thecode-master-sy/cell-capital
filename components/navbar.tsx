@@ -18,7 +18,7 @@ import {
   LinkedinLogoIcon,
   TiktokLogoIcon,
 } from "@phosphor-icons/react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, AnimatePresence } from "motion/react";
 
 const siteLinks = [
   {
@@ -56,6 +56,17 @@ const itemVariants = {
   offscreen: {
     opacity: 0,
     translateY: -5,
+  },
+};
+
+const floatingNavVariants = {
+  onscreen: {
+    backgroundColor: "transparent",
+    borderWidth: "0px",
+  },
+  offscreen: {
+    backgroundColor: "white",
+    borderWidth: "1px",
   },
 };
 
@@ -105,24 +116,53 @@ export default function NavBar() {
         </motion.li>
       </motion.ul>
 
-      <div className="flex gap-4  items-center fixed top-2 right-4 z-10">
+      <div className="flex gap-4  items-center fixed top-2 right-4 z-10 ">
         <button className="flex items-center gap-2 text-body cursor-pointer">
           <ShoppingBag size={16} />
         </button>
-        <div className="flex gap-1 items-center rounded-sm">
-          <Button
-            size="sm"
-            className="rounded-sm font-semibold text-sm hidden md:flex"
-          >
-            Book a consultation
-          </Button>
+        <motion.div
+          layout
+          variants={floatingNavVariants}
+          animate={isInView ? "onscreen" : "offscreen"}
+          className="flex gap-1 items-center rounded-sm p-1 border-primary overflow-hidden"
+        >
+          <motion.div layout>
+            <Button
+              size="sm"
+              className="rounded-sm font-semibold text-sm hidden md:flex"
+            >
+              Book a consultation
+            </Button>
+          </motion.div>
+
+          <AnimatePresence>
+            {!isInView && (
+              <motion.div
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+                className="hidden lg:inline-block opacity-0"
+              >
+                <AlignJustify
+                  strokeWidth={1}
+                  size={24}
+                  className="cursor-pointer "
+                  onClick={() => toggleNav()}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <AlignJustify
             strokeWidth={1}
             size={30}
             className="cursor-pointer lg:hidden"
             onClick={() => toggleNav()}
           />
-        </div>
+        </motion.div>
       </div>
     </nav>
   );
