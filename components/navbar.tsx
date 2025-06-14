@@ -141,9 +141,6 @@ export default function NavBar() {
                 animate={{
                   opacity: 1,
                 }}
-                exit={{
-                  opacity: 0,
-                }}
                 className="hidden lg:inline-block opacity-0"
               >
                 <AlignJustify
