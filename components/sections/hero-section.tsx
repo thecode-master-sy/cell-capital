@@ -94,9 +94,9 @@ const MainHero = () => {
         </div>
 
         <p className="max-w-[40ch] md:hidden mt-4 text-center mx-auto">
-          At Cell Capital we are passionate about securing grants for business &
-          non-profits through expert consulting, research, and compelling Grant
-          Proposals or Business Plan
+          At Cell Capital we are passionate about securing grants for business
+          and non-profits through expert consulting, research, and compelling
+          grant proposals or business plan
         </p>
 
         <Button
