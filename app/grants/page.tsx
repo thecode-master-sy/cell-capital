@@ -21,7 +21,7 @@ export default function Grant() {
 
       <Faq />
 
-      <Footer initial={-10} moveValue={-100} />
+      <Footer />
     </div>
   );
 }

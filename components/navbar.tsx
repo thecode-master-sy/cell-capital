@@ -40,17 +40,17 @@ export default function NavBar() {
   const { toggleNav } = useNavBarContext();
   const pathname = usePathname();
   return (
-    <nav className="flex items-center justify-between px-4 py-2 relative z-1">
-      <div className="flex items-center ">
+    <nav className="flex items-center justify-between relative bg-background-gray text-navbar">
+      <div className="flex items-center fixed left-4 top-4 z-10">
         <Logo />
       </div>
 
-      <ul className="hidden lg:flex text-heading-two  items-center gap-7 text-body font-semibold">
+      <ul className="hidden lg:flex items-center gap-7 z-10 font-semibold mix-blend-difference text-white fixed top-2 left-1/2 right-1/2 -translate-x-1/2 w-max">
         {siteLinks.map((siteLink, index) => (
-          <li className="py-1 relative" key={index}>
+          <li className="py-1 relative " key={index}>
             <Link href={siteLink.pathname}>{siteLink.label}</Link>
             {pathname == siteLink.pathname && (
-              <span className="absolute top-[100%] w-full left-0 bg-white h-[1px]" />
+              <span className="absolute top-[100%] w-full left-0 bg-white h-[2px]" />
             )}
           </li>
         ))}
@@ -58,20 +58,28 @@ export default function NavBar() {
         <li>
           <a href="#about">About</a>
         </li>
-        <li>Get Free Updates</li>
+
+        <li>Get free updates</li>
       </ul>
 
-      <div className="flex gap-4  items-center">
+      <div className="flex gap-4  items-center fixed top-2 right-4 z-10">
         <button className="flex items-center gap-2 text-body cursor-pointer">
-          <span>Packages</span>
           <Box size={16} />
         </button>
-        <AlignJustify
-          strokeWidth={1}
-          size={30}
-          className="cursor-pointer lg:hidden"
-          onClick={() => toggleNav()}
-        />
+        <div className="flex gap-1 items-center rounded-sm">
+          <Button
+            size="sm"
+            className="rounded-sm font-semibold text-sm hidden md:flex"
+          >
+            Book a consultation
+          </Button>
+          <AlignJustify
+            strokeWidth={1}
+            size={30}
+            className="cursor-pointer lg:hidden"
+            onClick={() => toggleNav()}
+          />
+        </div>
       </div>
     </nav>
   );

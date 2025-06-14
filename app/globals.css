@@ -29,6 +29,8 @@
   --text-body: 16px;
   --text-caption: 14px;
   --text-logo: var(--fs-logo);
+  --text-heading-0: var(--text-heading-0);
+  --text-navbar: var(--text-navbar);
 }
 
 :root {
@@ -47,6 +49,10 @@
   --border: oklch(82.34% 0 0);
   --background-black-border: var(--cellcapital-light);
   --input: oklch(89.49% 0.006 84.57);
+  --text-heading-0: clamp(2.4em, 6vw + 0.5rem, 8em);
+  --text-navbar: clamp(1em, 1.4vw, 1.25em);
+  --text-heading-one: clamp();
+  --text-paragraph: clamp();
   --ring: oklch(0.708 0 0);
 }
 
@@ -58,16 +64,12 @@
     @apply bg-background text-foreground;
   }
 
-  .text-heading-0 {
-    @apply text-[36px] md:text-[48px] -tracking-[0.8px] lg:text-[60px] leading-[1.1] md:-tracking-[1.5px];
+  h1 {
+    @apply leading-[1.1] -tracking-[0.8px]  md:-tracking-[1.5px];
   }
 
   .text-heading-one {
     @apply lg:text-[22px]  text-[18px];
-  }
-
-  .text-paragraph {
-    @apply lg:text-[20px] text-[16px];
   }
 
   @media screen and (min-width: 450px) {

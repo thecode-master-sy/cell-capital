@@ -1,38 +1,8 @@
 "use client";
 import { ArrowRight, ArrowUp } from "lucide-react";
-import { CellCapitalSecondaryButton } from "../cell-capital-button";
-import Divider from "../divider";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
-export default function Footer({
-  moveValue,
-  initial,
-}: {
-  initial?: number;
-  moveValue?: number;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
-      gsap.set(sectionRef.current, {
-        y: initial ? initial : -550,
-      });
-      gsap.to(sectionRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: moveValue ? moveValue : -700,
-      });
-    },
-    { scope: sectionRef }
-  );
+export default function Footer() {
   return (
     <footer className="bg-background-black text-white  pt-16 overflow-hidden">
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 px-4 gap-y-16">

@@ -1,5 +1,5 @@
 import FloatingNav from "@/components/floating-nav";
-import { HiddenNav } from "@/components/navbar";
+import NavBar, { HiddenNav } from "@/components/navbar";
 import AboutSection from "@/components/sections/about-us";
 import CallToActionSection from "@/components/sections/call-to-action";
 import Footer from "@/components/sections/footer";
@@ -12,11 +12,9 @@ import TestimonalSection from "@/components/sections/testimonials-section";
 export default function Home() {
   return (
     <div className="absolute inset-0 z-[1]">
+      <NavBar />
       <HeroSection />
-      {/* <HeroSection /> */}
-      {/* <HeroSection /> */}
       <HiddenNav />
-      <FloatingNav />
       <SocialProof />
       <AboutSection />
       {/* <MeetOurTeam /> */}
