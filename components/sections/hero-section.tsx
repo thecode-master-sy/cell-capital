@@ -73,8 +73,8 @@ function MobileVideoBackground() {
 
 function RemainingHeroTextContent() {
   return (
-    <div className="pb-30 hidden md:block">
-      <h2 className="text-heading-one font-bold text-center mx-auto max-w-[40ch]">
+    <div className="md:pb-30 mt-10 md:mt-0 px-4">
+      <h2 className="md:text-heading-one md:font-bold text-center mx-auto text-paragraph max-w-[40ch]">
         At Cell Capital we are passionate about securing grants for business &
         non-profits through expert consulting, research, and compelling Grant
         Proposals or Business Plan
@@ -85,19 +85,13 @@ function RemainingHeroTextContent() {
 
 const MainHero = () => {
   return (
-    <div className="grid  px-4 pt-35">
+    <div className="grid  px-4 md:pt-35 pt-30">
       <div className="justify-self-center self-center flex flex-col">
         <div className="mx-auto">
           <h1 className="text-heading-0 font-bold max-w-[20ch]  text-center mx-auto">
             $15million secured in debt free Grants. You could be next!
           </h1>
         </div>
-
-        <p className="max-w-[42ch] md:hidden mt-4 text-center mx-auto text-paragraph">
-          At Cell Capital we are passionate about securing grants for business
-          and non-profits through expert consulting, research, and compelling
-          grant proposals or business plan
-        </p>
 
         <Button
           size="sm"

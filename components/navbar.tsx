@@ -117,19 +117,29 @@ export default function NavBar() {
       </motion.ul>
 
       <div className="flex gap-4  items-center fixed top-2 right-4 z-10 ">
-        <button className="flex items-center gap-2 text-body cursor-pointer">
-          <ShoppingBag size={16} />
+        <button className="flex items-center gap-2 text-body cursor-pointer p-1 bg-white rounded-sm border border-primary">
+          <ShoppingBag strokeWidth={1} size={20} />
         </button>
+
+        <div className="lg:hidden bg-white border border-primary p-1 rounded-sm">
+          <AlignJustify
+            strokeWidth={1}
+            size={20}
+            className="cursor-pointer "
+            onClick={() => toggleNav()}
+          />
+        </div>
+
         <motion.div
           layout
           variants={floatingNavVariants}
           animate={isInView ? "onscreen" : "offscreen"}
-          className="flex gap-1 items-center rounded-sm p-1 border-primary overflow-hidden"
+          className="hidden md:flex gap-1 items-center rounded-sm p-1 border-primary  overflow-hidden"
         >
           <motion.div layout>
             <Button
               size="sm"
-              className="rounded-sm font-semibold text-sm hidden md:flex"
+              className="hidden md:flex rounded-sm font-semibold text-sm"
             >
               Book a consultation
             </Button>
@@ -152,13 +162,6 @@ export default function NavBar() {
               </motion.div>
             )}
           </AnimatePresence>
-
-          <AlignJustify
-            strokeWidth={1}
-            size={30}
-            className="cursor-pointer lg:hidden"
-            onClick={() => toggleNav()}
-          />
         </motion.div>
       </div>
     </nav>
