@@ -152,7 +152,7 @@ export default function NavBar() {
         </motion.div>
       </div>
 
-      <button className="flex mix-blend-difference items-center text-white fixed right-15 top-[13px] z-10  text-body cursor-pointer">
+      <button className="flex mix-blend-difference md:hidden items-center text-white fixed right-15 top-[13px] z-10  text-body cursor-pointer">
         <ShoppingBag strokeWidth={1} size={20} />
       </button>
       <AlignJustify
