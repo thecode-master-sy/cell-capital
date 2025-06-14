@@ -93,7 +93,7 @@ const MainHero = () => {
           </h1>
         </div>
 
-        <p className="max-w-[40ch] md:hidden mt-4 text-center mx-auto">
+        <p className="max-w-[42ch] md:hidden mt-4 text-center mx-auto">
           At Cell Capital we are passionate about securing grants for business
           and non-profits through expert consulting, research, and compelling
           grant proposals or business plan
