@@ -117,19 +117,6 @@ export default function NavBar() {
       </motion.ul>
 
       <div className="flex gap-4  items-center fixed top-2 right-4 z-10 ">
-        <button className="flex items-center gap-2 text-body cursor-pointer p-1 bg-white rounded-sm border border-primary">
-          <ShoppingBag strokeWidth={1} size={20} />
-        </button>
-
-        <div className="lg:hidden bg-white border border-primary p-1 rounded-sm">
-          <AlignJustify
-            strokeWidth={1}
-            size={20}
-            className="cursor-pointer "
-            onClick={() => toggleNav()}
-          />
-        </div>
-
         <motion.div
           layout
           variants={floatingNavVariants}
@@ -164,6 +151,16 @@ export default function NavBar() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <button className="flex mix-blend-difference items-center text-white fixed right-15 top-[13px] z-10  text-body cursor-pointer">
+        <ShoppingBag strokeWidth={1} size={20} />
+      </button>
+      <AlignJustify
+        strokeWidth={1}
+        size={30}
+        className="cursor-pointer fixed right-4 top-2 md:hidden z-10 mix-blend-difference text-white"
+        onClick={() => toggleNav()}
+      />
     </nav>
   );
 }
