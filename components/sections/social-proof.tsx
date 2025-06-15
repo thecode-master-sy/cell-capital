@@ -6,66 +6,56 @@ import { useEffect, useRef } from "react";
 
 export default function SocialProof() {
   return (
-    <div className="relative bg-background-gray px-4">
-      <div className="py-10 overflow-hidden">
-        <h2 className="text-heading-one font-bold text-center">
-          Our funding sucess
-        </h2>
-        <p className="text-paragraph text-center mt-4 max-w-[45ch] mx-auto">
-          We have helped a diverse group of clients secure over $15 million in
-          grant funding to grow and scale their operations and have a positive
-          impact on their communites and we can hep you too!
-        </p>
-        <div className="flex flex-wrap gap-4 mt-7 items-center justify-center">
-          <div className="bg-white min-w-[150px] cursor-pointer md:flex-1 aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
-            <Image
-              width={100}
-              height={100}
-              src="/social-proof/logo-proof-one.png"
-              alt="boomin university logo"
-              className="w-[40%]"
-            />
+    <div className="bg-primary  relative">
+      <div className="py-16 flex flex-col items-center overflow-hidden">
+        <div className="flex flex-col">
+          <h1 className="font-bold text-heading-0 text-center mx-auto">
+            Our funding success
+          </h1>
+          <div className="mx-auto">
+            <p className="max-w-[45ch] md:max-w-[35ch] text-paragraph text-center">
+              We have helped a diverse group of clients secure over 15million in
+              grant funding to grow and scale their operations and have a
+              positive impact on their communities and we can help you too!
+            </p>
           </div>
+        </div>
 
-          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
-            <Image
-              width={100}
-              height={100}
-              src="/social-proof/logo-proof-two.png"
-              alt="sistas cohort logo"
-              className="w-[40%]"
-            />
-          </div>
+        <div className="grid grid-flow-col px-4 gap-7 mt-7 items-center">
+          <Image
+            width={100}
+            height={100}
+            src="/social-proof/logo-proof-one.png"
+            alt="boomin university logo"
+          />
 
-          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
-            <Image
-              width={100}
-              height={100}
-              src="/social-proof/logo-proof-three.png"
-              alt="angels online "
-              className="w-[40%]"
-            />
-          </div>
+          <Image
+            width={100}
+            height={100}
+            src="/social-proof/logo-proof-two.png"
+            alt="sistas cohort logo"
+          />
 
-          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
-            <Image
-              width={100}
-              height={100}
-              src="/social-proof/logo-proof-four.png"
-              alt="boomin university logo"
-              className="w-[40%]"
-            />
-          </div>
+          <Image
+            width={100}
+            height={100}
+            src="/social-proof/logo-proof-three.png"
+            alt="angels online "
+          />
 
-          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
-            <Image
-              width={100}
-              height={100}
-              src="/social-proof/logo-proof-five.png"
-              alt="boomin university logo"
-              className="w-[40%]"
-            />
-          </div>
+          <Image
+            width={100}
+            height={100}
+            src="/social-proof/logo-proof-four.png"
+            alt="boomin university logo"
+          />
+
+          <Image
+            width={100}
+            height={100}
+            src="/social-proof/logo-proof-five.png"
+            alt="boomin university logo"
+          />
         </div>
       </div>
     </div>

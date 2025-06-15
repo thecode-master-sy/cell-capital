@@ -13,7 +13,7 @@ export default function TestimonalSection() {
       </div>
 
       <Slider className="mt-7">
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "My work with Cell Capital was exceptional, they were very detailed
             and delivered well before the deadline. I will do a follow up review
@@ -34,7 +34,7 @@ export default function TestimonalSection() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "Cell Capital is the team! They understood my business goals and
             vision and put it on paper. I’m excited to see the results of the
@@ -55,7 +55,7 @@ export default function TestimonalSection() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "Cell Capital was an absolute pleasure to work with. Their
             adaptability to the brief and attention to detail made the project a
@@ -76,7 +76,7 @@ export default function TestimonalSection() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "Cell Capital did an amazing job. They were very detailed and
             understood the assignment!!!! I am beyond pleased with their work,
@@ -96,7 +96,7 @@ export default function TestimonalSection() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "Fantastic work on behalf of Cell Capital. My company will be proud
             to submit this proposal for grants. The written work has flawless
@@ -116,7 +116,7 @@ export default function TestimonalSection() {
           </div>
         </div>
 
-        <div className="bg-white flex flex-col border border-primary rounded-sm w-testimonial-card p-4">
+        <div className="bg-white flex flex-col rounded-sm w-testimonial-card p-4">
           <p className="pb-4  text-paragraph">
             "I cannot thank you enough. Words cannot express how much this mean
             to me. I am grateful to you for the work you've done more than
