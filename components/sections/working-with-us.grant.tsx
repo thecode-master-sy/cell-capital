@@ -4,8 +4,8 @@ import TestimonalSection from "./testimonials-section";
 
 export default function WorkingWithUs() {
   return (
-    <section className="pt-4">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-16 mt-4">
+    <section className="pt-4 bg-background-gray">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-16 mt-4 px-4">
         <div className="bg-white p-7 rounded-md">
           <div>
             <CircleDollarSign className="w-icon h-icon" />
@@ -70,7 +70,9 @@ export default function WorkingWithUs() {
         </div>
       </div>
 
-      <TestimonalSection />
+      <div className="mt-16">
+        <TestimonalSection />
+      </div>
     </section>
   );
 }

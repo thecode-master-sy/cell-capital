@@ -9,12 +9,12 @@ import {
 export default function Faq() {
   return (
     <div className="bg-background-gray py-4">
-      <div className="py-16 px-4">
+      <div className="pb-16 px-4">
         <h1 className="text-heading-0 font-bold max-w-[22ch]">
-          Still not sure? See the most commonly asked questions
+          Frequently asked questions
         </h1>
 
-        <div className="mt-8 max-w-[700px]">
+        <div className="mt-8 max-w-[700px] text-paragraph">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>

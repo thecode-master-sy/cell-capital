@@ -100,8 +100,6 @@ function MainHero() {
         >
           See our grant plans
         </CellCapitalPrimaryButton>
-
-        <p className="max-w-[45ch] mx-auto text-center mt-10 text-heading-one"></p>
       </div>
     </div>
   );
