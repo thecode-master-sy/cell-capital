@@ -24,7 +24,7 @@ export default function CellCapitalPrimaryButton({
     <Button
       size={size}
       className={cn(
-        "uppercase text-sm cursor-pointer mx-auto text-foreground rounded-sm font-bold",
+        "text-sm cursor-pointer mx-auto text-foreground rounded-sm font-bold",
         containerStyles[color],
         className
       )}
@@ -52,7 +52,7 @@ export function CellCapitalSecondaryButton({
     <Button
       size="sm"
       className={cn(
-        "uppercase text-caption bg-cellcapital-light rounded-sm cursor-pointer",
+        "text-caption bg-cellcapital-light rounded-sm cursor-pointer",
 
         className
       )}

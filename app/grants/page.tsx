@@ -9,6 +9,7 @@ import WorkingWithUs from "@/components/sections/working-with-us.grant";
 export default function Grant() {
   return (
     <div className="absolute inset-0 z-[1]">
+      <NavBar />
       <HiddenNav />
 
       <GrantsHeroSection />

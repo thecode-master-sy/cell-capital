@@ -51,10 +51,12 @@ export default function GrantPackages() {
     <div className="py-16">
       <div className="py-16 px-4">
         <div>
-          <h1 className="text-heading-0 font-bold">Our grant packages</h1>
+          <h1 className="text-heading-0 text-center font-bold">
+            Our grant packages
+          </h1>
         </div>
 
-        <p className="text-heading-one max-w-[33ch] mt-2">
+        <p className="text-paragraph text-center mx-auto max-w-[33ch] mt-2">
           We offer grant packages simplify the complex grant application process
         </p>
 

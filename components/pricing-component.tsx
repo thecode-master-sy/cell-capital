@@ -18,9 +18,9 @@ export default function PricingComponent({
   grantPackage: grantPackage;
 }) {
   return (
-    <div className="border rounded-sm p-4 bg-white border-primary">
+    <div className="rounded-sm p-4 border border-border">
       <div>
-        <h2 className="text-heading-two font-medium">{grantPackage.title}</h2>
+        <h2 className="text-paragraph font-bold">{grantPackage.title}</h2>
 
         <div className="mt-2">
           <p className="lg:max-w-[45ch] sm:max-w-[30ch] text-muted-foreground">
@@ -30,26 +30,24 @@ export default function PricingComponent({
       </div>
 
       <div className="mt-4">
-        <h1 className="text-heading-one">{grantPackage.price}</h1>
-        <p className="text-muted-foreground uppercase text-caption">
-          oneoff purchase
-        </p>
+        <h1 className="text-heading-one font-bold">{grantPackage.price}</h1>
+        <p className="text-muted-foreground">Oneoff purchase</p>
       </div>
 
       <div className="mt-4">
         <CellCapitalSecondaryButton
-          className="w-full bg-primary justify-between flex  py-7 text-paragraph"
+          className="w-full bg-background-black text-background-black-foreground justify-between flex  py-7"
           asChild
         >
           <Link href={`/grants/${grantPackage.packageLink}`}>
-            <span>Add to cart</span>
+            <span className="text-[18px]">Add to cart</span>
             <ArrowRight size={14} />
           </Link>
         </CellCapitalSecondaryButton>
       </div>
 
       <div className="py-4 border-t mt-4">
-        <p className="uppercase">what is included</p>
+        <p className="text-paragraph">What is included</p>
 
         <div className="space-y-4 mt-4">
           {grantPackage.perks.map((perk, index) => (
