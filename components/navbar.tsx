@@ -166,142 +166,156 @@ export default function NavBar() {
 export function HiddenNav() {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
-
   const { isOpen, toggleNav } = useNavBarContext();
 
-  const tl = useRef<GSAPTimeline>(null);
-
-  useGSAP(
-    () => {
-      gsap.set(".menu-link-item-holder", { y: 75 });
-
-      tl.current = gsap
-        .timeline({
-          paused: true,
-          onStart: () => {
-            gsap.set(".menu-backdrop", { display: "block" });
-          },
-          onReverseComplete: () => {
-            gsap.set(".menu-backdrop", { display: "none" });
-          },
-        })
-        .to(".menu-overlay", {
-          duration: 1.24,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          ease: "power4.inOut",
-        })
-        .to(
-          ".menu-backdrop",
-          {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power4.inOut",
-          },
-          "-=1"
-        )
-        .to(".menu-link-item-holder", {
-          y: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power4.inOut",
-          delay: -0.75,
-        });
+  // Variants for the menu overlay
+  const overlayVariants = {
+    hidden: {
+      clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+      transition: { duration: 1.24, ease: [0.76, 0, 0.24, 1] }, // power4.inOut equivalent
     },
-    { scope: containerRef }
-  );
+    visible: {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      transition: {
+        duration: 1.24,
+        ease: [0.76, 0, 0.24, 1],
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
-  useEffect(() => {
-    if (isOpen) {
-      tl.current?.play();
-    } else {
-      tl.current?.reverse();
-    }
-  }, [isOpen]);
+  // Variants for the backdrop
+  const backdropVariants = {
+    hidden: { opacity: 0, display: "none" },
+    visible: {
+      opacity: 1,
+      display: "block",
+      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.24 }, // Offset to sync with overlay
+    },
+  };
+
+  // Variants for menu items
+  const itemVariants = {
+    hidden: { y: 75, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+        opacity: {
+          duration: 1,
+          ease: [0.76, 0, 0.24, 1],
+        },
+      },
+    },
+  };
 
   return (
     <div ref={containerRef}>
-      <div
-        className={cn("fixed inset-0 z-[5] menu-backdrop opacity-0 hidden")}
-      ></div>
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              className={cn("fixed inset-0 z-[5] menu-backdrop")}
+              variants={backdropVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            ></motion.div>
 
-      <div className="fixed ml-auto inset-2 md:w-[60%] z-[10] bg-white py-4 pl-7 pr-4  grid grid-rows-[auto_1fr_auto] rounded-sm menu-overlay">
-        <div className="flex justify-end items-center">
-          <X size={40} className="cursor-pointer" onClick={() => toggleNav()} />
-        </div>
-
-        <ul className="text-heading-0 font-bold space-y-5 mt-4">
-          {siteLinks.map((siteLink, index) => (
-            <div
-              key={index}
-              className={cn(
-                "menu-link-item",
-                pathname === siteLink.pathname
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              )}
+            <motion.div
+              className="fixed ml-auto inset-0 md:w-[60%] z-[10] bg-white py-4 pl-7 pr-4 grid grid-rows-[auto_1fr_auto] menu-overlay"
+              variants={overlayVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
             >
-              <li className="menu-link-item-holder">
-                <Link
-                  href={siteLink.pathname}
-                  onClick={() => toggleNav()}
-                  className="flex gap-7"
+              <div className="flex justify-end items-center">
+                <X size={40} className="cursor-pointer" onClick={toggleNav} />
+              </div>
+
+              <motion.ul className="text-hidden-nav font-bold space-y-4 mt-4">
+                {siteLinks.map((siteLink, index) => (
+                  <motion.div
+                    key={index}
+                    className={cn(
+                      "menu-link-item",
+                      pathname === siteLink.pathname
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                    variants={itemVariants}
+                  >
+                    <li className="menu-link-item-holder">
+                      <Link
+                        href={siteLink.pathname}
+                        onClick={toggleNav}
+                        className="flex gap-7"
+                      >
+                        <span>0{index + 1}</span>
+                        <span>{siteLink.label}</span>
+                      </Link>
+                    </li>
+                  </motion.div>
+                ))}
+
+                <motion.div
+                  className="menu-link-item text-muted-foreground"
+                  variants={itemVariants}
                 >
-                  <span>0{index + 1}</span>
-                  <span>{siteLink.label}</span>
-                </Link>
-              </li>
-            </div>
-          ))}
+                  <li className="menu-link-item-holder flex gap-7">
+                    <span>04</span>
+                    <span>Get free updates</span>
+                  </li>
+                </motion.div>
 
-          <div className="menu-link-item text-muted-foreground">
-            {" "}
-            <li className="menu-link-item-holder flex gap-7">
-              <span>04</span>
-              <span>Get free updates</span>
-            </li>
-          </div>
+                <motion.div
+                  className="menu-link-item text-muted-foreground"
+                  variants={itemVariants}
+                >
+                  <li className="menu-link-item-holder">
+                    <a href="#about" className="flex gap-7">
+                      <span>05</span>
+                      <span>About</span>
+                    </a>
+                  </li>
+                </motion.div>
+              </motion.ul>
 
-          <div className="menu-link-item text-muted-foreground">
-            <li className="menu-link-item-holder">
-              <a href="#about" className="flex gap-7">
-                <span>05</span>
-                <span>About</span>
-              </a>
-            </li>
-          </div>
-        </ul>
-
-        <div className="text-caption uppercase flex flex-wrap gap-4 border-t border-primary py-4">
-          <Button
-            size="sm"
-            className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
-          >
-            <InstagramLogoIcon />
-            <span>instagram</span>
-          </Button>
-          <Button
-            size="sm"
-            className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
-          >
-            <TwitterLogoIcon />
-            <span>X (twitter)</span>
-          </Button>
-          <Button
-            size="sm"
-            className="py-1 px-3 bg-background border border-primary cursor-pointer"
-          >
-            <LinkedinLogoIcon />
-            <span>Linkedin</span>
-          </Button>
-          <Button
-            size="sm"
-            className="py-1 px-3 bg-background border border-primary cursor-pointer"
-          >
-            <TiktokLogoIcon />
-            <span>Tiktok</span>
-          </Button>
-        </div>
-      </div>
+              <div className="text-caption uppercase flex flex-wrap gap-4 py-4">
+                <Button
+                  size="sm"
+                  className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
+                >
+                  <InstagramLogoIcon />
+                  <span>instagram</span>
+                </Button>
+                <Button
+                  size="sm"
+                  className="py-1 px-3 bg-background border border-primary cursor-pointer items-center"
+                >
+                  <TwitterLogoIcon />
+                  <span>X (twitter)</span>
+                </Button>
+                <Button
+                  size="sm"
+                  className="py-1 px-3 bg-background border border-primary cursor-pointer"
+                >
+                  <LinkedinLogoIcon />
+                  <span>Linkedin</span>
+                </Button>
+                <Button
+                  size="sm"
+                  className="py-1 px-3 bg-background border border-primary cursor-pointer"
+                >
+                  <TiktokLogoIcon />
+                  <span>Tiktok</span>
+                </Button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
