@@ -12,7 +12,6 @@ export default function HeroSection() {
       <MainHero />
       <VideoBackground />
       <MobileVideoBackground />
-
       <RemainingHeroTextContent />s
     </div>
   );
@@ -75,7 +74,7 @@ function MobileVideoBackground() {
 function RemainingHeroTextContent() {
   return (
     <div className="md:pb-30 mt-10 md:mt-0 px-4">
-      <h2 className="md:text-heading-one md:font-bold text-center mx-auto text-paragraph max-w-[40ch]">
+      <h2 className="md:text-heading-one text-center mx-auto text-paragraph max-w-[40ch]">
         At Cell Capital we are passionate about securing grants for business &
         non-profits through expert consulting, research, and compelling Grant
         Proposals or Business Plan

@@ -8,16 +8,16 @@ export default function SocialProof() {
   return (
     <div className="relative bg-background-gray px-4">
       <div className="py-16 overflow-hidden">
-        <h1 className="text-heading-0 font-bold text-center">
+        <h2 className="text-heading-one font-bold text-center">
           Our funding sucess
-        </h1>
+        </h2>
         <p className="text-paragraph text-center mt-4 max-w-[45ch] mx-auto">
           We have helped a diverse group of clients secure over $15 million in
           grant funding to grow and scale their operations and have a positive
           impact on their communites and we can hep you too!
         </p>
-        <div className="flex flex-wrap gap-7 mt-7 items-center">
-          <div className="bg-white min-w-[150px] cursor-pointer md:flex-1 aspect-[1/0.5] flex justify-center items-center rounded-sm border border-primary p-4">
+        <div className="flex flex-wrap gap-4 mt-7 items-center justify-center">
+          <div className="bg-white min-w-[150px] cursor-pointer md:flex-1 aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
             <Image
               width={100}
               height={100}
@@ -27,7 +27,7 @@ export default function SocialProof() {
             />
           </div>
 
-          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm border border-primary p-4">
+          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
             <Image
               width={100}
               height={100}
@@ -37,7 +37,7 @@ export default function SocialProof() {
             />
           </div>
 
-          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm border border-primary p-4">
+          <div className="bg-white min-w-[150px] md:flex-1 cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
             <Image
               width={100}
               height={100}
@@ -47,7 +47,7 @@ export default function SocialProof() {
             />
           </div>
 
-          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm border border-primary p-4">
+          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
             <Image
               width={100}
               height={100}
@@ -57,7 +57,7 @@ export default function SocialProof() {
             />
           </div>
 
-          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm border border-primary p-4">
+          <div className="bg-white md:flex-1 min-w-[150px] cursor-pointer aspect-[1/0.5] flex justify-center items-center rounded-sm p-4">
             <Image
               width={100}
               height={100}

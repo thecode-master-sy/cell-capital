@@ -62,11 +62,9 @@ const itemVariants = {
 const floatingNavVariants = {
   onscreen: {
     backgroundColor: "transparent",
-    borderWidth: "0px",
   },
   offscreen: {
     backgroundColor: "white",
-    borderWidth: "1px",
   },
 };
 
@@ -121,7 +119,7 @@ export default function NavBar() {
           layout
           variants={floatingNavVariants}
           animate={isInView ? "onscreen" : "offscreen"}
-          className="hidden md:flex gap-1 items-center rounded-sm p-1 border-primary  overflow-hidden"
+          className="hidden md:flex gap-1 items-center rounded-sm p-1  overflow-hidden"
         >
           <motion.div layout>
             <Button
