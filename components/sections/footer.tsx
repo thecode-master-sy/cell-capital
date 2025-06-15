@@ -7,13 +7,13 @@ export default function Footer() {
     <footer className="bg-background-black text-white  pt-16 overflow-hidden">
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 px-4 gap-y-16">
         <div className="lg:col-span-7 col-span-full">
-          <h2 className="text-heading-0 font-bold">Get Free Grant Updates</h2>
+          <h2 className="text-heading-one font-bold">Get Free Grant Updates</h2>
 
           <form className="mt-7 max-w-[600px]">
             <div className="w-full border-b border-cellcapital-light pb-4 justify-between flex">
               <input
                 placeholder="Your Email"
-                className="text-heading-two flex-1 focus:outline-none foucs:border-none text-heading-one"
+                className=" flex-1 focus:outline-none foucs:border-none text-heading-paragraph"
               />
               <button className="cursor-pointer text-heading-one">
                 <ArrowRight size={30} />

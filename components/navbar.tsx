@@ -70,7 +70,7 @@ const floatingNavVariants = {
 
 export default function NavBar() {
   const elementRef = useRef(null);
-  const isInView = useInView(elementRef, { once: false, initial: true });
+  const isInView = useInView(elementRef, { once: false });
   const { toggleNav } = useNavBarContext();
   const pathname = usePathname();
   return (

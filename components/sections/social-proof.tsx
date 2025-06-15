@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 export default function SocialProof() {
   return (
     <div className="relative bg-background-gray px-4">
-      <div className="py-16 overflow-hidden">
+      <div className="py-10 overflow-hidden">
         <h2 className="text-heading-one font-bold text-center">
           Our funding sucess
         </h2>

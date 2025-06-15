@@ -12,7 +12,7 @@ export default function HeroSection() {
       <MainHero />
       <VideoBackground />
       <MobileVideoBackground />
-      <RemainingHeroTextContent />s
+      <RemainingHeroTextContent />
     </div>
   );
 }
@@ -27,7 +27,7 @@ function VideoBackground() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.9]);
   return (
     <div ref={container} className="relative h-[300vh] hidden md:block">
-      <div className="sticky h-[100vh] top-0">
+      <div className="sticky h-[85vh] top-0">
         <div className="w-full h-full top-16 absolute flex flex-col items-center">
           <motion.div
             style={{ scale }}
