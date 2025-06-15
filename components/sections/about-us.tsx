@@ -1,17 +1,10 @@
 "use client";
-import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
-import CellCapitalPrimaryButton from "../cell-capital-button";
-import Image from "next/image";
-import { gsap } from "gsap";
 import {
-  ArrowDownRight,
   CircleDollarSign,
   Crown,
   Sparkles,
   Trophy,
 } from "lucide-react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
 
 export default function MeetOurTeam() {
@@ -116,7 +109,7 @@ export default function MeetOurTeam() {
           </div>
 
           <div>
-            <span className="block bg-primary w-max text-white uppercase text-paragraph font-bold px-7 py-2">
+            <span className="block bg-primary w-max text-white uppercase md:text-paragraph font-bold px-7 py-2">
               Director of media and communications
             </span>
 
