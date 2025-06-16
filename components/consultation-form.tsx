@@ -43,7 +43,7 @@ export default function ConsultationForm() {
         {isOpen && (
           <>
             <motion.div
-              className={cn("fixed inset-0 z-[5] menu-backdrop")}
+              className={cn("fixed inset-0 z-[10] menu-backdrop")}
               variants={backdropVariants}
               initial="hidden"
               animate="visible"
@@ -52,24 +52,33 @@ export default function ConsultationForm() {
             ></motion.div>
 
             <motion.div
-              className="fixed ml-auto inset-0 md:w-[60%] z-[10] bg-white px-4  menu-overlay"
+              className="fixed ml-auto inset-0 md:w-[60%] z-[20] bg-white px-4  menu-overlay"
               variants={overlayVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <div className="flex">
+              <div className="flex justify-end items-start py-4">
+                <div
+                  onClick={toggleConsultationForm}
+                  className="flex gap-2 items-center cursor-pointer"
+                >
+                  <div className="flex justify-center items-center bg-background-gray w-[30px] h-[30px]  p-1 rounded-full">
+                    <X size={15} strokeWidth={2} className="cursor-pointer" />
+                  </div>
+                  <span>close</span>
+                </div>
+              </div>
+
+              <div className="mt-4">
                 <h2 className="text-heading-one font-bold">
                   Talk to us about your funding needs
                 </h2>
-                <div className="flex justify-end items-center">
-                  <X
-                    size={16}
-                    strokeWidth={1}
-                    className="cursor-pointer"
-                    onClick={toggleConsultationForm}
-                  />
-                </div>
+                <p className="max-w-[45ch]  text-paragraph mt-2">
+                  We offer a free consultation, which includes tips and
+                  suggestions on what steps you can take, including everything
+                  you need for a successful grant request!
+                </p>
               </div>
             </motion.div>
           </>

@@ -55,7 +55,7 @@
   --text-heading-0: clamp(2.6em, 6vw + 0.5rem, 8em);
   --text-navbar: clamp(1em, 1.2vw + 0.2rem, 2em);
   --text-heading-one: clamp(1.4em, 2vw + 0.5rem, 3.5em);
-  --text-paragraph: clamp(1.1em, 1.1vw + 0.4rem, 2em);
+  --text-paragraph: clamp(1.1em, 1.1vw + 0.3rem, 2em);
   --w-about-card: clamp(300px, 30vw, 1000px);
   --w-testimonal-card: clamp(400px, 40vw, 800px);
   --w-icon: clamp(25px, 3vw, 100px);
