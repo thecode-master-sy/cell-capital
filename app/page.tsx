@@ -8,6 +8,7 @@ import OurServices from "@/components/sections/our-services";
 import MeetOurTeam from "@/components/sections/about-us";
 import SocialProof from "@/components/sections/social-proof";
 import TestimonalSection from "@/components/sections/testimonials-section";
+import ConsultationForm from "@/components/consultation-form";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <HiddenNav />
+      <ConsultationForm />
       <SocialProof />
       <AboutSection />
       {/* <MeetOurTeam /> */}

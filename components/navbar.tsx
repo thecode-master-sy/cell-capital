@@ -10,6 +10,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { CustomEase } from "gsap/CustomEase";
 import { useNavBarContext } from "./providers/navbar-provider";
+import { useConsultationFormContext } from "./providers/consultation-provider";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
@@ -72,6 +73,7 @@ export default function NavBar() {
   const elementRef = useRef(null);
   const isInView = useInView(elementRef, { once: false });
   const { toggleNav } = useNavBarContext();
+  const { toggleConsultationForm } = useConsultationFormContext();
   const pathname = usePathname();
   return (
     <nav
@@ -124,7 +126,8 @@ export default function NavBar() {
           <motion.div layout>
             <Button
               size="sm"
-              className="hidden md:flex rounded-sm font-semibold text-sm"
+              className="hidden md:flex rounded-sm font-semibold text-sm cursor-pointer"
+              onClick={() => toggleConsultationForm()}
             >
               Book a consultation
             </Button>
@@ -196,10 +199,9 @@ export function HiddenNav() {
 
   // Variants for menu items
   const itemVariants = {
-    hidden: { y: 75, opacity: 0 },
+    hidden: { y: 75 },
     visible: {
       y: 0,
-      opacity: 1,
       transition: {
         y: { duration: 1, ease: [0.76, 0, 0.24, 1] },
         opacity: {
@@ -234,9 +236,9 @@ export function HiddenNav() {
                 <X size={40} className="cursor-pointer" onClick={toggleNav} />
               </div>
 
-              <motion.ul className="text-hidden-nav font-bold space-y-4 mt-4">
+              <ul className="text-hidden-nav font-bold space-y-4 mt-4">
                 {siteLinks.map((siteLink, index) => (
-                  <motion.div
+                  <div
                     key={index}
                     className={cn(
                       "menu-link-item",
@@ -244,9 +246,11 @@ export function HiddenNav() {
                         ? "text-primary"
                         : "text-muted-foreground"
                     )}
-                    variants={itemVariants}
                   >
-                    <li className="menu-link-item-holder">
+                    <motion.li
+                      variants={itemVariants}
+                      className="menu-link-item-holder"
+                    >
                       <Link
                         href={siteLink.pathname}
                         onClick={toggleNav}
@@ -255,32 +259,32 @@ export function HiddenNav() {
                         <span>0{index + 1}</span>
                         <span>{siteLink.label}</span>
                       </Link>
-                    </li>
-                  </motion.div>
+                    </motion.li>
+                  </div>
                 ))}
 
-                <motion.div
-                  className="menu-link-item text-muted-foreground"
-                  variants={itemVariants}
-                >
-                  <li className="menu-link-item-holder flex gap-7">
+                <div className="menu-link-item text-muted-foreground">
+                  <motion.li
+                    variants={itemVariants}
+                    className="menu-link-item-holder flex gap-7"
+                  >
                     <span>04</span>
                     <span>Get free updates</span>
-                  </li>
-                </motion.div>
+                  </motion.li>
+                </div>
 
-                <motion.div
-                  className="menu-link-item text-muted-foreground"
-                  variants={itemVariants}
-                >
-                  <li className="menu-link-item-holder">
+                <div className="menu-link-item text-muted-foreground">
+                  <motion.li
+                    variants={itemVariants}
+                    className="menu-link-item-holder"
+                  >
                     <a href="#about" className="flex gap-7">
                       <span>05</span>
                       <span>About</span>
                     </a>
-                  </li>
-                </motion.div>
-              </motion.ul>
+                  </motion.li>
+                </div>
+              </ul>
 
               <div className="text-caption uppercase flex flex-wrap gap-4 py-4">
                 <Button

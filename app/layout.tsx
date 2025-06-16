@@ -3,6 +3,7 @@ import "./globals.css";
 import { ReactLenis } from "@/lib/smooth-scroll";
 import NavBarProvider from "@/components/providers/navbar-provider";
 import ppNeueMonteralBook from "@/lib/font";
+import ConsultationFormProvider from "@/components/providers/consultation-provider";
 
 export const metadata: Metadata = {
   title: "Cell Capital - success oriented grant writing agency",
@@ -20,7 +21,9 @@ export default function RootLayout({
         <body
           className={`${ppNeueMonteralBook.variable} font-sans heantialiased`}
         >
-          <NavBarProvider>{children}</NavBarProvider>
+          <NavBarProvider>
+            <ConsultationFormProvider>{children}</ConsultationFormProvider>
+          </NavBarProvider>
         </body>
       </ReactLenis>
     </html>

@@ -5,12 +5,14 @@ import Footer from "@/components/sections/footer";
 import GrantPackages from "@/components/sections/grant-packages.grant";
 import GrantsHeroSection from "@/components/sections/hero-section.grants";
 import WorkingWithUs from "@/components/sections/working-with-us.grant";
+import ConsultationForm from "@/components/consultation-form";
 
 export default function Grant() {
   return (
     <div className="absolute inset-0 z-[1]">
       <NavBar />
       <HiddenNav />
+      <ConsultationForm />
 
       <GrantsHeroSection />
 
