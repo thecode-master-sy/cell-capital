@@ -5,6 +5,7 @@ import CellCapitalPrimaryButton from "../cell-capital-button";
 import { ArrowDown, CircleDollarSign, Rocket } from "lucide-react";
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
+import { useConsultationFormContext } from "../providers/consultation-provider";
 
 export default function HeroSection() {
   return (
@@ -84,6 +85,7 @@ function RemainingHeroTextContent() {
 }
 
 const MainHero = () => {
+  const { toggleConsultationForm } = useConsultationFormContext()
   return (
     <div className="grid  px-4 md:pt-35 pt-30">
       <div className="justify-self-center self-center flex flex-col">
@@ -95,6 +97,7 @@ const MainHero = () => {
 
         <Button
           size="sm"
+          onClick={toggleConsultationForm}
           className="rounded-sm font-semibold mt-4 md:hidden w-max mx-auto"
         >
           Book a consultation

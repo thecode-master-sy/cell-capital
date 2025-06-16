@@ -1,21 +1,57 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useConsultationFormContext } from "./providers/consultation-provider";
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
+import { useLenis } from "lenis/react";
 
 export default function ConsultationForm() {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const { isOpen, toggleConsultationForm } = useConsultationFormContext();
+  const lenis = useLenis();
 
-  // Variants for the menu overlay
+  useEffect(() => {
+    if (isOpen) {
+      lenis?.stop();
+      document.body.style.overflow = "hidden";
+    } else {
+      lenis?.start();
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      lenis?.start();
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const overlay = overlayRef.current;
+
+    if (!overlay || !isOpen) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const delta = e.deltaY;
+      overlay.scrollTop += delta;
+      e.stopPropagation();
+    };
+
+    overlay.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      overlay.removeEventListener("wheel", handleWheel);
+    };
+  }, [isOpen]);
+
   const overlayVariants = {
     hidden: {
       clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
-      transition: { duration: 1.24, ease: [0.76, 0, 0.24, 1] }, // power4.inOut equivalent
+      transition: { duration: 1.24, ease: [0.76, 0, 0.24, 1] },
     },
     visible: {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -29,11 +65,17 @@ export default function ConsultationForm() {
 
   // Variants for the backdrop
   const backdropVariants = {
-    hidden: { opacity: 0, display: "none" },
+    hidden: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.76, 0, 0.24, 1],
+        delay: 1,
+      },
+    },
     visible: {
       opacity: 1,
-      display: "block",
-      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.24 }, // Offset to sync with overlay
+      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.24 },
     },
   };
 
@@ -52,13 +94,14 @@ export default function ConsultationForm() {
             ></motion.div>
 
             <motion.div
-              className="fixed ml-auto inset-0 md:w-[60%] z-[20] bg-white px-4  menu-overlay"
+              ref={overlayRef}
+              className="fixed ml-auto overflow-y-scroll py-4 inset-0 md:w-[55%] z-[20] bg-background px-4  menu-overlay"
               variants={overlayVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <div className="flex justify-end items-start py-4">
+              <div className="absolute right-2 top-2">
                 <div
                   onClick={toggleConsultationForm}
                   className="flex gap-2 items-center cursor-pointer"
@@ -80,6 +123,54 @@ export default function ConsultationForm() {
                   you need for a successful grant request!
                 </p>
               </div>
+
+              <span className="font-bold text-paragraph mt-16 inline-block">
+                Personal information
+              </span>
+              <div className="mt-2 border-t border-gray-200" />
+
+              <form className="grid gap-4 mt-4" action="">
+                <div className="grid gap-2">
+                  <label htmlFor="name" className="text-paragraph">
+                    Name
+                  </label>
+                  <input
+                    placeholder="Tochi Chimeremeze"
+                    className="p-3 bg-background-gray rounded-sm text-paragraph"
+                    type="text"
+                    id="name"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label htmlFor="email" className="text-paragraph">
+                    Email address
+                  </label>
+                  <input
+                    placeholder="tochi@cellcapital.com"
+                    className="p-3 bg-background-gray rounded-sm text-paragraph"
+                    type="email"
+                    id="email"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label htmlFor="phone" className="text-paragraph">
+                    Phone number
+                  </label>
+                  <input
+                    placeholder="08123456789"
+                    className="p-3 bg-background-gray rounded-sm text-paragraph"
+                    type="tel"
+                    id="phone"
+                  />
+                </div>
+
+                <Button
+                  size="lg"
+                  className="font-bold w-full max-w-[150px] ml-auto cursor-pointer rounded-sm"
+                >
+                  <span>Continue</span>
+                </Button>
+              </form>
             </motion.div>
           </>
         )}

@@ -5,6 +5,7 @@ import NavBar from "../navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
+import { useConsultationFormContext } from "../providers/consultation-provider";
 
 export default function HeroGrantsSection() {
   return (
@@ -93,13 +94,16 @@ function MainHero() {
           </h1>
         </div>
 
-        <CellCapitalPrimaryButton
-          color="white"
+        <Button
+          asChild
           size="lg"
-          className="mt-2 border-primary border text-[18px]"
+          className="mt-2 bg-white w-max mx-auto border-primary border text-[18px]"
         >
-          See our grant plans
-        </CellCapitalPrimaryButton>
+          <a className="flex gap-2 items-center " href="#packages">
+            <span className="font-bold"> See our grant plans</span>{" "}
+            <span className="h-2 w-2 rounded-full bg-primary"></span>
+          </a>
+        </Button>
       </div>
     </div>
   );

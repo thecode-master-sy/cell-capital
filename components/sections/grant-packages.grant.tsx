@@ -48,7 +48,7 @@ const grantPackages = [
 
 export default function GrantPackages() {
   return (
-    <div className="py-16">
+    <section id="packages" className="py-16">
       <div className="py-16 px-4">
         <div>
           <h1 className="text-heading-0 text-center font-bold">
@@ -66,6 +66,6 @@ export default function GrantPackages() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

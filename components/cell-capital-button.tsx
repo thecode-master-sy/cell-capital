@@ -6,11 +6,14 @@ export default function CellCapitalPrimaryButton({
   color,
   className,
   size,
+  onClick,
+  ...props
 }: {
   children: React.ReactNode;
   color: "primary" | "white";
   className?: string;
   size?: "sm" | "lg" | "default" | null;
+  onClick?: () => void;
 }) {
   const containerStyles = {
     primary: "bg-primary",
@@ -23,6 +26,8 @@ export default function CellCapitalPrimaryButton({
   return (
     <Button
       size={size}
+      onClick={onClick}
+      {...props}
       className={cn(
         "text-sm cursor-pointer mx-auto text-foreground rounded-sm font-bold",
         containerStyles[color],
@@ -42,6 +47,7 @@ export function CellCapitalSecondaryButton({
   className,
   onClick,
   asChild,
+  ...props
 }: {
   className?: string;
   children: React.ReactNode;
@@ -51,6 +57,7 @@ export function CellCapitalSecondaryButton({
   return (
     <Button
       size="sm"
+      {...props}
       className={cn(
         "text-caption bg-cellcapital-light rounded-sm cursor-pointer",
 

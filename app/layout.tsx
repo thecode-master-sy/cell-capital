@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <ReactLenis root>
         <body
-          className={`${ppNeueMonteralBook.variable} font-sans heantialiased`}
+          className={`${ppNeueMonteralBook.variable} font-sans antialiased`}
         >
           <NavBarProvider>
             <ConsultationFormProvider>{children}</ConsultationFormProvider>
