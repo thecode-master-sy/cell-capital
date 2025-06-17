@@ -95,7 +95,7 @@ export default function ConsultationForm() {
 
             <motion.div
               ref={overlayRef}
-              className="fixed ml-auto overflow-y-scroll py-4 inset-0 md:w-[55%] z-[20] bg-background px-4  menu-overlay"
+              className="fixed ml-auto overflow-y-scroll pt-10 pb-4 inset-0 md:w-[55%] z-[20] bg-background px-4  menu-overlay"
               variants={overlayVariants}
               initial="hidden"
               animate="visible"
@@ -109,7 +109,6 @@ export default function ConsultationForm() {
                   <div className="flex justify-center items-center bg-background-gray w-[30px] h-[30px]  p-1 rounded-full">
                     <X size={15} strokeWidth={2} className="cursor-pointer" />
                   </div>
-                  <span>close</span>
                 </div>
               </div>
 
