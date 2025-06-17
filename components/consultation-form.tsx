@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useConsultationFormContext } from "./providers/consultation-provider";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, X } from "lucide-react";
@@ -14,6 +14,26 @@ export default function ConsultationForm() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const { isOpen, toggleConsultationForm } = useConsultationFormContext();
   const lenis = useLenis();
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    organizationName: "",
+    industry: "",
+    fundingGoal: "",
+  });
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (step < 2) {
+      setStep(step + 1);
+      return;
+    }
+
+    console.log("has submitted");
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -124,51 +144,113 @@ export default function ConsultationForm() {
               </div>
 
               <span className="font-bold text-paragraph mt-16 inline-block">
-                Personal information
+                {step === 1
+                  ? "Personal information"
+                  : "Organization information"}
               </span>
               <div className="mt-2 border-t border-gray-200" />
 
-              <form className="grid gap-4 mt-4" action="">
-                <div className="grid gap-2">
-                  <label htmlFor="name" className="text-paragraph">
-                    Name
-                  </label>
-                  <input
-                    placeholder="Tochi Chimeremeze"
-                    className="p-3 bg-background-gray rounded-sm text-paragraph"
-                    type="text"
-                    id="name"
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="email" className="text-paragraph">
-                    Email address
-                  </label>
-                  <input
-                    placeholder="tochi@cellcapital.com"
-                    className="p-3 bg-background-gray rounded-sm text-paragraph"
-                    type="email"
-                    id="email"
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="phone" className="text-paragraph">
-                    Phone number
-                  </label>
-                  <input
-                    placeholder="08123456789"
-                    className="p-3 bg-background-gray rounded-sm text-paragraph"
-                    type="tel"
-                    id="phone"
-                  />
-                </div>
+              <form className="grid gap-4 mt-4" onSubmit={handleSubmit}>
+                {step === 1 && (
+                  <>
+                    <div className="grid gap-2">
+                      <label htmlFor="name" className="text-paragraph">
+                        <span>Name</span>
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <input
+                        placeholder="Tochi Chimeremeze"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="text"
+                        id="name"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="email" className="text-paragraph">
+                        <span>Email address</span>
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <input
+                        placeholder="tochi@cellcapital.com"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="email"
+                        id="email"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="phone" className="text-paragraph">
+                        Phone number
+                      </label>
+                      <input
+                        placeholder="08123456789"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="tel"
+                        id="phone"
+                      />
+                    </div>
+                  </>
+                )}
 
-                <Button
-                  size="lg"
-                  className="font-bold w-full max-w-[150px] ml-auto cursor-pointer rounded-sm"
-                >
-                  <span>Continue</span>
-                </Button>
+                {step === 2 && (
+                  <>
+                    <div className="grid gap-2">
+                      <label htmlFor="name" className="text-paragraph">
+                        <span>Organization name</span>
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <input
+                        placeholder="Cell capital"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="text"
+                        id="organization-name"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="email" className="text-paragraph">
+                        <span>Organization industry/sector</span>
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <input
+                        placeholder="transportation"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="text"
+                        id="industry"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="phone" className="text-paragraph">
+                        Funding goal
+                      </label>
+                      <input
+                        placeholder="$1000"
+                        className="p-3 bg-background-gray rounded-sm text-paragraph"
+                        type="text"
+                        id="funding-goal"
+                      />
+                    </div>
+                  </>
+                )}
+
+                <div className="flex justify-end">
+                  {step > 1 && (
+                    <Button
+                      type="button"
+                      size="lg"
+                      variant="ghost"
+                      className="text-paragraph"
+                      onClick={() => setStep(step - 1)}
+                    >
+                      Back
+                    </Button>
+                  )}
+                  <Button
+                    size="lg"
+                    className="font-bold w-full max-w-[150px] cursor-pointer rounded-sm"
+                  >
+                    <span>Continue</span>
+                    <ArrowRight size={20} />
+                  </Button>
+                </div>
               </form>
             </motion.div>
           </>
