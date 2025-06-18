@@ -48,7 +48,7 @@ export default function Booker() {
 
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "business-consultation" });
+      const cal = await getCalApi({ namespace: "30min" });
       cal("ui", {
         theme: "light",
         hideEventTypeDetails: false,
@@ -75,8 +75,8 @@ export default function Booker() {
           </div>
         </div>
         <Cal
-          namespace="business-consultation"
-          calLink="thecodemaster/business-consultation"
+          namespace="30min"
+          calLink="cell-capital/30min"
           style={{ width: "100%", height: "600px" }}
           config={{
             layout: "month_view",
