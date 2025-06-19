@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { ArrowRight, Box, Minus, Plus, X } from "lucide-react";
+import { ArrowRight, Box, Minus, Plus, X, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import Divider from "../divider";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
@@ -19,7 +19,7 @@ export type Product = {
 
 export default function ProductDetails({ product }: { product: Product }) {
   return (
-    <div className="min-h-screen relative pt-25 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
+    <div className="min-h-screen relative pt-25 md:pt-35 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
       <div className="md:min-h-screen">
         <div className="aspect-[1/0.8] rounded-md overflow-hidden md:sticky top-10">
           <img src={`/${product.productImage}`} alt={product.title} />
@@ -53,9 +53,9 @@ export default function ProductDetails({ product }: { product: Product }) {
                   <Plus size={14} />
                 </span>
 
-                <CellCapitalSecondaryButton className="flex-1 p-5 justify-between bg-white border border-primary">
-                  <span className="text-paragraph">Add to packages</span>
-                  <Box size={14} />
+                <CellCapitalSecondaryButton className="flex-1 p-5 gap-4 items-center justify-between bg-white border border-primary">
+                  <span>Add to cart</span>
+                  <ShoppingBag size={14} />
                 </CellCapitalSecondaryButton>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
               <div className="flex flex-col gap-2 mt-2">
                 {product.process.map((step, index) => (
-                  <div className="flex gap-2" key={index}>
+                  <div className="flex gap-2 text-paragraph" key={index}>
                     <span>{index + 1}.</span>
 
                     <span>{step}</span>
@@ -90,22 +90,22 @@ export default function ProductDetails({ product }: { product: Product }) {
 
             <div className="mt-4">
               <p className="font-bold text-paragraph">
-                Why Choose the Bronze Starter Pack?
+                Why Choose {product.title}
               </p>
 
-              <p className="mt-2">{product.why}</p>
+              <p className="mt-2 text-paragraph">{product.why}</p>
             </div>
 
             <div className="mt-4">
               <p className="text-paragraph font-bold">What to Expect</p>
 
-              <p className="mt-2">{product.whatToExpect}</p>
+              <p className="mt-2 text-paragraph">{product.whatToExpect}</p>
             </div>
 
             <div className="mt-4">
-              <p className="font-bold">Have any questions?</p>
+              <p className="font-bold text-paragraph">Have any questions?</p>
 
-              <p className="mt-2">
+              <p className="mt-2 text-paragraph">
                 Contact us today to learn how the {product.title} can help your
                 organization thrive.
               </p>

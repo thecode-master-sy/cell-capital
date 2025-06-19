@@ -36,8 +36,6 @@ const siteLinks = [
   },
 ];
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(CustomEase);
 
 const navItemContainer = {
   onscreen: {

@@ -4,7 +4,7 @@ import ProductDetails, { Product } from "@/components/sections/product-details";
 import TestimonalSection from "@/components/sections/testimonials-section";
 import Footer from "@/components/sections/footer";
 
-const products: Record<string, Product> = {
+export const products: Record<string, Product> = {
   bronze: {
     productImage: "grant-package-one.jpg",
     title: "Bronze Starter Pack",
