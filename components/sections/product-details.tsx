@@ -20,7 +20,7 @@ export type Product = {
 export default function ProductDetails({ product }: { product: Product }) {
   return (
     <div className="min-h-screen relative pt-25 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
-      <div className="min-h-screen">
+      <div className="md:min-h-screen">
         <div className="aspect-[1/0.8] rounded-md overflow-hidden md:sticky top-10">
           <img src={`/${product.productImage}`} alt={product.title} />
         </div>
