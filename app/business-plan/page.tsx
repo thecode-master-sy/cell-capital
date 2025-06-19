@@ -5,11 +5,12 @@ import CustomQuote from "@/components/sections/call-to-action.grant";
 import TestimonalSection from "@/components/sections/testimonials-section";
 
 const product: Product = {
+  id: "business-plan",
   productImage: "business-plan.jpeg",
   title: "The Ultimate Business Plan  + Pitch Deck Pack",
   subText:
     "Comprehensive Business Plan + Investor Pitch Deck + Free Strategy Session",
-  price: "$500",
+  price: 500,
   description:
     "Cell Capital’s Platinum Business Plan Pack is your ultimate solution for crafting a professional, investor-ready business plan that drives funding success. Designed for businesses and nonprofits aiming to secure grants, loans, or seed capital, this package delivers a comprehensive business plan, a persuasive pitch deck, and a free strategy session to align our work with your vision.",
   included: `Our process starts with a straightforward questionnaire to capture your organization’s mission, goals, and financial needs, followed by a 45-minute free strategy session to refine your funding objectives. Our expert team then develops a comprehensive business plan, including an executive summary, market analysis, organizational structure, financial projections (3-5 years), funding requirements, and growth strategy—tailored to impress investors and grantors. We also create a visually stunning, 10-15 slide pitch deck to complement your plan, designed to captivate stakeholders in presentations. To ensure your satisfaction, we offer three revision rounds for both the plan and deck.`,

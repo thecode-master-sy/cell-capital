@@ -1,16 +1,18 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, Box, Minus, Plus, X, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import Divider from "../divider";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
+import { useCart } from "../providers/cart-provider";
 
 export type Product = {
+  id: string;
   title: string;
   subText: string;
   productImage: string;
   description: string;
-  price: string;
+  price: number;
   included: string;
   process: string[];
   why: string;
@@ -18,6 +20,31 @@ export type Product = {
 };
 
 export default function ProductDetails({ product }: { product: Product }) {
+  const [quantityState, setQuantityState] = useState(1);
+  const { addToCart, cart } = useCart();
+
+  const handleAddToCart = () => {
+    console.log(cart.length);
+    console.log(cart);
+    addToCart(
+      {
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        image: product.productImage,
+      },
+      quantityState
+    );
+  };
+
+  const incrementQuantity = () => {
+    setQuantityState((prev) => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantityState((prev) => Math.max(1, prev - 1));
+  };
+
   return (
     <div className="min-h-screen relative pt-25 md:pt-35 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
       <div className="md:min-h-screen">
@@ -35,7 +62,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           </div>
 
           <div className="mt-7">
-            <h2 className="text-heading-one font-bold">{product.price}</h2>
+            <h2 className="text-heading-one font-bold">${product.price}</h2>
           </div>
 
           <div className="mt-7">
@@ -43,26 +70,33 @@ export default function ProductDetails({ product }: { product: Product }) {
               <span className="text-paragraph">Quantity</span>
 
               <div className="flex items-center gap-2">
-                <span className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer">
+                <span
+                  onClick={decrementQuantity}
+                  className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
+                >
                   <Minus size={14} />
                 </span>
 
-                <span>0</span>
+                <span>{quantityState}</span>
 
-                <span className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer">
+                <span
+                  onClick={incrementQuantity}
+                  className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
+                >
                   <Plus size={14} />
                 </span>
-
-                <CellCapitalSecondaryButton className="flex-1 p-5 gap-4 items-center justify-between bg-white border border-primary">
-                  <span>Add to cart</span>
-                  <ShoppingBag size={14} />
-                </CellCapitalSecondaryButton>
               </div>
             </div>
 
             <div className="w-full flex gap-4 items-center py-4">
               <CellCapitalSecondaryButton className="flex-1 p-5 justify-center bg-primary max-w-[300px] ">
-                <span className="text-paragraph">Buy now</span>
+                <span className="font-bold text-base">Buy now</span>
+              </CellCapitalSecondaryButton>
+              <CellCapitalSecondaryButton
+                onClick={handleAddToCart}
+                className="p-5 gap-4 items-center justify-between bg-white"
+              >
+                <ShoppingBag size={14} />
               </CellCapitalSecondaryButton>
             </div>
           </div>

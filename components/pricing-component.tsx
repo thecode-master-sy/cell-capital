@@ -40,7 +40,7 @@ export default function PricingComponent({
           asChild
         >
           <Link href={`/grants/${grantPackage.packageLink}`}>
-            <span className="text-[18px]">Add to cart</span>
+            <span className="text-[18px]">Buy now</span>
             <ArrowRight size={14} />
           </Link>
         </CellCapitalSecondaryButton>

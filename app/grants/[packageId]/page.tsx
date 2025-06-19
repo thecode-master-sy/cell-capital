@@ -3,14 +3,16 @@ import CallToActionGrantSection from "@/components/sections/call-to-action.grant
 import ProductDetails, { Product } from "@/components/sections/product-details";
 import TestimonalSection from "@/components/sections/testimonials-section";
 import Footer from "@/components/sections/footer";
+import ConsultationComponent from "@/components/consultation-component";
 
 export const products: Record<string, Product> = {
   bronze: {
+    id: "bronze",
     productImage: "grant-package-one.jpg",
     title: "Bronze Starter Pack",
     subText:
       "Comprehensive Grant Proposal + A List of 3 Premium Grants + Free Consultation",
-    price: "$300",
+    price: 300,
     description:
       "Welcome to Our Bronze Starter Pack, the perfect entry point for businesses and nonprofits looking to secure funding without the stress. This package is designed to kickstart your grant journey with a professionally written grant proposal, a curated list of three premium grant opportunities, and a free consultation to align our efforts with your goals.",
     included: `Our process begins with a simple questionnaire to gather key details about your organization, followed by a 30-minute free consultation to discuss your funding needs and vision.
@@ -29,11 +31,12 @@ export const products: Record<string, Product> = {
   },
 
   "get-on-the-move": {
+    id: "get-on-the-move",
     productImage: "grant-package-two.jpg",
     title: "Get On The Move",
     subText:
       "Comprehensive Grant Proposal + A List of 4 Premium Grants + Writing & Application for 3 Grants of your choice + Free Consultation",
-    price: "$500",
+    price: 500,
     description:
       "Cell Capital’s Get on the Move!! package is your all-in-one solution for businesses and nonprofits ready to accelerate their funding journey. For just $500, we deliver a professionally written grant proposal, a curated list of four premium grants, full writing and application support for three grants of your choice, and a free consultation to ensure your strategy is on point. This package is designed to save you time and boost your chances of securing the funds you need.",
     included: `We start with an easy-to-complete questionnaire to understand your organization’s mission and funding goals, followed by a 30-minute free consultation to dive deeper into your needs. Our team then crafts a comprehensive grant proposal, including an executive summary, needs assessment, organizational background, budget proposal, objectives, and evaluation components—customized to impress grant reviewers. We also research and provide a list of four premium grants tailored to your sector, whether you’re a business, nonprofit, or social enterprise. From this list (or your own preferences), you’ll select three grants, and we’ll handle the writing and application process for each, submitting them on your behalf using your contact information for direct updates. To ensure quality, we offer two revision rounds for the proposal draft.`,
@@ -51,11 +54,12 @@ export const products: Record<string, Product> = {
   },
 
   "go-all-the-way": {
+    id: "go-all-the-way",
     productImage: "grant-package-three.jpg",
     title: "Go All The Way!!",
     subText:
       "Comprehensive Grant Proposal + A List of 5 Premium Grants + Writing & Application for all 5 Grants + Free Consultation.",
-    price: "$1000",
+    price: 1000,
     description:
       "Cell Capital’s Go All the Way! package is the ultimate funding solution for ambitious businesses and nonprofits ready to maximize their grant potential. For $1,000, we provide a professionally written grant proposal, a curated list of five premium grants, complete writing and application support for all five grants, and a free consultation to craft a winning strategy. This comprehensive package is designed to deliver unmatched value, positioning your organization for funding success.",
     included: `Our process begins with a detailed questionnaire to capture your organization’s mission, goals, and funding needs, followed by a 45-minute free consultation to refine your approach. Our expert team then develops a comprehensive grant proposal, including an executive summary, needs statement, organizational background, detailed budget, objectives, and evaluation plan—crafted to captivate grant reviewers. We also research and deliver a list of five premium grants, carefully matched to your sector and goals, whether you’re a startup, nonprofit, or social enterprise. For all five grants, we handle the full writing and application process, submitting each on your behalf using your contact information so you stay in the loop. To ensure perfection, we offer three revision rounds for the proposal draft, giving you confidence in the final product.`,
@@ -84,6 +88,10 @@ export default async function GrantPackage({
       <NavBar />
 
       <HiddenNav />
+
+      
+
+      <ConsultationComponent />
 
       <ProductDetails product={products[packageId]} />
 

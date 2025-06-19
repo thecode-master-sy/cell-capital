@@ -20,6 +20,7 @@ import {
   TiktokLogoIcon,
 } from "@phosphor-icons/react";
 import { motion, useInView, AnimatePresence } from "motion/react";
+import { useCart } from "./providers/cart-provider";
 
 const siteLinks = [
   {
@@ -35,7 +36,6 @@ const siteLinks = [
     pathname: "/business-plan",
   },
 ];
-
 
 const navItemContainer = {
   onscreen: {
@@ -72,6 +72,7 @@ export default function NavBar() {
   const isInView = useInView(elementRef, { once: false });
   const { toggleNav } = useNavBarContext();
   const { toggleConsultationForm } = useConsultationFormContext();
+  const { cart, toggleCart } = useCart();
   const pathname = usePathname();
   return (
     <nav
@@ -115,11 +116,14 @@ export default function NavBar() {
       </motion.ul>
 
       <div className="flex gap-4  items-center fixed top-2 right-4 z-10 ">
-        <ShoppingBag
-          className="hidden md:inline-block"
-          strokeWidth={1}
-          size={20}
-        />
+        <button
+          onClick={toggleCart}
+          className="gap-1 items-center hidden md:flex cursor-pointer"
+        >
+          <ShoppingBag strokeWidth={1} size={20} />
+          <span>{cart.length === 0 ? "" : cart.length}</span>
+        </button>
+
         <motion.div
           layout
           variants={floatingNavVariants}
@@ -156,8 +160,12 @@ export default function NavBar() {
         </motion.div>
       </div>
 
-      <button className="flex mix-blend-difference md:hidden items-center text-white fixed right-15 top-[13px] z-10  text-body cursor-pointer">
+      <button
+        onClick={toggleCart}
+        className="flex mix-blend-difference gap-1 md:hidden items-center text-white fixed right-15 top-[13px] z-10  text-body cursor-pointer"
+      >
         <ShoppingBag strokeWidth={1} size={20} />
+        <span>{cart.length === 0 ? "" : cart.length}</span>
       </button>
       <AlignJustify
         strokeWidth={1}
