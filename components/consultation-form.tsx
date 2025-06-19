@@ -64,6 +64,7 @@ export default function ConsultationForm() {
     addClientDetails({
       email: data.email,
       name: data.name,
+      phoneNumber: data.phone,
     });
     setStep(2);
   };
@@ -71,6 +72,11 @@ export default function ConsultationForm() {
   const onCompanySubmit: SubmitHandler<CompanyFormType> = (data) => {
     console.log("Step 2 submitted with data:", data);
     setFormData((prev) => ({ ...prev, ...data }));
+    addClientDetails({
+      organizationName: data.organizationName,
+      industry: data.industry,
+      fundingGoal: data.fundingGoal,
+    });
     toggleConsultationForm();
     toggleBooker();
   };

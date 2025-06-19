@@ -5,11 +5,25 @@ import { useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { X } from "lucide-react";
 
-type BookerProps = {};
+type Booking = {
+  videoCallUrl: string;
+  title: string;
+  startTime: string;
+};
 
 export default function Booker() {
-  const { bookerOpen, toggleBooker, clientDetails } =
-    useConsultationFormContext();
+  const {
+    bookerOpen,
+    toggleBooker,
+    clientDetails: {
+      organizationName,
+      industry,
+      fundingGoal,
+      phoneNumber,
+      email,
+      name,
+    },
+  } = useConsultationFormContext();
   const lenis = useLenis();
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -47,17 +61,72 @@ export default function Booker() {
   }, [bookerOpen]);
 
   useEffect(() => {
+    console.log("the useeffect is running again");
+
     (async function () {
       const cal = await getCalApi({ namespace: "30min" });
+
       cal("ui", {
         theme: "light",
         hideEventTypeDetails: false,
         layout: "month_view",
       });
-    })();
-  }, []);
+      cal("on", {
+        action: "bookingSuccessful",
+        callback: async (e) => {
+          if (
+            !organizationName ||
+            !industry ||
+            !fundingGoal ||
+            !phoneNumber ||
+            !email ||
+            !name
+          ) {
+            return; // Skip setup if any value is empty
+          }
+          console.log(e.detail, "this is the e details");
+          const {
+            data: { booking },
+          } = e.detail;
 
-  console.log(clientDetails);
+          const { videoCallUrl, title, startTime } = booking as Booking;
+
+          try {
+            const response = await fetch(
+              "https://api.cellcapital.org/api/bookings",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  meetingName: title,
+                  scheduledDate: startTime,
+                  organizationName,
+                  clientEmail: email,
+                  fundingGoal,
+                  phoneNumber,
+                  meetingLink: videoCallUrl,
+                  industry,
+                }),
+              }
+            );
+            const result = await response.json();
+
+            if (!response.ok) {
+              console.error(
+                "Failed to create Notion entry:",
+                result.errors || result.error
+              );
+            } else {
+              console.log("Notion entry created:", result.pageId);
+            }
+          } catch (error) {
+            console.error("Error creating booking:", error);
+          }
+        },
+      });
+    })();
+  }, [organizationName, industry, fundingGoal, phoneNumber, email, name]);
+
   return (
     bookerOpen && (
       <div
@@ -81,8 +150,8 @@ export default function Booker() {
           config={{
             layout: "month_view",
             theme: "light",
-            name: clientDetails.name,
-            email: clientDetails.email,
+            name: name,
+            email: email,
           }}
         />
       </div>

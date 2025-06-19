@@ -7,6 +7,10 @@ interface IConsultationFormContext {
   clientDetails: {
     name: string;
     email: string;
+    phoneNumber: string;
+    organizationName: string;
+    industry: string;
+    fundingGoal: string;
   };
   toggleConsultationForm: () => void;
   toggleBooker: () => void;
@@ -38,6 +42,10 @@ export default function ConsultationFormProvider({
   const [clientDetails, setClientDetails] = useState({
     email: "",
     name: "",
+    phoneNumber: "",
+    organizationName: "",
+    industry: "",
+    fundingGoal: "",
   });
 
   function toggleConsultationForm() {
