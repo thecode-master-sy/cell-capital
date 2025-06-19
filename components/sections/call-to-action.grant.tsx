@@ -3,7 +3,7 @@ import Divider from "../divider";
 
 export default function CallToActionGrantSection() {
   return (
-    <div className=" bg-background-gray">
+    <div className=" bg-background">
       <div className="px-4 grid py-16">
         <h1 className="text-heading-0 font-bold text-center max-w-[25ch]">
           Do you have a special request not outlined in our packages?

@@ -117,13 +117,18 @@ export default function NavBar() {
       </motion.ul>
 
       <div className="flex gap-4  items-center fixed top-2 right-4 z-10 ">
+        <ShoppingBag
+          className="hidden md:inline-block"
+          strokeWidth={1}
+          size={20}
+        />
         <motion.div
           layout
           variants={floatingNavVariants}
           animate={isInView ? "onscreen" : "offscreen"}
           className="hidden md:flex gap-1 items-center rounded-sm p-1  overflow-hidden"
         >
-          <motion.div layout>
+          <motion.div className="flex gap-2 items-center" layout>
             <Button
               size="sm"
               className="hidden md:flex rounded-sm font-semibold text-sm cursor-pointer"

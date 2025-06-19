@@ -1,130 +1,124 @@
 "use client";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Box, Minus, Plus, X } from "lucide-react";
 import Link from "next/link";
 import Divider from "../divider";
-import CellCapitalPrimaryButton, {
-  CellCapitalSecondaryButton,
-} from "../cell-capital-button";
+import { CellCapitalSecondaryButton } from "../cell-capital-button";
 
-gsap.registerPlugin(ScrollTrigger);
+export type Product = {
+  title: string;
+  subText: string;
+  productImage: string;
+  description: string;
+  price: string;
+  included: string;
+  process: string[];
+  why: string;
+  whatToExpect: string;
+};
 
-export default function ProductDetails() {
-  const leftDivRef = useRef<HTMLDivElement>(null);
-  const rightDivRef = useRef<HTMLDivElement>(null);
-  const progressCircleRef = useRef<SVGCircleElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      const leftDiv = leftDivRef.current;
-      const rightDiv = rightDivRef.current;
-      const progressCircle = progressCircleRef.current;
-      const containerDiv = containerRef.current;
-
-      if (!leftDiv || !rightDiv || !progressCircle || !containerDiv) return;
-
-      const circumference = 2 * Math.PI * 30; // Radius = 30
-      gsap.set(progressCircle, {
-        strokeDasharray: circumference,
-        strokeDashoffset: circumference,
-      });
-
-      gsap.set(leftDiv, {
-        clipPath: "inset(0 0 0 0)",
-        width: "45%", // Initial width
-      });
-      gsap.set(rightDiv, {
-        width: "55%", // Initial width
-      });
-
-      // Initialize ScrollTrigger for progress tracking
-      // gsap.to(leftDiv, {
-      //   scrollTrigger: {
-      //     trigger: rightDiv,
-      //     start: "top top",
-      //     end: "bottom bottom",
-      //     scrub: true,
-      //     onUpdate: (self) => {
-      //       // Update progress bar width
-      //       const progress = self.progress * 100;
-      //       progressBar.style.width = `${progress}%`;
-      //     },
-      //     onEnterBack: () => {
-      //       // Restore sticky behavior when scrolling back up
-      //       leftDiv.style.position = "sticky";
-      //       leftDiv.style.top = "0";
-      //     },
-      //     onLeave: () => {
-      //       // Remove sticky when right div content is exhausted
-      //       leftDiv.style.position = "static";
-      //     },
-      //   },
-      // });
-
-      gsap.to(leftDiv, {
-        scrollTrigger: {
-          trigger: rightDiv,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-          onUpdate: (self) => {
-            // Update circular progress
-            const progress = self.progress;
-            gsap.to(progressCircle, {
-              strokeDashoffset: circumference * (1 - progress),
-              duration: 0.1,
-              ease: "none",
-            });
-          },
-          onEnterBack: () => {
-            // Restore sticky behavior
-            leftDiv.style.position = "sticky";
-            leftDiv.style.top = "0";
-            leftDiv.style.height = "100vh";
-          },
-          onLeave: () => {
-            // Remove sticky behavior
-            leftDiv.style.position = "relative";
-            leftDiv.style.height = "auto";
-          },
-        },
-      });
-
-      // Immediate clip on scroll start
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: leftDiv,
-            start: "top top", // When top of left div hits viewport top
-            toggleActions: "play none none reverse",
-          },
-        })
-        .to(leftDiv, {
-          clipPath: "inset(0 calc(100% - 80px) 0 0)", // Clip to show only cancel button
-
-          duration: 0.8,
-          ease: "power4.inOut",
-        })
-        .to(
-          ".content",
-          {
-            opacity: 0,
-            duration: 0.5,
-            ease: "power4.inOut",
-          },
-          0
-        );
-    },
-    { scope: containerRef }
-  );
-
+export default function ProductDetails({ product }: { product: Product }) {
   return (
-    <div ref={containerRef} className="hidden md:flex items-stretch w-full">
-      <div
+    <div className="min-h-screen relative pt-25 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
+      <div className="min-h-screen">
+        <div className="aspect-[1/0.8] rounded-md overflow-hidden md:sticky top-10">
+          <img src={`/${product.productImage}`} alt={product.title} />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <h2 className="text-heading-one font-bold">{product.title}</h2>
+            <p className="text-paragraph mt-2 text-muted-foreground">
+              {product.subText}
+            </p>
+          </div>
+
+          <div className="mt-7">
+            <h2 className="text-heading-one font-bold">{product.price}</h2>
+          </div>
+
+          <div className="mt-7">
+            <div className="flex items-center gap-2">
+              <span className="text-paragraph">Quantity</span>
+
+              <div className="flex items-center gap-2">
+                <span className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer">
+                  <Minus size={14} />
+                </span>
+
+                <span>0</span>
+
+                <span className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer">
+                  <Plus size={14} />
+                </span>
+
+                <CellCapitalSecondaryButton className="flex-1 p-5 justify-between bg-white border border-primary">
+                  <span className="text-paragraph">Add to packages</span>
+                  <Box size={14} />
+                </CellCapitalSecondaryButton>
+              </div>
+            </div>
+
+            <div className="w-full flex gap-4 items-center py-4">
+              <CellCapitalSecondaryButton className="flex-1 p-5 justify-center bg-primary max-w-[300px] ">
+                <span className="text-paragraph">Buy now</span>
+              </CellCapitalSecondaryButton>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <div>
+              <p className="font-bold text-paragraph">What is included?</p>
+
+              <p className="mt-2 text-paragraph">{product.included}</p>
+            </div>
+
+            <div className="mt-4">
+              <p className="text-paragraph font-bold">Our process</p>
+
+              <div className="flex flex-col gap-2 mt-2">
+                {product.process.map((step, index) => (
+                  <div className="flex gap-2" key={index}>
+                    <span>{index + 1}.</span>
+
+                    <span>{step}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-bold text-paragraph">
+                Why Choose the Bronze Starter Pack?
+              </p>
+
+              <p className="mt-2">{product.why}</p>
+            </div>
+
+            <div className="mt-4">
+              <p className="text-paragraph font-bold">What to Expect</p>
+
+              <p className="mt-2">{product.whatToExpect}</p>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-bold">Have any questions?</p>
+
+              <p className="mt-2">
+                Contact us today to learn how the {product.title} can help your
+                organization thrive.
+              </p>
+
+              <CellCapitalSecondaryButton className="justify-between border border-primary bg-white mt-4">
+                <span>Contact us</span>
+                <ArrowRight size={14} />
+              </CellCapitalSecondaryButton>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div
         ref={leftDivRef}
         className="bg-background-gray w-[45%] py-4 sticky top-0 h-screen"
       >
@@ -313,7 +307,7 @@ export default function ProductDetails() {
             <ArrowRight size={14} />
           </CellCapitalSecondaryButton>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
