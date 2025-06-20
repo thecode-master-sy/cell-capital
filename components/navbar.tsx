@@ -107,7 +107,7 @@ export default function NavBar() {
         ))}
 
         <motion.li variants={itemVariants} key={"item-one"}>
-          <a href="#about">About</a>
+          <Link href="/#about">About</Link>
         </motion.li>
 
         <motion.li variants={itemVariants} key={"item-two"}>

@@ -8,6 +8,7 @@ import { useLenis } from "lenis/react";
 import { useCart } from "./providers/cart-provider";
 import CartItemComponent from "./cart-item";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function CartComponent() {
   const pathname = usePathname();
@@ -102,39 +103,69 @@ export default function CartComponent() {
               animate="visible"
               exit="hidden"
             >
-              <div className="fixed top-0 z-[10] py-4 w-full md:w-[55%]  flex justify-between  px-4 bg-background  border-black right-0">
-                <div>
-                  <h2 className="text-heading-one font-bold">Order summary</h2>
-                </div>
-                <div
-                  onClick={toggleCart}
-                  className="flex gap-2 items-center cursor-pointer ml-auto"
-                >
-                  <div className="flex justify-center items-center bg-background-gray w-[30px] h-[30px]  p-1 rounded-full">
-                    <X size={15} strokeWidth={2} className="cursor-pointer" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="py-18  grid gap-4">
-                {cart.map((item) => (
-                  <CartItemComponent key={item.id} product={item} />
-                ))}
-              </div>
-
-              <div className="fixed bottom-0 py-4 w-full md:w-[55%]  flex items-center justify-between  px-4 bg-background  border-black right-0">
-                <div>
-                  <p className="text-muted-foreground">Total</p>
-                  <h2 className="text-heading-one font-bold">
-                    ${getCartTotal()}
-                  </h2>
-                </div>
-                <div>
-                  <Button size="lg" className="font-bold  cursor-pointer">
-                    <span>Checkout</span>
+              {cart.length === 0 ? (
+                <div className="flex gap-2 flex-col justify-center h-full items-center">
+                  <button
+                    onClick={toggleCart}
+                    className="flex gap-2 items-center fixed top-2 right-2 cursor-pointer ml-auto"
+                  >
+                    <div className="flex justify-center items-center bg-background-gray w-[30px] h-[30px]  p-1 rounded-full">
+                      <X size={15} strokeWidth={2} className="cursor-pointer" />
+                    </div>
+                  </button>
+                  <p className="text-paragraph max-w-[35ch] text-center">
+                    Your cart is empty at the moment, check out our Grant
+                    packages and Business plan
+                  </p>
+                  <Button onClick={toggleCart} className="font-bold" asChild>
+                    <Link href="/grants#packages">
+                      Continue to grant packages
+                    </Link>
                   </Button>
                 </div>
-              </div>
+              ) : (
+                <>
+                  <div className="fixed top-0 z-[10] py-4 w-full md:w-[55%]  flex justify-between  px-4 bg-background  border-black right-0">
+                    <div>
+                      <h2 className="text-heading-one font-bold">
+                        Order summary
+                      </h2>
+                    </div>
+                    <button
+                      onClick={toggleCart}
+                      className="flex gap-2 items-center cursor-pointer ml-auto"
+                    >
+                      <div className="flex justify-center items-center bg-background-gray w-[30px] h-[30px]  p-1 rounded-full">
+                        <X
+                          size={15}
+                          strokeWidth={2}
+                          className="cursor-pointer"
+                        />
+                      </div>
+                    </button>
+                  </div>
+
+                  <div className="md:pt-18 md:pb-30 py-10  grid gap-4">
+                    {cart.map((item) => (
+                      <CartItemComponent key={item.id} product={item} />
+                    ))}
+                  </div>
+
+                  <div className="fixed bottom-0 py-4 w-full md:w-[55%]  flex items-center justify-between  px-4 bg-background  border-black right-0">
+                    <div>
+                      <p className="text-muted-foreground">Total</p>
+                      <h2 className="text-heading-one tracking-wide font-bold">
+                        ${getCartTotal()}
+                      </h2>
+                    </div>
+                    <div>
+                      <Button size="lg" className="font-bold  cursor-pointer">
+                        <span>Checkout</span>
+                      </Button>
+                    </div>
+                  </div>
+                </>
+              )}
             </motion.div>
           </>
         )}
