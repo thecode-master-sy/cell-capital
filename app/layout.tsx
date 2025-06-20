@@ -6,6 +6,7 @@ import ppNeueMonteralBook from "@/lib/font";
 import ConsultationFormProvider from "@/components/providers/consultation-provider";
 import { CartProvider } from "@/components/providers/cart-provider";
 import CartComponent from "@/components/cart-component";
+import ConsultationComponent from "@/components/consultation-component";
 
 export const metadata: Metadata = {
   title: "Cell Capital - success oriented grant writing agency",
@@ -27,6 +28,7 @@ export default function RootLayout({
             <NavBarProvider>
               <ConsultationFormProvider>
                 <CartComponent />
+                <ConsultationComponent />
                 {children}
               </ConsultationFormProvider>
             </NavBarProvider>

@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUp } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
+  
   return (
     <footer className="bg-background-black text-white  pt-16 overflow-hidden">
       <div className="grid grid-cols-6 lg:grid-cols-12 md:grid-cols-8 px-4 gap-y-16">

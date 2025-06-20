@@ -3,7 +3,6 @@ import CallToActionGrantSection from "@/components/sections/call-to-action.grant
 import ProductDetails, { Product } from "@/components/sections/product-details";
 import TestimonalSection from "@/components/sections/testimonials-section";
 import Footer from "@/components/sections/footer";
-import ConsultationComponent from "@/components/consultation-component";
 import { products } from "../../../lib/static";
 
 export default async function GrantPackage({
@@ -17,8 +16,6 @@ export default async function GrantPackage({
       <NavBar />
 
       <HiddenNav />
-
-      <ConsultationComponent />
 
       <ProductDetails product={products[packageId]} />
 

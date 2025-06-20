@@ -4,8 +4,10 @@ import { Button } from "../ui/button";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ArrowRight } from "lucide-react";
+import { useConsultationFormContext } from "../providers/consultation-provider";
 
 export default function CallToActionSection() {
+  const { toggleConsultationForm } = useConsultationFormContext();
   return (
     <div className="bg-background-black text-background-black-foreground overflow-hidden pb-16">
       <div className="bg-background-gray">
@@ -19,7 +21,10 @@ export default function CallToActionSection() {
           With over $15m in secured grants, we know what it takes to get funded.
           Let’s do the work for you.
         </p>
-        <Button className="bg-primary mx-auto mt-2 border border-white rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold">
+        <Button
+          onClick={toggleConsultationForm}
+          className="bg-primary mx-auto mt-2 border border-white rounded-sm cursor-pointer items-center h-auto px-7 py-2 text-paragraph  font-bold"
+        >
           <span className="mr-2  text-black">Book a free consultation</span>
           <ArrowRight className=" text-black" />
         </Button>
