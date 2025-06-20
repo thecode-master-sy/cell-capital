@@ -68,6 +68,8 @@ export default function ProductDetails({ product }: { product: Product }) {
 
       const result = await response.json();
 
+      setLoading(true);
+
       window.open(result.checkoutUrl, "_blank");
     } catch (error) {
       setLoading(false);
