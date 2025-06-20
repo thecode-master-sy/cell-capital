@@ -16,21 +16,21 @@ export default function CartItemComponent({ product }: { product: CartItem }) {
         <p className="text-paragraph">{product.name}</p>
 
         <div className="flex items-center gap-2 mt-2">
-          <span
+          <button
             onClick={() => decreaseQuantity(product.id)}
             className="flex justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
           >
             <Minus size={14} />
-          </span>
+          </button>
 
           <span>{product.quantity}</span>
 
-          <span
+          <button
             onClick={() => increaseQuantity(product.id)}
             className="flex justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
           >
             <Plus size={14} />
-          </span>
+          </button>
         </div>
 
         <div className="mt-4">

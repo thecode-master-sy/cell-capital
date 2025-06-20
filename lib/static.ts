@@ -1,3 +1,5 @@
+import { Product } from "@/components/sections/product-details";
+
 export const products: Record<string, Product> = {
   bronze: {
     id: "bronze",

@@ -70,21 +70,21 @@ export default function ProductDetails({ product }: { product: Product }) {
               <span className="text-paragraph">Quantity</span>
 
               <div className="flex items-center gap-2">
-                <span
+                <button
                   onClick={decrementQuantity}
                   className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
                 >
                   <Minus size={14} />
-                </span>
+                </button>
 
                 <span>{quantityState}</span>
 
-                <span
+                <button
                   onClick={incrementQuantity}
                   className="flex bg-white justify-center items-center rounded-full w-[28px] h-[28px] cursor-pointer"
                 >
                   <Plus size={14} />
-                </span>
+                </button>
               </div>
             </div>
 
