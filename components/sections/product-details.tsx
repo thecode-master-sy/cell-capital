@@ -1,10 +1,19 @@
 "use client";
 import { useRef, useState } from "react";
-import { ArrowRight, Box, Minus, Plus, X, ShoppingBag } from "lucide-react";
+import {
+  ArrowRight,
+  Box,
+  Minus,
+  Plus,
+  X,
+  ShoppingBag,
+  Loader2,
+} from "lucide-react";
 import Link from "next/link";
 import Divider from "../divider";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
 import { useCart } from "../providers/cart-provider";
+import { Button } from "../ui/button";
 
 export type Product = {
   id: string;
@@ -22,6 +31,7 @@ export type Product = {
 export default function ProductDetails({ product }: { product: Product }) {
   const [quantityState, setQuantityState] = useState(1);
   const { addToCart, cart } = useCart();
+  const [loading, setLoading] = useState(false);
 
   const handleAddToCart = () => {
     console.log(cart.length);
@@ -43,6 +53,27 @@ export default function ProductDetails({ product }: { product: Product }) {
 
   const decrementQuantity = () => {
     setQuantityState((prev) => Math.max(1, prev - 1));
+  };
+
+  const handleBuyNow = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("https://api.cellcapital.org/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productId: "862182",
+        }),
+      });
+
+      const result = await response.json();
+
+      window.open(result.checkoutUrl, "_blank");
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+      alert("Failed to buy product #1");
+    }
   };
 
   return (
@@ -89,9 +120,20 @@ export default function ProductDetails({ product }: { product: Product }) {
             </div>
 
             <div className="w-full flex gap-4 items-center py-4">
-              <CellCapitalSecondaryButton className="flex-1 p-5 justify-center bg-primary max-w-[300px] ">
-                <span className="font-bold text-base">Buy now</span>
-              </CellCapitalSecondaryButton>
+              <Button
+                onClick={handleBuyNow}
+                disabled={loading}
+                className="flex-1 p-5 justify-center bg-primary max-w-[300px] cursor-pointer"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <span>Processing...</span>
+                  </>
+                ) : (
+                  <span className="font-bold text-base">Buy now</span>
+                )}
+              </Button>
               <CellCapitalSecondaryButton
                 onClick={handleAddToCart}
                 className="p-5 gap-4 items-center justify-between bg-white"
