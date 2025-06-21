@@ -34,7 +34,7 @@ export default function CartItemComponent({ product }: { product: CartItem }) {
         </div>
 
         <div className="mt-4">
-          <p className="text-paragraph font-bold">
+          <p className="text-paragraph font-bold tracking-wider">
             ${product.price * product.quantity}
           </p>
         </div>

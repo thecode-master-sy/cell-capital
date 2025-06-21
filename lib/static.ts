@@ -3,6 +3,7 @@ import { Product } from "@/components/sections/product-details";
 export const products: Record<string, Product> = {
   bronze: {
     id: "bronze",
+    priceId: "pri_01jy9pr27ggvhmf4zk1vxcfpxw",
     productImage: "grant-package-one.jpg",
     title: "Bronze Starter Pack",
     subText:
@@ -27,6 +28,7 @@ export const products: Record<string, Product> = {
 
   "get-on-the-move": {
     id: "get-on-the-move",
+    priceId: "pri_01jy9yfmn885g2y1nxnzzaq8yb",
     productImage: "grant-package-two.jpg",
     title: "Get On The Move",
     subText:
@@ -50,6 +52,7 @@ export const products: Record<string, Product> = {
 
   "go-all-the-way": {
     id: "go-all-the-way",
+    priceId: "pri_01jya49kgygxgmycdyhxbk7fbv",
     productImage: "grant-package-three.jpg",
     title: "Go All The Way!!",
     subText:

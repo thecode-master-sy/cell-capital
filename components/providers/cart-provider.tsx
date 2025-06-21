@@ -12,6 +12,7 @@ interface Product {
   name: string;
   price: number;
   image: string;
+  priceId: string;
 }
 
 export interface CartItem extends Product {

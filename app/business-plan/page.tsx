@@ -6,6 +6,7 @@ import TestimonalSection from "@/components/sections/testimonials-section";
 
 const product: Product = {
   id: "business-plan",
+  priceId: "pri_01jya5ge6cf91ana3g5javd2g7",
   productImage: "business-plan.jpeg",
   title: "The Ultimate Business Plan  + Pitch Deck Pack",
   subText:

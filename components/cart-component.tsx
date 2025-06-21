@@ -9,6 +9,7 @@ import { useCart } from "./providers/cart-provider";
 import CartItemComponent from "./cart-item";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import PaymentComponent from "./payment-component";
 
 export default function CartComponent() {
   const pathname = usePathname();
@@ -159,9 +160,14 @@ export default function CartComponent() {
                       </h2>
                     </div>
                     <div>
-                      <Button size="lg" className="font-bold  cursor-pointer">
-                        <span>Checkout</span>
-                      </Button>
+                      <PaymentComponent
+                        items={cart.map((item) => ({
+                          priceId: item.priceId,
+                          quantity: item.quantity,
+                        }))}
+                      >
+                        Checkout
+                      </PaymentComponent>
                     </div>
                   </div>
                 </>

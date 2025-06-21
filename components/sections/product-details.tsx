@@ -14,6 +14,7 @@ import Divider from "../divider";
 import { CellCapitalSecondaryButton } from "../cell-capital-button";
 import { useCart } from "../providers/cart-provider";
 import { Button } from "../ui/button";
+import PaymentComponent from "../payment-component";
 
 export type Product = {
   id: string;
@@ -26,6 +27,7 @@ export type Product = {
   process: string[];
   why: string;
   whatToExpect: string;
+  priceId: string;
 };
 
 export default function ProductDetails({ product }: { product: Product }) {
@@ -42,6 +44,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         name: product.title,
         price: product.price,
         image: product.productImage,
+        priceId: product.priceId
       },
       quantityState
     );
@@ -55,28 +58,27 @@ export default function ProductDetails({ product }: { product: Product }) {
     setQuantityState((prev) => Math.max(1, prev - 1));
   };
 
-  const handleBuyNow = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("https://api.cellcapital.org/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          productId: "862182",
-        }),
-      });
+  // const handleBuyNow = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await fetch("http://localhost:3001/api/checkout", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         productId: "862182",
+  //         quantity: quantityState,
+  //       }),
+  //     });
 
-      const result = await response.json();
+  //     const result = await response.json();
 
-      setLoading(true);
-
-      window.open(result.checkoutUrl, "_blank");
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-      alert("Failed to buy product #1");
-    }
-  };
+  //     window.location = result.checkoutUrl;
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error);
+  //     alert("Failed to buy product #1");
+  //   }
+  // };
 
   return (
     <div className="min-h-screen relative pt-25 md:pt-35 pb-16 grid gap-7 md:grid-cols-[1fr_1.2fr] px-4 bg-background-gray">
@@ -95,7 +97,9 @@ export default function ProductDetails({ product }: { product: Product }) {
           </div>
 
           <div className="mt-7">
-            <h2 className="text-heading-one font-bold">${product.price}</h2>
+            <h2 className="text-heading-one font-bold tracking-wider">
+              ${product.price}
+            </h2>
           </div>
 
           <div className="mt-7">
@@ -122,7 +126,12 @@ export default function ProductDetails({ product }: { product: Product }) {
             </div>
 
             <div className="w-full flex gap-4 items-center py-4">
-              <Button
+              <PaymentComponent
+                items={[{ priceId: product.priceId, quantity: quantityState }]}
+              >
+                Buy now
+              </PaymentComponent>
+              {/* <Button
                 onClick={handleBuyNow}
                 disabled={loading}
                 className="flex-1 p-5 justify-center bg-primary max-w-[300px] cursor-pointer"
@@ -135,7 +144,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 ) : (
                   <span className="font-bold text-base">Buy now</span>
                 )}
-              </Button>
+              </Button> */}
               <CellCapitalSecondaryButton
                 onClick={handleAddToCart}
                 className="p-5 gap-4 items-center justify-between bg-white"

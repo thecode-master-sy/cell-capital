@@ -91,7 +91,7 @@ export default function NavBar() {
           staggerDirection: -1,
           duration: 0.5,
         }}
-        className="hidden lg:flex items-center gap-7 z-10 font-semibold mix-blend-difference text-white fixed top-2 left-1/2 right-1/2 -translate-x-1/2 w-max"
+        className="hidden lg:flex items-center gap-7 z-10 font-semibold mix-blend-difference tracking-wide text-white fixed top-2 left-1/2 right-1/2 -translate-x-1/2 w-max"
       >
         {siteLinks.map((siteLink, index) => (
           <motion.li
